@@ -1,0 +1,91 @@
+.nav-bar{
+    margin:0;
+  padding:0;
+display:flex;
+justify-content: space-between;
+}
+.nav{
+    display:flex;
+    flex-direction: row;
+}
+
+.nav-img{
+    padding-top: 25px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+   height: 25px;
+
+}
+.admin-name{
+    font-size:12px;
+    font-weight:medium;
+
+}
+.nav-profile img
+{
+width: 40px;
+height: 40px;
+padding-top:15px;
+
+}
+.profile-contact
+{
+    display:flex;
+    flex-direction:column;
+    padding-top:25px;
+    padding-left: 10px;
+}
+.email
+{
+    color: #8B8B8B;
+    font-size:12px
+}
+.logo{
+    display:flex;
+    flex-direction: row;
+}
+.survey{
+    padding-left: 50px;
+    padding-top: 18px;
+    color: #045758;
+    font-size:24px;
+    font-weight:medium;
+}
+.logo img{
+    padding-left:15px;
+    padding-top:15px;   
+    height:30px
+}
+@media  (max-width: 500px) {
+    .email
+    {
+        color: #582424;
+        font-size:2px
+    }
+    .logo img{
+   
+        padding-top:25px;   
+        height:15px
+    }
+    .survey{
+        padding-left: 50px;
+        padding-top: 27px;
+    
+        font-size:14px;
+      
+    }
+    .nav-profile img
+{
+        width: 30px;
+         height: 30px;
+        padding-top:25px;
+
+}
+.nav-img{
+    padding-top: 27px;
+    padding-right: 15px;
+   height: 20px;
+
+}
+  }
