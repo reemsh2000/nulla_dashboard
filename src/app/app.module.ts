@@ -15,6 +15,7 @@ import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 // import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
 // import { fas } from '@fortawesome/free-solid-svg-icons';
 // import { far } from '@fortawesome/free-regular-svg-icons';
+import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,12 @@ import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
     AuthImageSideComponent,
     LoginComponent,
     SignupComponent,
-    ImportSurveyComponent,
     SurveysComponent,
     RecommendationsComponent,
     CompanyAccountComponent,
     InterestsComponent,
-    NavBarComponent
+    NavBarComponent,
+    StackChartComponent
   ],
   imports: [
     BrowserModule,

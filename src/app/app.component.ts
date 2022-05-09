@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nulla';
+
+  data={
+    agree: 70,
+    netural: 20,
+    disagree: 10,
+  }
 }
