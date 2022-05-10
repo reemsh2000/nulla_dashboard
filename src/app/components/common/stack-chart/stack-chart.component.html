@@ -1,0 +1,8 @@
+<div class="chart">
+  <p class="graph_title">{{header}}</p>
+    <div   class="line">
+      <div [ngStyle]="{'width': data.agree+'%'} "   class="bowl agree">{{data.agree}}%</div>
+      <div [ngStyle]="{'width': data.netural+'%'}"   class="bowl netural" >{{data.netural}}%</div>
+      <div [ngStyle]="{'width': data.disagree+'%'}"   class="bowl disagree">{{data.disagree}}%</div>
+    </div>
+  </div>
