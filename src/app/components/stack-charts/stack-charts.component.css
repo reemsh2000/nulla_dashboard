@@ -1,0 +1,41 @@
+.charts{
+    border: 2px solid salmon;
+    width: 40%;
+    margin: 20px 5px;
+
+}
+
+.chart_legend {
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  color: rgba(0, 0, 0, 0.76);
+  font-size: 20px;
+}
+.legend_item {
+  display: flex;
+  align-items: center;
+}
+.legend_item .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin-right: 5px;
+}
+.legend_item .agree {
+  background-color: #61c6cb;
+}
+.legend_item .neutral {
+  background-color: #f7842a;
+}
+.legend_item .disgree {
+  background-color: #be3635;
+}
+
+@media (max-width: 650px) {
+
+  .charts{
+    width: 98%;
+  }
+}
