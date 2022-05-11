@@ -1,3 +1,4 @@
+import { Statistics } from './../../../Interfaces/interfaces';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -5,14 +6,17 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './stack-chart.component.html',
   styleUrls: ['./stack-chart.component.css']
 })
-export class StackChartComponent implements OnInit {
-  @Input() data: any;
+export class StackChartComponent {
+  @Input() statistics: Statistics={
+    agree: 0,
+    neutral: 0,
+    disagree: 0
+  };
   @Input() header: string | undefined;
   constructor() { 
-    console.log(this.data)
+    
   }
 
-  ngOnInit(): void {
-  }
+  
 
 }
