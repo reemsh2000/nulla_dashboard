@@ -1,10 +1,15 @@
 .chart {
   display: flex;
-  width: 45%;
+  width: 95%;
   align-items: center;
   justify-content: space-between;
   font-size: 19px;
   font-weight: 550;
+  padding: 2%;
+}
+.graph_title {
+  margin: 10px 7px 0 0 ;
+  color: rgba(0, 0, 0, 0.76);
 }
 
 .line {
@@ -25,7 +30,7 @@
   background-color: #61c6cb;
   border-radius: 15px 0 0 15px;
 }
-.bowl.netural {
+.bowl.neutral {
   background-color: #f7842a;
 }
 .bowl.disagree {
