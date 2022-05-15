@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { far } from '@fortawesome/free-regular-svg-icons';
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
+import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { StackChartsComponent } from './components/stack-charts/stack-charts.com
     InterestsComponent,
     NavBarComponent,
     StackChartComponent,
-    StackChartsComponent
+    StackChartsComponent,
+    AgeStatisticsComponent
   ],
   imports: [
     BrowserModule,
