@@ -13,4 +13,10 @@ export interface Statistics {
     neutral: number;
     disagree: number;
 }
+export interface AgeStatistics {
+    Adolescence: number; //18-24
+    Earlyadulthood: number; //24-34
+    Midlife: number; //35-44
+    Matureadulthood: number; //
+}
 
