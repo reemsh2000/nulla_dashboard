@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,10 @@ import { AgeStatisticsComponent } from './components/age-statistics/age-statisti
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
     // FontAwesomeModule,
-    // FaIconLibrary
+    // FaIconLibrary, initialize
+    ,ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
