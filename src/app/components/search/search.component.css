@@ -1,0 +1,33 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+padding-top:5px
+
+   
+}
+.title{
+    font-size:15px;
+    color: #696F79;
+    padding-left: 17%;
+    padding-top: 50px;
+   
+}
+.search-input{
+    width:50%;
+    height:38px;    
+}
+.btn-search{
+    height: 38px;
+  width:15%;
+  background-color: #045758;
+  color: #fff;
+  border: none;
+align-items: center;
+margin-left: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
