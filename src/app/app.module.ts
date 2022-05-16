@@ -21,6 +21,7 @@ import { StackChartsComponent } from './components/stack-charts/stack-charts.com
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
 import {ChartModule} from 'primeng/chart';
 import { SearchComponent } from './components/search/search.component';
+import { SnapshotComponent } from './components/snapshot/snapshot.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SearchComponent } from './components/search/search.component';
     StackChartComponent,
     StackChartsComponent,
     AgeStatisticsComponent,
-    SearchComponent
+    SearchComponent,
+    SnapshotComponent
   ],
   imports: [
     BrowserModule,
