@@ -13,4 +13,8 @@ export interface Statistics {
     neutral: number;
     disagree: number;
 }
+export interface SideBarRow {
+    icon : string;
+    label : string;
+}
 
