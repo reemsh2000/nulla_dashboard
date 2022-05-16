@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './Router/app-routing.module';
@@ -11,13 +12,12 @@ import { SurveysComponent } from './components/Dashborad/surveys/surveys.compone
 import { RecommendationsComponent } from './components/Dashborad/recommendations/recommendations.component';
 import { CompanyAccountComponent } from './components/company/company-account/company-account.component';
 import { InterestsComponent } from './components/company/interests/interests.component';
-import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { FontAwesomeModule,FaIconLibrary } from '@fortawesome/angular-fontawesome';
-// import { fas } from '@fortawesome/free-solid-svg-icons';
-// import { far } from '@fortawesome/free-regular-svg-icons';
+
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
+import { SidebarComponent } from './components/common/sidebar/sidebar.component';
+import { NavComponent } from './components/common/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -29,21 +29,23 @@ import { StackChartsComponent } from './components/stack-charts/stack-charts.com
     RecommendationsComponent,
     CompanyAccountComponent,
     InterestsComponent,
-    NavBarComponent,
     StackChartComponent,
-    StackChartsComponent
+    StackChartsComponent,
+    SidebarComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     // FontAwesomeModule,
     // FaIconLibrary
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   // constructor(library: FaIconLibrary){
   //   library.addIconPacks(fas,far)
 
