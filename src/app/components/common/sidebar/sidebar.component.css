@@ -1,0 +1,95 @@
+aside {
+  width: 100%;
+  height: 100%;
+}
+
+aside.active {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.line_menu {
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  width: 90%;
+  border-radius: 0 15px 15px 0;
+  align-items: center;
+  height: 45px;
+  overflow: hidden;
+  padding: 15px;
+  transition: 0.2s ease-in-out;
+  user-select: none;
+}
+
+aside.active .line_menu {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title_line {
+  margin-left: 10px;
+  font-size: 1rem;
+  animation: before 0.6s ease-in-out;
+}
+
+@keyframes before {
+  0% {
+    opacity: 0;
+  }
+}
+
+aside.active .line_menu .title_line {
+  display: none;
+  opacity: 0;
+}
+
+.line_menu:hover {
+  background-color: #f9f9f9;
+}
+
+.line_menu.active {
+  color: #fc8424;
+}
+
+.line_menu i {
+  fill: rgb(104, 104, 104);
+}
+
+.line_menu.active i {
+  fill: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 800px) {
+  aside {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  aside .line_menu {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  aside .line_menu .title_line {
+    display: none;
+    opacity: 0;
+  }
+
+  .line_menu:hover {
+    border-radius: 50% !important;
+  }
+
+  .line_menu i {
+    fill: rgb(0, 0, 0);
+  }
+}
