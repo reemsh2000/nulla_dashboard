@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   title = 'nulla';
+  openMenu: boolean = false;
+  checkMenu(event: boolean) {
+    this.openMenu = event;
+  }
 
   constructor() { }
 
