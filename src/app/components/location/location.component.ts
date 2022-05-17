@@ -1,45 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service'
-import { AgeStatistics, Question, Statistics } from '../../Interfaces/interfaces';
-
+import { LoactionStatistics, Question, Statistics } from '../../Interfaces/interfaces';
 @Component({
-  selector: 'app-age-statistics',
-  templateUrl: './age-statistics.component.html',
-  styleUrls: ['./age-statistics.component.css']
+  selector: 'app-location',
+  templateUrl: './location.component.html',
+  styleUrls: ['./location.component.css']
 })
+export class LocationComponent implements OnInit {
 
-export class AgeStatisticsComponent implements OnInit {
+
+
   ngOnInit(): void {
   }
   ageAnswers: any = [];
   ageQuestions: Question[] = [];
-  statistics: AgeStatistics = {
-    Adolescence: 10, //18-24
-    Earlyadulthood: 9, //24-34
-    Midlife: 12, //35-44
-    Matureadulthood: 15, //45-54
+  statistics: LoactionStatistics = {
+    londen: 10,
+    magrate: 8,
+    others: 9,
 
   };
   data: any;
-
   constructor(public dataService: DataService) {
     this.ageQuestions = this.getAgeQuestions("UzkZtaLj");
 
 
 
     this.data = {
-      "labels": ['18-24', '25-34', '35-44', '45-54', '55-64', '65-74', '+75'],
+      "labels": ['Londan', 'Margate', 'Other location'],
       "datasets": [
         {
-          label: 'Age destibution',
-          data: [this.statistics["Adolescence"], this.statistics["Earlyadulthood"], this.statistics["Midlife"]],
+          label: 'Location Statistics',
+          data: [this.statistics["londen"], this.statistics["magrate"], this.statistics["others"]],
           backgroundColor: '#FC8424',
         }
       ]
     }
-  }
-
-
+   }
+   
 
   getAgeQuestions(surveyId: string): Question[] {
     let ageQuestion: Question[] = []
@@ -53,12 +51,11 @@ export class AgeStatisticsComponent implements OnInit {
     return ageQuestion;
   }
 
-  getPersonalityAnswersStatistics(surveyId: string): AgeStatistics {
-    let personalityQusetionsStatistics: AgeStatistics = {
-      Adolescence: 0, //18-24
-      Earlyadulthood: 0, //24-34
-      Midlife: 0, //35-44
-      Matureadulthood: 0, //45-54
+  getPersonalityAnswersStatistics(surveyId: string): LoactionStatistics {
+    let personalityQusetionsStatistics: LoactionStatistics = {
+      londen: 0,
+      magrate: 0,
+      others: 0,
     }
     this.dataService.getAnswers(surveyId).subscribe((answers: any) => {
       answers.items.forEach((surveyResponse: any) => {
@@ -66,16 +63,16 @@ export class AgeStatisticsComponent implements OnInit {
           this.ageQuestions.forEach((peronalityQusetion: any) => {
             if (answer.field.id === peronalityQusetion.id) {
               switch (answer.choice.label) {
-                case '18-24':
+                case 'londen':
 
-                  this.statistics['Adolescence'] = this.statistics['Adolescence'] + 1;
+                  this.statistics['londen'] = this.statistics['londen'] + 1;
                   break;
 
-                case '25-34':
-                  this.statistics['Earlyadulthood'] = this.statistics['Earlyadulthood'] + 1;
+                case 'Margate':
+                  this.statistics['magrate'] = this.statistics['magrate'] + 1;
                   break;
-                case '35-44':
-                  this.statistics['Midlife'] = this.statistics['Midlife'] + 1;
+                case 'Other location':
+                  this.statistics['others'] = this.statistics['others'] + 1;
                   break;
               }
             }
@@ -88,8 +85,4 @@ export class AgeStatisticsComponent implements OnInit {
     ); // request end 
     return personalityQusetionsStatistics;
   }
-  //   }
 }
-
-
-
