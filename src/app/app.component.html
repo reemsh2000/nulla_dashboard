@@ -1,7 +1,11 @@
 <app-nav (isMenuopen)="checkMenu($event)"></app-nav>
 <div class="content">
-  <app-sidebar [isSideSmall]="openMenu" class="bowl_aside" [class.active]="openMenu"></app-sidebar>
+  <app-sidebar
+    [isSideSmall]="openMenu"
+    class="bowl_aside"
+    [class.active]="openMenu"
+  ></app-sidebar>
   <div class="main_container" [class.active]="openMenu">
     <app-stack-charts></app-stack-charts>
-</div>
+  </div>
 </div>
