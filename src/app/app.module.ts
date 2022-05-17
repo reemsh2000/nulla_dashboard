@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 
 import {ChartModule} from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NavComponent } from './components/common/nav/nav.component';
     SidebarComponent,
     NavComponent,
     AgeStatisticsComponent,
+    LocationComponent,
   ],
   imports: [
     ChartModule,
