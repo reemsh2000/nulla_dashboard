@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-padding-top:5px
+padding-top:5px;
+
 
    
 }
@@ -16,6 +17,10 @@ padding-top:5px
 .search-input{
     width:65%;
     height:38px;    
+    padding-left:12px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    box-shadow: 1px 1px 1px #ccc;
 }
 .btn-search{
     height: 38px;
