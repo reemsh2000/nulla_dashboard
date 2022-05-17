@@ -1,6 +1,7 @@
 import { Statistics } from './../../Interfaces/interfaces';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { StackChartsService } from './stack-charts.service';
+import {DataService} from '../../../app/services/data.service'
 @Component({
   selector: 'app-stack-charts',
   templateUrl: './stack-charts.component.html',
@@ -29,10 +30,10 @@ export class StackChartsComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    let subscribtion = this.stackService.statistics$.subscribe((val: any) => {
-      this.stackService.getQuestionStatistics('UzkZtaLj', this.stackService.pesrsonalityQuestions);
-      console.log(val)
-    });
+    // let subscribtion = this.stackService.statistics$.subscribe((val: any) => {
+    //   this.stackService.getQuestionStatistics('UzkZtaLj', this.stackService.pesrsonalityQuestions);
+    //   console.log(val)
+    // });
 
   }
   convertToPercentage(statistics: Statistics): Statistics {
