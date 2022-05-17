@@ -1,8 +1,26 @@
 <div class="chart">
-  <p class="graph_title">{{header}}</p>
-    <div   class="line">
-      <div [ngStyle]="{'width': statistics.agree+'%'} "   class="bowl agree">{{statistics.agree}}%</div>
-      <div [ngStyle]="{'width': statistics.neutral+'%'}"   class="bowl neutral" >{{statistics.neutral}}%</div>
-      <div [ngStyle]="{'width': statistics.disagree+'%'}"   class="bowl disagree">{{statistics.disagree}}%</div>
+  <p class="graph_title">{{ header }}</p>
+  <div class="line">
+    <div
+      *ngIf="statistics.agree !== 0"
+      [ngStyle]="{ width: statistics.agree + '%' }"
+      class="bowl agree"
+    >
+      {{ statistics.agree }}%
+    </div>
+    <div
+      *ngIf="statistics.neutral !== 0"
+      [ngStyle]="{ width: statistics.neutral + '%' }"
+      class="bowl neutral"
+    >
+      {{ statistics.neutral }}%
+    </div>
+    <div
+      *ngIf="statistics.disagree !== 0"
+      [ngStyle]="{ width: statistics.disagree + '%' }"
+      class="bowl disagree"
+    >
+      {{ statistics.disagree }}%
     </div>
   </div>
+</div>

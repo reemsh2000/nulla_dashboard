@@ -11,10 +11,13 @@ export class DataService {
   });
 
   constructor(private http: HttpClient) { }
+
+  
   getQuestions(formId: string) {
     return this.http.get(`${this.apiUrl}${formId}`, { headers: this.headers })
-
   }
+
+
   getAnswers(formId: string) {
     return this.http.get(`${this.apiUrl}${formId}/responses`, { headers: this.headers })
   }
