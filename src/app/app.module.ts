@@ -20,6 +20,7 @@ import { SnapshotComponent } from './components/snapshot/snapshot.component';
 import { SearchComponent } from './components/search/search.component';
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
 // import { Module } from 'chart.js';
+import { FormsModule } from '@angular/forms';
 
 import {ChartModule} from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
@@ -50,7 +51,7 @@ import { NavComponent } from './components/common/nav/nav.component';
     AppRoutingModule,
     HttpClientModule,
     CommonModule, 
-
+    FormsModule,
     
     // FontAwesomeModule,
     // FaIconLibrary, initialize
