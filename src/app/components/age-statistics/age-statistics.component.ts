@@ -23,7 +23,7 @@ export class AgeStatisticsComponent implements OnInit {
   data: any;
 
   constructor(public dataService: DataService) {
-    this.ageQuestions = this.getAgeQuestions("TNatOmnO");
+    this.ageQuestions = this.getAgeQuestions("UzkZtaLj");
 
 
 

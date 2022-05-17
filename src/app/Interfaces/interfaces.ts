@@ -23,4 +23,8 @@ export interface SideBarRow {
     icon : string;
     label : string;
 }
-
+export interface LoactionStatistics{
+    londen: number;
+    magrate: number;
+    others: number;
+}
