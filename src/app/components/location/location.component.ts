@@ -15,9 +15,9 @@ export class LocationComponent implements OnInit {
   ageAnswers: any = [];
   ageQuestions: Question[] = [];
   statistics: LoactionStatistics = {
-    londen: 0,
-    magrate: 0,
-    others: 0,
+    londen: 10,
+    magrate: 8,
+    others: 9,
 
   };
   data: any;
@@ -30,7 +30,7 @@ export class LocationComponent implements OnInit {
       "labels": ['Londan', 'Margate', 'Other location'],
       "datasets": [
         {
-          label: 'Age destibution',
+          label: 'Location Statistics',
           data: [this.statistics["londen"], this.statistics["magrate"], this.statistics["others"]],
           backgroundColor: '#FC8424',
         }

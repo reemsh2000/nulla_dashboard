@@ -14,10 +14,10 @@ export class AgeStatisticsComponent implements OnInit {
   ageAnswers: any = [];
   ageQuestions: Question[] = [];
   statistics: AgeStatistics = {
-    Adolescence: 0, //18-24
-    Earlyadulthood: 0, //24-34
-    Midlife: 0, //35-44
-    Matureadulthood: 0, //45-54
+    Adolescence: 10, //18-24
+    Earlyadulthood: 9, //24-34
+    Midlife: 12, //35-44
+    Matureadulthood: 15, //45-54
 
   };
   data: any;
