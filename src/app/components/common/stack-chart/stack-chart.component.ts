@@ -7,16 +7,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./stack-chart.component.css']
 })
 export class StackChartComponent {
-  @Input() statistics: Statistics={
+  @Input() statistics: Statistics = {
     agree: 0,
     neutral: 0,
     disagree: 0
   };
   @Input() header: string | undefined;
-  constructor() { 
-    
+  constructor() {
+
+
   }
 
-  
+
 
 }
