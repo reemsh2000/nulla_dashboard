@@ -1,7 +1,9 @@
 .charts{
-    border: 2px solid salmon;
-    width: 40%;
+    width: 50%;
     margin: 20px 5px;
+    box-shadow: 1px 1px 10px #ccc;
+    border-radius: 7px;
+    padding: 15px;
 
 }
 
@@ -36,6 +38,14 @@
 @media (max-width: 650px) {
 
   .charts{
-    width: 98%;
+    width: 90%;
+    margin: 10px auto ;
+  }
+  .loader{
+    z-index: -1;
+  }
+  .chart_legend {
+    width: 100%;
+    font-size: 15px;
   }
 }
