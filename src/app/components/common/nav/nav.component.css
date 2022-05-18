@@ -4,7 +4,7 @@ nav {
   background-color: #fff;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 98%;
   display: flex;
   z-index: 100;
   align-items: center;
@@ -108,12 +108,13 @@ nav {
 }
 @media (max-width: 450px) {
   nav {
-    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
     height: 50px;
+    margin: 10px 0;
   }
-
+.left_nav {
+    width: 90%;
+  }
   .logo {
     width: 90px;
     height: 30px;
