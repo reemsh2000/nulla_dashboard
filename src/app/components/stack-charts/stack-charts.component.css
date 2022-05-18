@@ -13,7 +13,10 @@
   justify-content: space-evenly;
   color: rgba(0, 0, 0, 0.76);
   font-size: 20px;
+  margin: 0 auto;
+  padding: 10px;
 }
+
 .legend_item {
   display: flex;
   align-items: center;
@@ -47,5 +50,12 @@
   .chart_legend {
     width: 100%;
     font-size: 15px;
+  }
+
+  .chart_legend {
+    width: 100%;
+    justify-content: space-around;
+    font-size: 17px;
+    padding: 7px;
   }
 }

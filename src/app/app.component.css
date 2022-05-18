@@ -14,7 +14,6 @@ body{
 
 
 .content {
-    display: flex;
     height: calc(100vh - 65px);
     margin-top: 65px;
     width: 100%;
@@ -70,5 +69,10 @@ body{
     display: block;
     width:80%;
 }
+}
+.age-location-statistics{
+    display: flex;
+    flex-direction: row;
+ justify-content:center;
 
 }
