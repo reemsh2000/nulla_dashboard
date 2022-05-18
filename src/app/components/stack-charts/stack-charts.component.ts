@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StackChartsService } from './stack-charts.service';
+import { StackChartsService } from '../../services/stack-charts.service';
 
 @Component({
   selector: 'app-stack-charts',

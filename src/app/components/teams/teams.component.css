@@ -1,9 +1,7 @@
-.teams-chart{
-    width:20%;
-    height:20%;
-    margin-left:12%;
-   padding-top:18px
+.teams_chart  {
+      width:250px !important;
 }
+
 
 @media (max-width: 650px) {
     .teams-chart{

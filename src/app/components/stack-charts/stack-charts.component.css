@@ -1,7 +1,8 @@
-.charts {
-  border: 2px solid salmon;
-  width: 500px;
-  padding: 10px;
+.charts{
+    width: 100%;
+    box-shadow: 1px 1px 10px #ccc;
+    border-radius: 7px;
+    padding: 25px 10px;
 }
 
 .chart_legend {
@@ -36,8 +37,16 @@
 }
 
 @media (max-width: 650px) {
-  .charts {
-    width: 98%;
+  .charts{
+    width: 90%;
+    margin: 10px auto ;
+  }
+  .loader{
+    z-index: -1;
+  }
+  .chart_legend {
+    width: 100%;
+    font-size: 15px;
   }
 
   .chart_legend {

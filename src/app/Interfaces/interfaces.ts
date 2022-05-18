@@ -12,6 +12,7 @@ export interface Statistics {
     agree: number;
     neutral: number;
     disagree: number;
+    title:string;
 }
 export interface AgeStatistics {
     Adolescence: number; //18-24

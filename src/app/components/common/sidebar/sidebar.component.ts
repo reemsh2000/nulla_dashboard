@@ -18,7 +18,7 @@ export class SidebarComponent {
   @Input() isSideSmall: boolean = false;
 
   constructor(public section: AsideService) {
-    console.log(section.sectionName);
+    // console.log(section.sectionName);
   }
  
    sideBarArray= [
@@ -45,6 +45,10 @@ export class SidebarComponent {
   {
       icon:PrimeIcons.BOOK,
       label: 'Reports'
+    },
+    {
+      icon:PrimeIcons.USER,
+      label: 'Profile'
     },
 
 

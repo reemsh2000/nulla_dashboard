@@ -2,16 +2,20 @@
 
 <app-nav (isMenuopen)="checkMenu($event)"></app-nav>
 <div class="content">
-    <app-sidebar [isSideSmall]="openMenu" class="bowl_aside" [class.active]="openMenu"></app-sidebar>
-    <div class="main_container" [class.active]="openMenu">
-        <!-- <app-stack-charts></app-stack-charts> -->
-        <app-search></app-search>
-        <app-snapshot></app-snapshot>
-        <div class="age-location-statistics">
-            <app-age-statistics></app-age-statistics>
-            <app-location></app-location>
-        </div>
-        <app-teams></app-teams>
-        
+  <app-sidebar
+    [isSideSmall]="openMenu"
+    class="bowl_aside"
+    [class.active]="openMenu"
+  ></app-sidebar>
+  <div class="main_container" [class.active]="openMenu">
+    <app-search></app-search>
+    <app-snapshot></app-snapshot>
+
+    <div class="grid_charts">
+      <app-stack-charts class="charts_statistics chart"></app-stack-charts>
+      <app-age-statistics class="age_statistics chart"></app-age-statistics>
+      <app-location class="chart"></app-location>
+      <app-teams class="chart"></app-teams>
     </div>
+  </div>
 </div>

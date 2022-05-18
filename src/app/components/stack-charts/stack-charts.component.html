@@ -1,28 +1,33 @@
 <div class="charts">
-  <div class="chart_legend">
+  <div class="chart_legend" 
+  *ngIf="(stackService.personalityStatistics$ | async)?.length !== 0"
+  >
     <div class="legend_item">
-      <span class="circle agree"></span>
+      <span class="circle agree"> </span>
       <p>Agree</p>
     </div>
     <div class="legend_item">
-      <span class="circle neutral"></span>
+      <span class="circle neutral"> </span>
       <p>Neutral</p>
     </div>
     <div class="legend_item">
-      <span class="circle disgree"></span>
+      <span class="circle disgree"> </span>
       <p>Disagree</p>
     </div>
   </div>
 
-  <!-- <app-stack-chart
-    *ngIf="personalityStatistics.agree"
-    header="Personality"
-    [statistics]="personalityStatistics | async"
-  ></app-stack-chart> -->
-  <!-- <app-stack-chart
-    *ngIf="leadStatistics.agree"
-    header="Lead Questions"
-    [statistics]="leadStatistics"
-  ></app-stack-chart> -->
+  <div *ngIf="(stackService.personalityStatistics$ | async)?.length === 1">
+    <p-progressSpinner class="loader"></p-progressSpinner>
+  </div>
+
+  <div
+    *ngFor="let item of stackService.personalityStatistics$ | async"
+    class="loop"
+  >
+    <app-stack-chart
+      [header]="item.title"
+      [statistics]="item"
+    ></app-stack-chart>
+  </div>
 
 </div>

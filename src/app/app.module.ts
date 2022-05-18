@@ -12,6 +12,7 @@ import { RecommendationsComponent } from './components/Dashborad/recommendations
 import { CompanyAccountComponent } from './components/company/company-account/company-account.component';
 import { InterestsComponent } from './components/company/interests/interests.component';
 import { HttpClientModule } from '@angular/common/http';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
@@ -54,7 +55,8 @@ import { TeamsComponent } from './components/teams/teams.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule, 
+    CommonModule,
+    ProgressSpinnerModule,
     FormsModule,
     
     // FontAwesomeModule,

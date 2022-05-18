@@ -1,19 +1,11 @@
-.card{
-    padding-top: 50px;
-  
-    height:40%;
-    padding-left: 80px;
+.card {
+  height: 40%;
+  width: 100%;
 }
 
-
 @media (max-width: 650px) {
- 
-    .card{
-        padding-top: 50px;
-        width: 40%;
-        height:40%;
-        padding-left: 80px;
-        background-color:#f00
-    }
-    
+  .card {
+    width: 90%;
+    height: 100%;
   }
+}
