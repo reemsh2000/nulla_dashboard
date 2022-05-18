@@ -1,19 +1,28 @@
 <div class="charts">
-    <div class="chart_legend">
-        <div class="legend_item">
-            <span class="circle agree"> </span>
-            <p>Agree</p>
-        </div>
-        <div class="legend_item">
-            <span class="circle neutral"> </span>
-            <p>Neutral</p>
-        </div>
-        <div class="legend_item">
-            <span class="circle disgree"> </span>
-            <p>Disagree</p>
-        </div>
-
+  <div class="chart_legend">
+    <div class="legend_item">
+      <span class="circle agree"></span>
+      <p>Agree</p>
     </div>
-    <app-stack-chart header="Personality" [statistics]="PersonalityStatistics"> </app-stack-chart>
-</div>
+    <div class="legend_item">
+      <span class="circle neutral"></span>
+      <p>Neutral</p>
+    </div>
+    <div class="legend_item">
+      <span class="circle disgree"></span>
+      <p>Disagree</p>
+    </div>
+  </div>
 
+  <!-- <app-stack-chart
+    *ngIf="personalityStatistics.agree"
+    header="Personality"
+    [statistics]="personalityStatistics | async"
+  ></app-stack-chart> -->
+  <!-- <app-stack-chart
+    *ngIf="leadStatistics.agree"
+    header="Lead Questions"
+    [statistics]="leadStatistics"
+  ></app-stack-chart> -->
+
+</div>

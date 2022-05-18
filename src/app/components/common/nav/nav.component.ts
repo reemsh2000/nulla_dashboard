@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { LoaderService } from 'src/app/services/loader.service';
+import { LoaderService } from '../../../services/loader.service';
 
 @Component({
   selector: 'app-nav',

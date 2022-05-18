@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SideBarRow } from 'src/app/Interfaces/interfaces';
+import { SideBarRow } from '../../../Interfaces/interfaces';
 import { PrimeIcons} from 'primeng/api';
-import { AsideService } from 'src/app/services/aside.service';
+// import { SideBarRow } from '../../../Interfaces';
+
+import { AsideService } from '../../../services/aside.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,7 +21,7 @@ export class SidebarComponent {
     console.log(section.sectionName);
   }
  
-   sideBarArray: SideBarRow[] = [
+   sideBarArray= [
      {
         icon: PrimeIcons.HOME,
         label: 'Dashboard'

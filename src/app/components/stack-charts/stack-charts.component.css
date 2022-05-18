@@ -1,8 +1,7 @@
-.charts{
-    border: 2px solid salmon;
-    width: 40%;
-    margin: 20px 5px;
-
+.charts {
+  border: 2px solid salmon;
+  width: 500px;
+  padding: 10px;
 }
 
 .chart_legend {
@@ -11,7 +10,10 @@
   justify-content: space-evenly;
   color: rgba(0, 0, 0, 0.76);
   font-size: 20px;
+  margin: 0 auto;
+  padding: 10px;
 }
+
 .legend_item {
   display: flex;
   align-items: center;
@@ -34,8 +36,14 @@
 }
 
 @media (max-width: 650px) {
-
-  .charts{
+  .charts {
     width: 98%;
+  }
+
+  .chart_legend {
+    width: 100%;
+    justify-content: space-around;
+    font-size: 17px;
+    padding: 7px;
   }
 }
