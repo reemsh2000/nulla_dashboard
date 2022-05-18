@@ -65,19 +65,18 @@ aside.active .line_menu .title_line {
 }
 
 @media screen and (max-width: 800px) {
-  aside {
+  aside.active {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    width:100%;
   }
 
-  aside .line_menu {
-    width: 50px;
-    height: 50px;
+  aside.active .line_menu {
+    width: 170px;
     border-radius: 15px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   aside .line_menu .title_line {
@@ -86,10 +85,17 @@ aside.active .line_menu .title_line {
   }
 
   .line_menu:hover {
-    border-radius: 50% !important;
+    border-radius: 5px;
   }
 
   .line_menu i {
+    width: 20px;
     fill: rgb(0, 0, 0);
+  }
+  aside.active .line_menu .title_line {
+    display: block;
+    opacity: 1;
+    width: 100px;
+    z-index: 2;
   }
 }
