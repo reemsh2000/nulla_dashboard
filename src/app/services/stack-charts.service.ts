@@ -1,7 +1,7 @@
 import { BehaviorSubject, mergeMap, tap } from 'rxjs';
 import { Injectable, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
-import { Question, Statistics } from '../../Interfaces/interfaces';
+import { DataService } from './data.service';
+import { Question, Statistics } from '../Interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
