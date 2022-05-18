@@ -3,20 +3,26 @@
   width: 95%;
   align-items: center;
   justify-content: space-between;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 550;
-  padding: 2%;
+  padding:10px ;
 }
+
 .graph_title {
-  margin: 10px 7px 0 0 ;
+  margin: 10px 7px 0 0;
+  width: 135px;
   color: rgba(0, 0, 0, 0.76);
 }
 
 .line {
   margin-top: 10px;
   display: flex;
-  height: 50px;
+  height: 40px;
   width: 85%;
+  background-color: rgb(238, 238, 238);
+  border-radius: 20px;
+  overflow: hidden;
+
 }
 
 .bowl {
@@ -28,25 +34,32 @@
 
 .bowl.agree {
   background-color: #61c6cb;
-  border-radius: 15px 0 0 15px;
 }
+
 .bowl.neutral {
   background-color: #f7842a;
 }
+
 .bowl.disagree {
   background-color: #be3635;
-  border-radius: 0px 15px 15px 0;
 }
 
 @media (max-width: 650px) {
+.chart {
+  width: 100%;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
   .line {
     width: 95%;
     font-size: 10px;
-    margin-top: 0;
+    margin-top: 10;
+    height: 30px;
+
   }
-  .chart {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 98%;
+  .graph_title {
+  font-size: 1rem;
   }
+
 }
