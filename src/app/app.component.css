@@ -2,6 +2,7 @@ body{
     margin:0;
     padding:0;
 }
+
 .main_page{
     display: flex;
     justify-content: space-evenly;
@@ -10,10 +11,7 @@ body{
     width: 20%;
     height: 70vh;
 }
-.main_container{
-    width: 80%;;
-}
-/*  */
+
 
 .content {
     display: flex;
@@ -52,13 +50,25 @@ body{
 @media screen and (max-width: 800px) {
 
     .main_container {
-        width: calc(100% - 75px);
-        margin-left: 75px;
+        width: 100%;
+        margin-left: 0px;
+    }
+    .main_container.active{
+        display: none;
+        visibility: hidden;
     }
 
     .bowl_aside {
         width: 75px;
         background-color: #fff;
+        display: none;
+        visibility: hidden;
     }
+
+.bowl_aside.active {
+    visibility: visible;
+    display: block;
+    width:80%;
+}
 
 }
