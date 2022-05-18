@@ -1,20 +1,21 @@
 .snapshot-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  padding-top: 50px;
+  justify-content: space-between;
+  padding-top: 30px;
+  width: 90%;
 }
 .snapshot {
   display: flex;
   flex-direction: column;
   border: 1px solid #d2c0d2;
   border-radius: 4%;
-  width: 20%;
-  height: 200px;
+  width: 30%;
+  height: 220px;
 }
 
 .snapshot-percentage {
-  height: 130px;
+  height: 120px;
   text-align: center;
   padding-top: 45px;
   color: #ffffff;
@@ -23,12 +24,10 @@
 }
 .snapshot-question {
   text-align: center;
-  padding: 10px 15px;
-
-  height: 70px;
-  /* border-radius: 4px; */
+  padding: 20px 15px;
+  height:100px;
   color: #ffffff;
-  padding-top: 20px;
+  font-size: 18px;
 }
 .one-percentage {
   background-color: #be4a57;
@@ -70,5 +69,9 @@
     border-radius: 4%;
     width: 25%;
     height: 150px;
+  }
+  .snapshot-container {
+    justify-content: space-evenly;
+    width: 95%;
   }
 }
