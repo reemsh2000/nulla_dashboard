@@ -10,6 +10,7 @@ export class StackChartsComponent {
   constructor(public stackService: StackChartsService) {
     let questionsPersonal = this.stackService.pesrsonalityQuestions;
     let questionsLead = this.stackService.leadQuestions;
+  
     this.stackService.getQuestionStatistics(
       'UzkZtaLj',
       questionsPersonal,

@@ -19,6 +19,7 @@ export interface AgeStatistics {
     Earlyadulthood: number; //24-34
     Midlife: number; //35-44
     Matureadulthood: number; //
+ 
 }
 export interface SideBarRow {
     icon : string;
