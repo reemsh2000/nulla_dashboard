@@ -10,50 +10,6 @@ export class StackChartsService {
   private personalityStatistics = new BehaviorSubject<Statistics[]>([]);
   public personalityStatistics$ = this.personalityStatistics.asObservable();
 
-  convertToPercentage({ agree, neutral, disagree, title }: Statistics) {
-    let total = agree + neutral + disagree,
-      agreePer = (agree / total) * 100,
-      neutralPer = (neutral / total) * 100,
-      disagreePer = (disagree / total) * 100;
-    this.personalityStatistics.next([
-      ...this.personalityStatistics.getValue(),
-      { agree: agreePer, neutral: neutralPer, disagree: disagreePer, title },
-    ]);
-  }
-
-  //  Get the statistics of perosnality Questions for the stack chart
-  getQuestionStatistics(
-    surveyId: string,
-    questions: Question[],
-    title: string
-  ) {
-    let obj = { agree: 0, neutral: 0, disagree: 0, title };
-    this.dataService.getAnswers(surveyId).subscribe((answers: any) => {
-      answers.items.forEach((surveyResponse: any) => {
-        surveyResponse.answers.forEach((answer: any) => {
-          questions.forEach((question: any) => {
-            if (answer.field.id === question.id) {
-              switch (answer.choice.label) {
-                case 'Strongly agree':
-                case 'Agree':
-                  obj['agree'] = obj['agree'] + 1;
-                  break;
-                case 'Disagree':
-                case 'Strongly disagree':
-                  obj['disagree'] = obj['disagree'] + 1;
-                  break;
-                case 'Neutral':
-                  obj['neutral'] = obj['neutral'] + 1;
-                  break;
-              }
-            }
-          });
-        }); //answers loop end
-      }); // survey response loop end
-      this.convertToPercentage(obj);
-    });
-  }
-
   pesrsonalityQuestions: Question[] = [];
   leadQuestions: Question[] = [];
 
@@ -73,7 +29,7 @@ export class StackChartsService {
       }
     );
   }
-
+  
   getFirstQuestionRef(surveyId: string, questionType: string, cb: any): void {
     this.dataService.getQuestions(surveyId).subscribe((res: any) => {
       for (let i = 0; i < res.logic.length; i++) {
@@ -85,7 +41,7 @@ export class StackChartsService {
     });
   }
 
-  //  Get the personality questions for the stack chart
+  //  Get the  questions for the stack chart
   getQuestions(surveyId: string, firstRef: string, cb: any): void {
     let personalityQuestion: Question[] = [];
     this.dataService.getQuestions(surveyId).subscribe((res: any) => {
@@ -101,4 +57,47 @@ export class StackChartsService {
       });
     });
   }
+
+    //  Get the statistics of perosnality Questions for the stack chart
+    getQuestionStatistics(
+      surveyId: string,
+      questions: Question[],
+      title: string
+    ) {
+      let statistics = { agree: 0, neutral: 0, disagree: 0, title };
+      this.dataService.getAnswers(surveyId).subscribe((answers: any) => {
+        answers.items.forEach((surveyResponse: any) => {
+          surveyResponse.answers.forEach((answer: any) => {
+            questions.forEach((question: any) => {
+              if (answer.field.id === question.id) {
+                switch (answer.choice.label) {
+                  case 'Strongly agree':
+                  case 'Agree':
+                    statistics['agree'] = statistics['agree'] + 1;
+                    break;
+                  case 'Disagree':
+                  case 'Strongly disagree':
+                    statistics['disagree'] = statistics['disagree'] + 1;
+                    break;
+                  case 'Neutral':
+                    statistics['neutral'] = statistics['neutral'] + 1;
+                    break;
+                }
+              }
+            });
+          }); //answers loop end
+        }); // survey response loop end
+        this.convertToPercentage(statistics);
+      });
+    }
+    convertToPercentage({ agree, neutral, disagree, title }: Statistics) {
+      let total = agree + neutral + disagree,
+        agreePer = (agree / total) * 100,
+        neutralPer = (neutral / total) * 100,
+        disagreePer = (disagree / total) * 100;
+      this.personalityStatistics.next([
+        ...this.personalityStatistics.getValue(),
+        { agree: agreePer, neutral: neutralPer, disagree: disagreePer, title },
+      ]);
+    }
 }
