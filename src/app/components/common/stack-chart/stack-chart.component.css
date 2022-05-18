@@ -1,6 +1,5 @@
 .chart {
   display: flex;
-  width: 95%;
   align-items: center;
   justify-content: space-between;
   font-size: 17px;
@@ -11,17 +10,20 @@
 .graph_title {
   margin: 10px 7px 0 0;
   width: 135px;
-  color: rgba(0, 0, 0, 0.76);
+  font-size: 18px;
 }
 
+
+
 .line {
-  margin-top: 10px;
+  margin-top: 15px;
   display: flex;
   height: 40px;
   width: 85%;
   background-color: rgb(238, 238, 238);
   border-radius: 20px;
   overflow: hidden;
+
 
 }
 
@@ -30,6 +32,27 @@
   align-items: center;
   justify-content: center;
   color: antiquewhite;
+  animation: animate 0.5s ease-in-out;
+}
+
+@media (max-width: 500px) {
+  .chart {
+    flex-direction: column;
+    margin-top: 15px;
+    align-items: flex-start;
+  }
+
+  .line {
+    margin-top: 7px;
+    width: 95%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
 .bowl.agree {
@@ -63,3 +86,4 @@
   }
 
 }
+

@@ -1,7 +1,17 @@
+<!-- <app-stack-chart [data]="data" header="Personality"> </app-stack-chart> -->
+
 <app-nav (isMenuopen)="checkMenu($event)"></app-nav>
 <div class="content">
-  <app-sidebar [isSideSmall]="openMenu" class="bowl_aside" [class.active]="openMenu"></app-sidebar>
-  <div class="main_container" [class.active]="openMenu">
-    <app-stack-charts></app-stack-charts>
-</div>
+    <app-sidebar [isSideSmall]="openMenu" class="bowl_aside" [class.active]="openMenu"></app-sidebar>
+    <div class="main_container" [class.active]="openMenu">
+        <!-- <app-stack-charts></app-stack-charts> -->
+        <app-search></app-search>
+        <app-snapshot></app-snapshot>
+        <div class="age-location-statistics">
+            <app-age-statistics></app-age-statistics>
+            <app-location></app-location>
+        </div>
+        <app-teams></app-teams>
+        
+    </div>
 </div>
