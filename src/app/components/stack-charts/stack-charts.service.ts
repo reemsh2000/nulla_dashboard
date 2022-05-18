@@ -4,38 +4,73 @@ import { DataService } from '../../data.service';
 import { Question, Statistics } from '../../Interfaces/interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StackChartsService {
-  private personalityStatistics = new BehaviorSubject<Statistics>({
-    agree: 0,
-    neutral: 0,
-    disagree: 0
-
-  })
+  private personalityStatistics = new BehaviorSubject<Statistics[]>([]);
   public personalityStatistics$ = this.personalityStatistics.asObservable();
-  get getPersonaResult(): Statistics {
-    return this.personalityStatistics.getValue();
+
+  convertToPercentage({ agree, neutral, disagree, title }: Statistics) {
+    let total = agree + neutral + disagree,
+      agreePer = (agree / total) * 100,
+      neutralPer = (neutral / total) * 100,
+      disagreePer = (disagree / total) * 100;
+    this.personalityStatistics.next([
+      ...this.personalityStatistics.getValue(),
+      { agree: agreePer, neutral: neutralPer, disagree: disagreePer, title },
+    ]);
   }
 
-  private set getPersonalResult(val: Statistics) {
-    this.personalityStatistics.next(val);
+  //  Get the statistics of perosnality Questions for the stack chart
+  getQuestionStatistics(
+    surveyId: string,
+    questions: Question[],
+    title: string
+  ) {
+    let obj = { agree: 0, neutral: 0, disagree: 0, title };
+    this.dataService.getAnswers(surveyId).subscribe((answers: any) => {
+      answers.items.forEach((surveyResponse: any) => {
+        surveyResponse.answers.forEach((answer: any) => {
+          questions.forEach((question: any) => {
+            if (answer.field.id === question.id) {
+              switch (answer.choice.label) {
+                case 'Strongly agree':
+                case 'Agree':
+                  obj['agree'] = obj['agree'] + 1;
+                  break;
+                case 'Disagree':
+                case 'Strongly disagree':
+                  obj['disagree'] = obj['disagree'] + 1;
+                  break;
+                case 'Neutral':
+                  obj['neutral'] = obj['neutral'] + 1;
+                  break;
+              }
+            }
+          });
+        }); //answers loop end
+      }); // survey response loop end
+      this.convertToPercentage(obj);
+    });
   }
-  pesrsonalityQuestions: Question[] = []
+
+  pesrsonalityQuestions: Question[] = [];
   leadQuestions: Question[] = [];
 
-
   constructor(private dataService: DataService) {
-    this.getFirstQuestionRef("UzkZtaLj", "personal", (questionRef: string) => {
-      this.getQuestions("UzkZtaLj", questionRef, (value: any) => {
-        this.pesrsonalityQuestions.push(value)
-      })
+    this.getFirstQuestionRef('UzkZtaLj', 'personal', (questionRef: string) => {
+      this.getQuestions('UzkZtaLj', questionRef, (value: any) => {
+        this.pesrsonalityQuestions.push(value);
+      });
     });
-    this.getFirstQuestionRef("UzkZtaLj", "lead_question", (questionRef: string) => {
-      this.getQuestions("UzkZtaLj", questionRef, (value: any) => {
-        this.leadQuestions.push(value)
-      })
-    }
+    this.getFirstQuestionRef(
+      'UzkZtaLj',
+      'lead_question',
+      (questionRef: string) => {
+        this.getQuestions('UzkZtaLj', questionRef, (value: any) => {
+          this.leadQuestions.push(value);
+        });
+      }
     );
   }
 
@@ -47,12 +82,12 @@ export class StackChartsService {
           break;
         }
       }
-    })
+    });
   }
 
   //  Get the personality questions for the stack chart
   getQuestions(surveyId: string, firstRef: string, cb: any): void {
-    let personalityQuestion: Question[] = []
+    let personalityQuestion: Question[] = [];
     this.dataService.getQuestions(surveyId).subscribe((res: any) => {
       res.fields.forEach((questions: any) => {
         for (let i = 0; i < questions.properties.fields?.length; i++) {
@@ -61,52 +96,9 @@ export class StackChartsService {
               cb(question);
             });
           }
-
         }
         return;
-      })
+      });
     });
-
-  }
-
-
-  //  Get the statistics of perosnality Questions for the stack chart
-  getQuestionStatistics(surveyId: string, questions: Question[]) {
-    let statistics: Statistics = {
-      agree: 0,
-      neutral: 0,
-      disagree: 0,
-    }
-
-    this.dataService.getAnswers(surveyId).subscribe((answers: any) => {
-      answers.items.forEach((surveyResponse: any) => {
-        surveyResponse.answers.forEach((answer: any) => {
-          questions.forEach((question: any) => {
-            if (answer.field.id === question.id) {
-              switch (answer.choice.label) {
-                case 'Strongly agree':
-                case 'Agree':
-                  statistics['agree'] = statistics['agree'] + 1;
-                  break;
-                case 'Disagree':
-                case 'Strongly disagree':
-                  statistics['disagree'] = statistics['disagree'] + 1;
-                  break;
-                case 'Neutral':
-                  statistics['neutral'] = statistics['neutral'] + 1;
-                  break;
-              }
-            }
-
-
-          });
-
-          //questions loop end 
-        }) //answers loop end 
-      });// survey response loop end 
-      this.getPersonalResult = statistics;
-    }
-    );
-    return statistics;
   }
 }
