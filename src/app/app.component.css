@@ -12,7 +12,6 @@ body{
     height: 70vh;
 }
 
-
 .content {
     height: calc(100vh - 65px);
     margin-top: 65px;
@@ -69,10 +68,20 @@ body{
     display: block;
     width:80%;
 }
+<<<<<<< HEAD
 }
 .age-location-statistics{
     display: flex;
     flex-direction: row;
  justify-content:center;
+=======
+>>>>>>> cfc61cfa1de87cac78b22a3fec35bcdbc3362a9c
 
+.age-location-statistics{
+    display: flex;
+    flex-direction: row;
+ justify-content:center;
+
+
+}
 }
