@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DemographicQuestion, Question } from 'app/Interfaces/interfaces';
 import { BehaviorSubject } from 'rxjs';
 import { DataService } from './data.service';
-import { staticticsService } from './statictics.service';
+import { StaticticsService } from './statictics.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class DemographicService {
   demographicQuestions: DemographicQuestion[] = [];
   constructor(
     private dataService: DataService,
-    private staticticsService: staticticsService
+    private staticticsService: StaticticsService
   ) {
     this.staticticsService.getFirstQuestionRef(
       'UzkZtaLj',
