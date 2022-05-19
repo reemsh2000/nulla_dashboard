@@ -6,12 +6,13 @@ import { Question, Statistics } from '../Interfaces/interfaces';
 @Injectable({
   providedIn: 'root',
 })
-export class staticticsService {
+export class StaticticsService {
   private personalityStatistics = new BehaviorSubject<Statistics[]>([]);
   public personalityStatistics$ = this.personalityStatistics.asObservable();
 
   pesrsonalityQuestions: Question[] = [];
   leadQuestions: Question[] = [];
+  driverQuestions: Question[] = [];
 
   
 
@@ -29,6 +30,15 @@ export class staticticsService {
       (questionRef: string) => {
         this.getQuestions('UzkZtaLj', questionRef, (value: any) => {
           this.leadQuestions.push(value);
+        });
+      }
+    );
+    this.getFirstQuestionRef(
+      'UzkZtaLj',
+      'driver',
+      (questionRef: string) => {
+        this.getQuestions('UzkZtaLj', questionRef, (value: any) => {
+          this.driverQuestions.push(value);
         });
       }
     );
