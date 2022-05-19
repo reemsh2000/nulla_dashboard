@@ -10,7 +10,7 @@
 .graph_title {
   margin: 10px 7px 0 0;
   width: 135px;
-  color: rgba(0, 0, 0, 0.76);
+  color: var(--text);
   font-size: 18px;
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   height: 40px;
   width: 85%;
-  background-color: rgb(238, 238, 238);
+  background-color: var(--body);
   border-radius: 20px;
   overflow: hidden;
 
@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: antiquewhite;
+  color:var(--body);
   animation: animate 0.5s ease-in-out;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .bowl.agree {
-  background-color: #61c6cb;
+  background-color: var(--primary);
 }
 
 .bowl.neutral {

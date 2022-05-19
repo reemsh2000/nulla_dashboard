@@ -27,6 +27,7 @@ import {ChartModule} from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { TeamsComponent } from './components/teams/teams.component';
     CommonModule,
     ProgressSpinnerModule,
     FormsModule,
+    BrowserAnimationsModule,
     
     // FontAwesomeModule,
     // FaIconLibrary, initialize
