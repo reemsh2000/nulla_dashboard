@@ -23,11 +23,13 @@ import { AgeStatisticsComponent } from './components/age-statistics/age-statisti
 // import { Module } from 'chart.js';
 import { FormsModule } from '@angular/forms';
 
+
 import {ChartModule} from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChartsModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TeamsComponent,
   ],
   imports: [
+
+    ChartsModule,
     ChartModule,
     BrowserModule,
     AppRoutingModule,
