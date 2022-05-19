@@ -12,20 +12,32 @@ export interface Statistics {
     agree: number;
     neutral: number;
     disagree: number;
-    title:string;
+    title: string;
 }
 export interface AgeStatistics {
     Adolescence: number; //18-24
     Earlyadulthood: number; //24-34
     Midlife: number; //35-44
     Matureadulthood: number; //
+
 }
 export interface SideBarRow {
-    icon : string;
-    label : string;
+    icon: string;
+    label: string;
 }
-export interface LoactionStatistics{
-    londen: number;
-    magrate: number;
-    others: number;
-}
+
+export interface DemographicQuestion {
+        question: string;
+        answers: Answer[];
+    }
+    // teams: {
+    //     question: Question,
+    //     answers: Answer[]
+
+    // },
+    // location: {
+    //     question: Question,
+    //     answers: Answer[]
+
+    // },
+
