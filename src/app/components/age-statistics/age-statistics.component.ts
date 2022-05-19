@@ -13,6 +13,9 @@ import { DemographicService } from 'app/services/demographic.service';
 export class AgeStatisticsComponent implements OnInit {
   ngOnInit(): void {
   }
+
+
+
   private personalityStatistics = new BehaviorSubject<AgeStatistics[]>([]);
   public personalityStatistics$ = this.personalityStatistics.asObservable();
 
