@@ -3,62 +3,61 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 30px;
-  width: 90%;
+  width: 75%;
 }
 .snapshot {
   display: flex;
   flex-direction: column;
-  border: 1px solid #d2c0d2;
-  border-radius: 4%;
-  width: 30%;
+  width: 25%;
   height: 220px;
-  
 }
 
-.snapshot-percentage {
+.snapshot_percentage {
   height: 120px;
   text-align: center;
   padding-top: 45px;
   color: var(--body);
   font-weight: bold;
   font-size: 40px;
+  border-bottom: 1px solid #ccc;
+  border-radius: 15px 15px 0 0 ;
 }
-.snapshot-question {
+.snapshot_question {
   text-align: center;
   padding: 20px 15px;
-  height:100px;
+  height: 100px;
   color: var(--body);
-  font-size: 18px;
+  font-size: 14px;
+  border-radius: 0px 0px 15px 15px ;
 }
-.one-percentage {
-  background-color: #be4a57;
+.snapshot_percentage.one {
+  background-color: #9d859d;
 }
-.one-percent {
-  background-color: #e989af;
-}
-.two-percentage {
-  background-color: #4683b6;
-}
-.two-percent {
-  background-color: #a6c8d2;
+.snapshot_percentage.two {
+  background-color: #206970;
 }
 
-.three-percentage {
-  background-color: #ec5c30;
+.snapshot_percentage.three {
+  background-color: #64925b;
 }
-.three-percent {
-  background-color: #fcbf4a;
-  padding: 10px 15px;
-  padding-bottom: 18px;
+.snapshot_question.one {
+  background-color: rgba(157, 133, 157, 0.8);
+}
+.snapshot_question.two {
+  background-color: rgba(32, 105, 112, 0.8);
+}
+
+.snapshot_question.three {
+  background-color: rgba(100, 146, 91, 0.8);
 }
 @media (max-width: 650px) {
-  .snapshot-percentage {
+  .snapshot_percentage {
     font-size: 15px;
     height: 50px;
     padding-top: 15px;
     font-size: 22px;
   }
-  .snapshot-question {
+  .snapshot_question {
     padding: 5px 15px;
     height: 100px;
     font-size: 12px;
