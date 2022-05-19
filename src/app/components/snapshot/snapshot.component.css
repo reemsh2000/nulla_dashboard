@@ -12,13 +12,14 @@
   border-radius: 4%;
   width: 30%;
   height: 220px;
+  
 }
 
 .snapshot-percentage {
   height: 120px;
   text-align: center;
   padding-top: 45px;
-  color: #ffffff;
+  color: var(--body);
   font-weight: bold;
   font-size: 40px;
 }
@@ -26,7 +27,7 @@
   text-align: center;
   padding: 20px 15px;
   height:100px;
-  color: #ffffff;
+  color: var(--body);
   font-size: 18px;
 }
 .one-percentage {

@@ -49,11 +49,12 @@ aside.active .line_menu .title_line {
 }
 
 .line_menu:hover {
-  background-color: #f9f9f9;
+  background-color: var(--secondary);
 }
 
 .line_menu.active {
-  color: #fc8424;
+  color:  var(--primary);
+  font-weight: 500;
 }
 
 .line_menu i {
