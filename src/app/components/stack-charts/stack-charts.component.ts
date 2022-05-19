@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StackChartsService } from '../../services/stack-charts.service';
+import { staticticsService } from '../../services/statictics.service';
 
 @Component({
   selector: 'app-stack-charts',
@@ -7,7 +7,7 @@ import { StackChartsService } from '../../services/stack-charts.service';
   styleUrls: ['./stack-charts.component.css'],
 })
 export class StackChartsComponent {
-  constructor(public stackService: StackChartsService) {
+  constructor(public stackService: staticticsService) {
     let questionsPersonal = this.stackService.pesrsonalityQuestions;
     let questionsLead = this.stackService.leadQuestions;
   

@@ -6,12 +6,16 @@ import { Question, Statistics } from '../Interfaces/interfaces';
 @Injectable({
   providedIn: 'root',
 })
-export class StackChartsService {
+export class staticticsService {
   private personalityStatistics = new BehaviorSubject<Statistics[]>([]);
   public personalityStatistics$ = this.personalityStatistics.asObservable();
 
   pesrsonalityQuestions: Question[] = [];
   leadQuestions: Question[] = [];
+
+  
+
+
 
   constructor(private dataService: DataService) {
     this.getFirstQuestionRef('UzkZtaLj', 'personal', (questionRef: string) => {
