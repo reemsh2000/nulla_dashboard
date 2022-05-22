@@ -30,7 +30,6 @@ import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +53,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TeamsComponent,
   ],
   imports: [
+<<<<<<< HEAD
 
+=======
+>>>>>>> 063b70a444e24c941f6400a6af52e527b5914777
     ChartModule,
     BrowserModule,
     AppRoutingModule,

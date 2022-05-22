@@ -56,11 +56,7 @@ export class AgeStatisticsComponent implements OnInit {
       })
     );
 
-    // let label = this.demographicService.demographicQuestions
-    // console.log(label)
-    // for (let i = 0; i < 3; i++) {
-    //   console.log(this.demographicService.demographicQuestions,"juhy8gt7")
-    // }
+ 
 
 
     //  Get the statistics of perosnality Questions for the stack chart
