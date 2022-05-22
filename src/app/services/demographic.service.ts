@@ -8,9 +8,21 @@ import { StaticticsService } from './statictics.service';
   providedIn: 'root',
 })
 export class DemographicService {
-  private demographicStatistics = new BehaviorSubject<[]>([]);
+  private demographicStatistics = new BehaviorSubject<DemographicQuestion[]>(
+    []
+  );
   public demographicStatistics$ = this.demographicStatistics.asObservable();
+
+  private agesLables = new BehaviorSubject<[]>([]);
+  public agesLables$ = this.agesLables.asObservable();
+
   demographicQuestions: DemographicQuestion[] = [];
+
+  get getLables() {
+    console.log('hiiii', this.agesLables.getValue());
+    return this.agesLables.getValue();
+  }
+
   constructor(
     private dataService: DataService,
     private staticticsService: StaticticsService
@@ -23,9 +35,8 @@ export class DemographicService {
           'UzkZtaLj',
           questionRef,
           (question: any) => {
-          
-            this.getDemographicQuestionsAndAnswers(question)
-            console.log(this.demographicQuestions)
+            this.getDemographicQuestionsAndAnswers(question);
+            // console.log(this.demographicQuestions);
           }
         );
       }
@@ -39,22 +50,31 @@ export class DemographicService {
     switch (true) {
       case question.title.includes('old '):
         demographicQuestion.question = question.title;
-        demographicQuestion.answers= question.properties.choices ;
+        demographicQuestion.answers = question.properties.choices;
+        this.agesLables.next(question.properties.choices);
         this.demographicQuestions.push(demographicQuestion);
         break;
 
       case question.title.includes('located'):
         demographicQuestion.question = question.title;
-        demographicQuestion.answers= question.properties.choices ;
+        demographicQuestion.answers = question.properties.choices;
         this.demographicQuestions.push(demographicQuestion);
 
         break;
 
       case question.title.includes('business'):
         demographicQuestion.question = question.title;
-        demographicQuestion.answers= question.properties.choices ;
+        demographicQuestion.answers = question.properties.choices;
         this.demographicQuestions.push(demographicQuestion);
         break;
     }
+    // console.log(demographicQuestion);
+    this.demographicStatistics.next([
+      ...this.demographicStatistics.getValue(),
+      {
+        question: demographicQuestion.question,
+        answers: demographicQuestion.answers,
+      },
+    ]);
   }
 }

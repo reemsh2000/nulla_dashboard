@@ -4,12 +4,14 @@
   justify-content: space-between;
   padding-top: 30px;
   width: 75%;
+  
 }
 .snapshot {
   display: flex;
   flex-direction: column;
   width: 25%;
   height: 220px;
+ 
 }
 
 .snapshot_percentage {
