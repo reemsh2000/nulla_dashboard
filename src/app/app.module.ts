@@ -29,7 +29,7 @@ import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ChartsModule } from 'angular-bootstrap-md';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +55,6 @@ import { ChartsModule } from 'angular-bootstrap-md';
   ],
   imports: [
 
-    ChartsModule,
     ChartModule,
     BrowserModule,
     AppRoutingModule,

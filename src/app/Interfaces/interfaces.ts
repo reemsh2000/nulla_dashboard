@@ -30,14 +30,4 @@ export interface DemographicQuestion {
         question: string;
         answers: Answer[];
     }
-    // teams: {
-    //     question: Question,
-    //     answers: Answer[]
-
-    // },
-    // location: {
-    //     question: Question,
-    //     answers: Answer[]
-
-    // },
-
+  
