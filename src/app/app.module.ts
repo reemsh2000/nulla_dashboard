@@ -53,10 +53,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TeamsComponent,
   ],
   imports: [
-<<<<<<< HEAD
-
-=======
->>>>>>> 063b70a444e24c941f6400a6af52e527b5914777
     ChartModule,
     BrowserModule,
     AppRoutingModule,
