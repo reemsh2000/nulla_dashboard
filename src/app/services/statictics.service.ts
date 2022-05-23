@@ -1,6 +1,5 @@
-import { BehaviorSubject, mergeMap, tap, Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { Question, Statistics } from '../Interfaces/interfaces'
 @Injectable({
