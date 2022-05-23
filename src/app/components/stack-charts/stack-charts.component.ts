@@ -12,17 +12,14 @@ export class StackChartsComponent {
     let questionsLead = this.stackService.leadQuestions;
     let queestionsDriver = this.stackService.driverQuestions;
     this.stackService.getQuestionStatistics(
-      'UzkZtaLj',
       questionsPersonal,
       'Personality'
     );
     this.stackService.getQuestionStatistics(
-      'UzkZtaLj',
       questionsLead,
       'Lead question'
     );
     this.stackService.getQuestionStatistics(
-      'UzkZtaLj',
       queestionsDriver,
       'driver'
     );

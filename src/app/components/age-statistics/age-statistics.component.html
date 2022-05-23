@@ -1,3 +1,7 @@
-<div class="card">
-    <p-chart type="bar" [data]="data" header="Age Statistics"></p-chart>
+<div class="card" *ngIf="isShow">
+  <p-chart
+    type="bar"
+    [data]="ageStaticticsData"
+    header="Age Statistics"
+  ></p-chart>
 </div>

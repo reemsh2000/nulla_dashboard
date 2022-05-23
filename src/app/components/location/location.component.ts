@@ -1,39 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service'
-import {  Question, Statistics } from '../../Interfaces/interfaces';
+import { DataService } from '../../services/data.service';
+import {
+  DemographicQuestion,
+  Question,
+  Statistics,
+} from '../../Interfaces/interfaces';
+import { DemographicService } from 'app/services/demographic.service';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
-  styleUrls: ['./location.component.css']
+  styleUrls: ['./location.component.css'],
 })
 export class LocationComponent implements OnInit {
-
-
-
-  ngOnInit(): void {
-  }
-  ageAnswers: any = [];
-  ageQuestions: Question[] = [];
-
-  data: any;
-  statistics: any = {
-    Lodon: 10, //18-24
-    Magrate: 20, //24-34
-    OtherLocation: 30, //35-44
-    //45-54
-
+  isShow: boolean = false;
+  locationStaticticsData: any = {
+    labels: [],
+    datasets: [
+      {
+        label: 'Location destibution',
+        data: [],
+        backgroundColor: '#09240D',
+      },
+    ],
   };
-  constructor(public dataService: DataService) {
-    this.data = {
-      "labels": ['Lodon', 'Magrate', 'Other Location'],
-      "datasets": [
-        {
-          label: 'Age destibution',
-          data: [this.statistics["Lodon"], this.statistics["Magrate"], this.statistics["OtherLocation"]],
-          backgroundColor: '#FC8424',
-        }
-      ]
-    }
-  }
 
+  private locationQuestion = new BehaviorSubject<DemographicQuestion>({
+    question: '',
+    answers: [],
+    title: '',
+    questionId: '',
+  });
+  public locationQuestion$ = this.locationQuestion.asObservable();
+  ngOnInit(): void {}
+
+  constructor(
+    public dataService: DataService,
+    private demographicService: DemographicService
+  ) {
+    this.demographicService.demographicQuestionsAndAnswers$.subscribe((val) => {
+      this.locationQuestion.next(
+        val.filter((val) => val.title == 'location')[0]
+      );
+      this.demographicService.getLocationStatistics(
+        this.locationQuestion.getValue()
+      );
+    });
+    this.demographicService.locationStatistics$.subscribe((val) => {
+      let keys = Object.keys(val);
+      let values = Object.values(val);
+      this.locationStaticticsData = {
+        labels: keys,
+        datasets: [
+          {
+            label: 'Location destibution',
+            data: values,
+            backgroundColor: '#58A364',
+          },
+        ],
+      };
+      if (keys.length) {
+        this.isShow = true;
+      }
+    });
+  }
 }

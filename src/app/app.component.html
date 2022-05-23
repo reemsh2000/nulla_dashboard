@@ -8,15 +8,14 @@
     [class.active]="openMenu"
   ></app-sidebar>
   <div class="main_container" [class.active]="openMenu">
-    <app-search></app-search>
+    <app-search (importEvent)="checkImport($event)"></app-search>
     <app-snapshot></app-snapshot>
 
-    <div class="grid_charts">
-    
-      <app-location class="chart"></app-location>
-      <app-age-statistics class="age_statistics chart"></app-age-statistics>
+    <div class="grid_charts" *ngIf="displayResult">
       <app-stack-charts class="charts_statistics chart"></app-stack-charts>
       <app-teams class="chart"></app-teams>
+      <app-location class="chart"></app-location>
+      <app-age-statistics class="age_statistics chart"></app-age-statistics>
     </div>
   </div>
 </div>

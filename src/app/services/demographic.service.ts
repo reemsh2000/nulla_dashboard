@@ -8,73 +8,142 @@ import { StaticticsService } from './statictics.service';
   providedIn: 'root',
 })
 export class DemographicService {
-  private demographicStatistics = new BehaviorSubject<DemographicQuestion[]>(
-    []
-  );
-  public demographicStatistics$ = this.demographicStatistics.asObservable();
-
-  private agesLables = new BehaviorSubject<[]>([]);
-  public agesLables$ = this.agesLables.asObservable();
-
+  private demographicQuestionsAndAnswers = new BehaviorSubject<DemographicQuestion[]>([]);
+  public demographicQuestionsAndAnswers$ = this.demographicQuestionsAndAnswers.asObservable();
   demographicQuestions: DemographicQuestion[] = [];
 
-  get getLables() {
-    console.log('hiiii', this.agesLables.getValue());
-    return this.agesLables.getValue();
-  }
+  private ageStatistics = new BehaviorSubject<{}>({});
+  public ageStatistics$ = this.ageStatistics.asObservable();
 
-  constructor(
-    private dataService: DataService,
-    private staticticsService: StaticticsService
-  ) {
+  private locationStatistics = new BehaviorSubject<{}>({});
+  public locationStatistics$ = this.locationStatistics.asObservable();
+
+  private teamsStatistics = new BehaviorSubject<{}>({});
+  public teamsStatistics$ = this.teamsStatistics.asObservable();
+
+  constructor(private dataService: DataService, private staticticsService: StaticticsService) {
     this.staticticsService.getFirstQuestionRef(
-      'UzkZtaLj',
       'demographic',
       (questionRef: string) => {
-        this.staticticsService.getQuestions(
-          'UzkZtaLj',
-          questionRef,
-          (question: any) => {
-            this.getDemographicQuestionsAndAnswers(question);
-            // console.log(this.demographicQuestions);
-          }
-        );
+        this.staticticsService.getQuestions(questionRef, (question: any) => {
+          this.getDemographicQuestionsAndAnswers(question);
+          // console.log(this.demographicQuestions);
+        });
       }
     );
   }
+  // to labels or answers choices for chart labels
+  getQuestionLables(answers: any): string[] {
+    let labels: string[] = [];
+    answers.forEach((answer: any) => {
+      labels.push(answer.label);
+    });
+    return labels;
+  }
+  //  Get the demographic questions and answers
   getDemographicQuestionsAndAnswers(question: any) {
     let demographicQuestion: DemographicQuestion = {
       question: '',
       answers: [],
+      title: '',
+      questionId: ''
     };
     switch (true) {
-      case question.title.includes('old '):
+      case question.title.includes('old'):
         demographicQuestion.question = question.title;
-        demographicQuestion.answers = question.properties.choices;
-        this.agesLables.next(question.properties.choices);
+        demographicQuestion.answers = this.getQuestionLables(question.properties.choices);
+        demographicQuestion.title = 'age';
+        demographicQuestion.questionId = question.id;
         this.demographicQuestions.push(demographicQuestion);
         break;
 
       case question.title.includes('located'):
         demographicQuestion.question = question.title;
-        demographicQuestion.answers = question.properties.choices;
+        demographicQuestion.answers = this.getQuestionLables(question.properties.choices);
+        demographicQuestion.title = 'location';
+        demographicQuestion.questionId = question.id;
         this.demographicQuestions.push(demographicQuestion);
 
         break;
 
       case question.title.includes('business'):
         demographicQuestion.question = question.title;
-        demographicQuestion.answers = question.properties.choices;
+        demographicQuestion.answers = this.getQuestionLables(question.properties.choices);
+        demographicQuestion.title = 'teams';
+        demographicQuestion.questionId = question.id;
         this.demographicQuestions.push(demographicQuestion);
         break;
     }
-    // console.log(demographicQuestion);
-    this.demographicStatistics.next([
-      ...this.demographicStatistics.getValue(),
+    this.demographicQuestionsAndAnswers.next([
+      ...this.demographicQuestionsAndAnswers.getValue(),
       {
         question: demographicQuestion.question,
         answers: demographicQuestion.answers,
+        title: demographicQuestion.title,
+        questionId: demographicQuestion.questionId
+
       },
     ]);
   }
+  // *******************Get Age Statictics*********************************
+  getAgeStatistics(question: any) {
+    let agestatistics: any = {};
+    this.dataService.getAnswers().subscribe((answers: any) => {
+      answers.items.forEach((surveyResponse: any) => {
+        surveyResponse.answers.forEach((answer: any) => {
+          if (answer.field.id === question?.questionId) {
+            question.answers.forEach((questionAnswer: any) => {
+              if (!agestatistics[questionAnswer]) agestatistics[questionAnswer] = 0;
+              if (questionAnswer === answer.choice.label) {
+                agestatistics[questionAnswer] += 1;
+              }
+            });
+          }
+        }); //answers loop end
+      }); // survey response loop end
+      this.ageStatistics.next(agestatistics);
+    });
+  }
+  // *******************Get location Statictics*********************************
+  getLocationStatistics(question: any) {
+    let locationStatistics: any = {};
+
+    this.dataService.getAnswers().subscribe((answers: any) => {
+      answers.items.forEach((surveyResponse: any) => {
+        surveyResponse.answers.forEach((answer: any) => {
+          if (answer.field.id === question?.questionId) {
+            question.answers.forEach((questionAnswer: any) => {
+              if (!locationStatistics[questionAnswer]) locationStatistics[questionAnswer] = 0;
+              if (questionAnswer === answer.choice.label) {
+                locationStatistics[questionAnswer] += 1;
+              }
+            });
+          }
+        }); //answers loop end
+      }); // survey response loop end
+      this.locationStatistics.next(locationStatistics);
+    });
+  }
+
+    // *******************Get teams Statictics*********************************
+    getTeamsStatistics(question: any) {
+      let teamsStatistics: any = {};
+      this.dataService.getAnswers().subscribe((answers: any) => {
+        answers.items.forEach((surveyResponse: any) => {
+          surveyResponse.answers.forEach((answer: any) => {
+            if (answer.field.id === question?.questionId) {
+              question.answers.forEach((questionAnswer: any) => {
+                if (!teamsStatistics[questionAnswer]) teamsStatistics[questionAnswer] = 0;
+                if (questionAnswer === answer.choice.label) {
+                  teamsStatistics[questionAnswer] += 1;
+                }
+              });
+            }
+          }); //answers loop end
+        }); // survey response loop end
+        // console.log(teamsStatistics, 'teamsStatistics');
+        this.teamsStatistics.next(teamsStatistics);
+      });
+    }
+
 }
