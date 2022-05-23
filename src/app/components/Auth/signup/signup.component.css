@@ -140,17 +140,21 @@ label{
 
 @media (max-width:700px) {
 
+    .welcome-image{
+        display:none;visibility:hidden;
+    padding:0;
+    margin:0
+    }
     .welcome-container{
-        display:flex;
-        flex-direction:column;
-        justify-content:space-around;
+      
+   
         border: 1px solid #dddd;
     
         width: 100%;
         box-shadow: 2px 2px #dddd;
         padding: 0px;
         margin: 0px;
-        height: 2000px;
+      
        
     }
     .join-container{
