@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DataService } from './../../services/data.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -6,20 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-link: string=''
-  constructor() { }
+  link: string = ''
+  @Output() importEvent = new EventEmitter<boolean>();
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
-  getLink(link:string){
-   
-  let linkId= link.split('forms/')[1]
 
- }
- getLinkclick(){
-  return this.getLink(this.link)
-
- }
+  getLinkclick() {
+    let linkId = this.link.trim().split('forms/')[1]
+    this.dataService.setSurveyId(linkId);
+    this.importEvent.emit(true);
+  }
 
 
 }
