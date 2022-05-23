@@ -12,14 +12,6 @@ export class DemographicService {
   public demographicQuestionsAndAnswers$ = this.demographicQuestionsAndAnswers.asObservable();
   demographicQuestions: DemographicQuestion[] = [];
 
-  private ageStatistics = new BehaviorSubject<{}>({});
-  public ageStatistics$ = this.ageStatistics.asObservable();
-
-  private locationStatistics = new BehaviorSubject<{}>({});
-  public locationStatistics$ = this.locationStatistics.asObservable();
-
-  private teamsStatistics = new BehaviorSubject<{}>({});
-  public teamsStatistics$ = this.teamsStatistics.asObservable();
 
   constructor(private dataService: DataService, private staticticsService: StaticticsService) {
     this.staticticsService.getFirstQuestionRef(
@@ -27,7 +19,6 @@ export class DemographicService {
       (questionRef: string) => {
         this.staticticsService.getQuestions(questionRef, (question: any) => {
           this.getDemographicQuestionsAndAnswers(question);
-          // console.log(this.demographicQuestions);
         });
       }
     );
@@ -86,6 +77,9 @@ export class DemographicService {
     ]);
   }
   // *******************Get Age Statictics*********************************
+  private ageStatistics = new BehaviorSubject<{}>({});
+  public ageStatistics$ = this.ageStatistics.asObservable();
+
   getAgeStatistics(question: any) {
     let agestatistics: any = {};
     this.dataService.getAnswers().subscribe((answers: any) => {
@@ -105,6 +99,9 @@ export class DemographicService {
     });
   }
   // *******************Get location Statictics*********************************
+  private locationStatistics = new BehaviorSubject<{}>({});
+  public locationStatistics$ = this.locationStatistics.asObservable();
+
   getLocationStatistics(question: any) {
     let locationStatistics: any = {};
 
@@ -125,25 +122,29 @@ export class DemographicService {
     });
   }
 
-    // *******************Get teams Statictics*********************************
-    getTeamsStatistics(question: any) {
-      let teamsStatistics: any = {};
-      this.dataService.getAnswers().subscribe((answers: any) => {
-        answers.items.forEach((surveyResponse: any) => {
-          surveyResponse.answers.forEach((answer: any) => {
-            if (answer.field.id === question?.questionId) {
-              question.answers.forEach((questionAnswer: any) => {
-                if (!teamsStatistics[questionAnswer]) teamsStatistics[questionAnswer] = 0;
-                if (questionAnswer === answer.choice.label) {
-                  teamsStatistics[questionAnswer] += 1;
-                }
-              });
-            }
-          }); //answers loop end
-        }); // survey response loop end
-        // console.log(teamsStatistics, 'teamsStatistics');
-        this.teamsStatistics.next(teamsStatistics);
-      });
-    }
+  // *******************Get teams Statictics*********************************
+  private teamsStatistics = new BehaviorSubject<{}>({});
+  public teamsStatistics$ = this.teamsStatistics.asObservable();
+
+  getTeamsStatistics(question: any) {
+    let teamsStatistics: any = {};
+
+    this.dataService.getAnswers().subscribe((answers: any) => {
+      answers.items.forEach((surveyResponse: any) => {
+        surveyResponse.answers.forEach((answer: any) => {
+          if (answer.field.id === question?.questionId) {
+            question.answers.forEach((questionAnswer: any) => {
+              if (!teamsStatistics[questionAnswer]) teamsStatistics[questionAnswer] = 0;
+              if (questionAnswer === answer.choice.label) {
+                teamsStatistics[questionAnswer] += 1;
+              }
+            });
+          }
+        }); //answers loop end
+      }); // survey response loop end
+      this.teamsStatistics.next(teamsStatistics);
+    });
+  }
+
 
 }
