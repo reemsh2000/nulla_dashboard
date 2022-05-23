@@ -1,3 +1,3 @@
-<div class="card">
-    <p-chart type="bar" [data]="data" header="Location Statistics"></p-chart>
+<div class="card" *ngIf="isShow">
+    <p-chart type="bar" [data]="locationStaticticsData" header="Location Statistics"></p-chart>
 </div>
