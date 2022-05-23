@@ -1,0 +1,179 @@
+.welcome-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    border: 1px solid #dddd;
+    /* background-color: rgb(31, 35, 85); */
+    width: 80%;
+    margin-left:10%;
+    margin-top:2%;
+    box-shadow: 2px 2px #dddd;
+
+}
+.welcome-image{
+    display:flex;
+    flex-direction:column;
+    background-image:url(../../../assets/images/unsplash_t8MgrNitecE.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    height:750px;
+
+text-align:center;
+
+}
+.logo{
+    height: 100px;
+    width: 200px;
+    margin-left: 35%;
+    display: block;
+ padding-top:50px;
+ margin-top: 2%;
+
+ 
+}
+.comma{
+    height: 30px;
+    width: 30px;
+    margin-left: 15%;
+    margin-top: 15%;
+}
+.vector{
+    height: 30px;
+    width: 30px;
+}
+.paragraph-welcome{
+    color: #fff;
+    padding:50px 80px;
+    line-height: 1.8
+
+}
+
+
+.account{
+    color: #8692A6;
+    padding-left: 100px;
+    padding-top: 15px;
+}
+.login{
+    color: #045758;
+    cursor: pointer;
+ 
+}
+.nav-welcome{
+ 
+    padding-top:25px;
+    padding-left: 40%;
+ 
+}
+.join-container{
+  
+    padding-left: 50px;
+    width: 58%;
+}
+.join{
+padding-top: 25%;
+padding-left: 50px
+;
+/* background-color: #8692A6; */
+margin-right: 400px;
+}
+.join-title
+{
+    font-size:30px;
+    color: #000000;
+
+
+}
+.join-para{
+    padding-top :15px;
+    color: #8692A6;
+    font-size:18px;
+    line-height: 1.5;
+  
+    width: 200%;
+}
+
+.verctor-name{
+    padding-top :50px;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+color: #fff;
+}
+
+.company{
+    border:1px solid #045758;
+    display: flex;
+    flex-direction: row;
+    padding:12px;
+  width:150%;
+    margin-top: 10%;
+    border-radius: 6px;
+    background-color: #C4C4C4;
+}
+.company img{
+    width:25%
+}
+.company-description{
+    display:flex;flex-direction: column;
+    padding-left: 25px;
+}
+.company-title{
+    color: #000000;
+    font-weight: bold;
+}
+.para-company{
+   color: #303031;
+ 
+}
+
+
+
+.ngo{
+    border:1px solid #fff;
+    display: flex;
+    flex-direction: row;
+   
+    padding:12px;
+    width:150%;
+    margin-top: 10%;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.ngo img{
+    width:25%
+}
+
+
+
+@media (max-width:700px) {
+
+.welcome-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    border: 1px solid #dddd;
+
+    width: 100%;
+    box-shadow: 2px 2px #dddd;
+    padding: 0px;
+    margin: 0px;
+}
+.join-container{
+  
+     width: 100%;
+    
+}
+.company{
+
+  width:200%;
+  
+}
+.ngo{
+    width:200%;
+}
+}
+
+    
+
