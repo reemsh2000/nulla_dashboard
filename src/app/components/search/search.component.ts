@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  link: string = ''
+  link: string = 'https://api.typeform.com/forms/UzkZtaLj'
   @Output() importEvent = new EventEmitter<boolean>();
   constructor(private dataService: DataService) { }
 
