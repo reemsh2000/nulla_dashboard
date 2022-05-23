@@ -58,8 +58,6 @@ export class StaticticsService {
   getQuestions(firstRef: string, cb: any): void {
     let personalityQuestion: Question[] = [];
     this.dataService.getQuestions().subscribe((res: any) => {
-      console.log(res);
-
       res.fields.forEach((questions: any) => {
         for (let i = 0; i < questions.properties.fields?.length; i++) {
           if (questions.properties.fields[i].ref === firstRef) {
