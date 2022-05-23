@@ -14,13 +14,6 @@ export interface Statistics {
     disagree: number;
     title: string;
 }
-export interface AgeStatistics {
-    Adolescence: number; //18-24
-    Earlyadulthood: number; //24-34
-    Midlife: number; //35-44
-    Matureadulthood: number; //
-
-}
 export interface SideBarRow {
     icon: string;
     label: string;
@@ -28,6 +21,8 @@ export interface SideBarRow {
 
 export interface DemographicQuestion {
         question: string;
-        answers: Answer[];
+        answers: string[];
+        title:string;
+        questionId:string;
     }
   
