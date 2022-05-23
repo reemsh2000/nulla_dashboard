@@ -29,6 +29,7 @@ import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AgeStatisticsComponent,
     LocationComponent,
     TeamsComponent,
+    WelcomepageComponent,
   ],
   imports: [
     ChartModule,
@@ -61,6 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProgressSpinnerModule,
     FormsModule,
     BrowserAnimationsModule,
+   
     
     // FontAwesomeModule,
     // FaIconLibrary, initialize
