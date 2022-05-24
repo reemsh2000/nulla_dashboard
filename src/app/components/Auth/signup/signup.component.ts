@@ -8,17 +8,24 @@ import { AuthService } from 'app/services/auth.service';
 export class SignupComponent implements OnInit {
   email:string ='' ;
   password:string='';
-  constructor(private authService:AuthService) { }
+  name:string='';
+  phone:number=0;
 
+  constructor(private authService:AuthService) { }
+ 
   ngOnInit(): void {
   }
   register(){
-    this.authService.register(this.email, this.password)
-    console.log(this.email)
-    this.email=''
-    this.password=''
 
-
+    this.authService.register(this.email, this.password,this.name,this.phone)
+    let Record = {
+      'name':this.name,
+      'phone':this.phone
+    }
+    this.authService.admin(Record)
+    console.log(Record)
+  
   }
+ 
 
 }
