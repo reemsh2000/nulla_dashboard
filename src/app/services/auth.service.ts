@@ -31,6 +31,13 @@ export class AuthService {
       console.error(err)
     })
   }
-
+  login(email:string,password:string){
+    this.auth['signInWithEmailAndPassword'](email,password).then((res: { user: any; })=>{
+      localStorage.setItem('token','true')
+      if(res.user){
+        this.router.navigate(['/dashborad']);
+      }
+    })
+  }
 
 }
