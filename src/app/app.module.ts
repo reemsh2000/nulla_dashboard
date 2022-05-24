@@ -20,17 +20,16 @@ import { SidebarComponent } from './components/common/sidebar/sidebar.component'
 import { SnapshotComponent } from './components/snapshot/snapshot.component';
 import { SearchComponent } from './components/search/search.component';
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
-// import { Module } from 'chart.js';
 import { FormsModule } from '@angular/forms';
-
-
+import {routingTable} from './routes'
 import {ChartModule} from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
-
+import { DasboradComponent } from './components/dasborad/dasborad.component';
+import {RouterModule} from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,8 +52,11 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
     LocationComponent,
     TeamsComponent,
     WelcomepageComponent,
+    DasboradComponent,
   ],
   imports: [
+   
+    RouterModule.forRoot(routingTable),
     ChartModule,
     BrowserModule,
     AppRoutingModule,
