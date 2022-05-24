@@ -5,6 +5,7 @@ import { CompanyAccountComponent } from "./components/company/company-account/co
 import { InterestsComponent } from "./components/company/interests/interests.component";
 import { WelcomepageComponent } from "./components/welcomepage/welcomepage.component";
 import {DasboradComponent} from './components/dasborad/dasborad.component'
+import {ResetPasswordComponent} from './components/reset-password/reset-password.component'
 export const routingTable = [
     { path: '', redirectTo: 'welcome', pathMatch: 'full'},
     {path:'dashborad',component:DasboradComponent},
@@ -12,6 +13,7 @@ export const routingTable = [
   {path:'login',component: LoginComponent},
   {path:'register',component: SignupComponent},
   {path:'company',component: CompanyAccountComponent},
-  {path:'intrest',component:InterestsComponent}
+  {path:'intrest',component:InterestsComponent},
+  {path:'resetpassword',component:ResetPasswordComponent}
  
   ]
