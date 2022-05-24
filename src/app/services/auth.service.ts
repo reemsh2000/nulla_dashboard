@@ -47,7 +47,8 @@ export class AuthService {
     );
   }
   ResetPassword(email: string) {
-    this.auth['sendPasswordResetEmail'](email).then((res: any) => {
+    this.auth.sendPasswordResetEmail(email).then(() => {
+  
       this.router.navigate(['/login']);
     });
   }

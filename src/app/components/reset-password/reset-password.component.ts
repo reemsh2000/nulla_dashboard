@@ -14,7 +14,7 @@ email:string
   }
   resetPassword(){
     this.authService.ResetPassword(this.email)
-    this.email=''
+
 
   }
 
