@@ -13,6 +13,7 @@ import { CompanyAccountComponent } from './components/company/company-account/co
 import { InterestsComponent } from './components/company/interests/interests.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { environment } from '../environments/environment';
 
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
@@ -30,6 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
 import { DasboradComponent } from './components/dasborad/dasborad.component';
 import {RouterModule} from '@angular/router';
+import {AngularFireModule} from '@angular/fire/compat'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,9 +59,11 @@ import {RouterModule} from '@angular/router';
     DasboradComponent,
   ],
   imports: [
-   
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     RouterModule.forRoot(routingTable),
     ChartModule,
+    AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
