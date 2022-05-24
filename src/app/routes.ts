@@ -7,7 +7,7 @@ import { WelcomepageComponent } from "./components/welcomepage/welcomepage.compo
 import {DasboradComponent} from './components/dasborad/dasborad.component'
 export const routingTable = [
     { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-    {path:'',component:DasboradComponent},
+    {path:'dashborad',component:DasboradComponent},
   {path:'welcome',component: WelcomepageComponent},
   {path:'login',component: LoginComponent},
   {path:'register',component: SignupComponent},
