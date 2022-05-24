@@ -25,17 +25,17 @@
 
     <div class="register-form">
         <label class="">Full Name *</label>
-        <input type="text" placeholder="Enter Full Name" class="name"/>
+        <input type="text" placeholder="Enter Full Name" class="name" />
 
         <label class="">Email Address *</label>
-        <input type="text" placeholder="Enter Email Address" class="name"/>
+        <input type="text" placeholder="Enter Email Address" class="name" [(ngModel)]="email"/>
 
         <label class="">Create Password *</label>
-        <input type="text" placeholder="Enter Password" class="name"/>
+        <input type="password" placeholder="Enter Password" class="name" [(ngModel)]="password"/>
 
         <label class="">Phone Number</label>
         <input type="text" placeholder="Enter Phone Number" class="name"/>
-       <button class="register-btn">Register Account</button>
+       <button class="register-btn" (click)="register()">Register Account</button>
        <span class="or-span">Or</span>
        <button class="register-btn-google">Register Account</button>
     </div>
