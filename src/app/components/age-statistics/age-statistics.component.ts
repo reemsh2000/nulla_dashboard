@@ -13,7 +13,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AgeStatisticsComponent implements OnInit {
   ngOnInit(): void { }
-  // ageQuestions: any = [];
   private ageQuestion = new BehaviorSubject<DemographicQuestion>({
     question: '',
     answers: [],
