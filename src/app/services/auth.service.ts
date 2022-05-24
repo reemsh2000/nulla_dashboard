@@ -7,37 +7,48 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private auth: AngularFireAuth, private router: Router ,public firestore: AngularFirestore ) {
-    
-  }
-  
-  register(email: string, password: string ,name: string,phone:number) {
+  constructor(
+    private auth: AngularFireAuth,
+    private router: Router,
+    public firestore: AngularFirestore
+  ) {}
+
+  register(email: string, password: string, name: string, phone: number) {
     this.auth['createUserWithEmailAndPassword'](email, password).then(
       (res: { user: any }) => {
-    
-     this.firestore.collection('admin').doc(res.user.uid).set({email,name,phone}).then(()=>{
-      this.router.navigate(['/login'])
-     })
-  
+        this.firestore
+          .collection('admin')
+          .doc(res.user.uid)
+          .set({ email, name, phone })
+          .then(() => {
+            this.router.navigate(['/login']);
+          });
       }
     );
-
   }
 
-  admin(Record:any){
-    this.firestore.collection('admin').add(Record).then(()=>{
-     
-    }).catch(err=>{
-      console.error(err)
-    })
+  admin(Record: any) {
+    this.firestore
+      .collection('admin')
+      .add(Record)
+      .then(() => {})
+      .catch((err) => {
+        console.error(err);
+      });
   }
-  login(email:string,password:string){
-    this.auth['signInWithEmailAndPassword'](email,password).then((res: { user: any; })=>{
-      localStorage.setItem('token','true')
-      if(res.user){
-        this.router.navigate(['/dashborad']);
+  login(email: string, password: string) {
+    this.auth['signInWithEmailAndPassword'](email, password).then(
+      (res: { user: any }) => {
+        localStorage.setItem('token', 'true');
+        if (res.user) {
+          this.router.navigate(['/dashborad']);
+        }
       }
-    })
+    );
   }
-
+  ResetPassword(email: string) {
+    this.auth['sendPasswordResetEmail'](email).then((res: any) => {
+      this.router.navigate(['/login']);
+    });
+  }
 }
