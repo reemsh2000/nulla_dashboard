@@ -5,16 +5,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nulla';
-  openMenu: boolean = false;
-  displayResult=false;
-  checkMenu(event: boolean) {
-    this.openMenu = event;
-  }
 
-  constructor() { }
-  checkImport(event:any){
-    this.displayResult=event;
-  }
 
 }
