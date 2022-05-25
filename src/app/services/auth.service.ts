@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import {
+ 
+  GoogleAuthProvider,
 
+  signInWithPopup,
+ 
+} from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root',
 })
@@ -49,5 +55,10 @@ export class AuthService {
   logout(){
   this.auth.signOut();
   this.router.navigate(['/login']);
+  }
+  loginWithGoogle() {
+    this.auth.signInWithPopup(new GoogleAuthProvider())
+    this.router.navigate(['/dashborad']);
+  
   }
 }
