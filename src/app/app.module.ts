@@ -13,6 +13,7 @@ import { CompanyAccountComponent } from './components/company/company-account/co
 import { InterestsComponent } from './components/company/interests/interests.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { environment } from '../environments/environment';
 
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
@@ -20,17 +21,19 @@ import { SidebarComponent } from './components/common/sidebar/sidebar.component'
 import { SnapshotComponent } from './components/snapshot/snapshot.component';
 import { SearchComponent } from './components/search/search.component';
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
-// import { Module } from 'chart.js';
 import { FormsModule } from '@angular/forms';
-
-
+import {routingTable} from './routes'
 import {ChartModule} from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
-
+import { DasboradComponent } from './components/dasborad/dasborad.component';
+import {RouterModule} from '@angular/router';
+import {AngularFireModule} from '@angular/fire/compat'
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,9 +56,14 @@ import { WelcomepageComponent } from './components/welcomepage/welcomepage.compo
     LocationComponent,
     TeamsComponent,
     WelcomepageComponent,
+    DasboradComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(routingTable),
     ChartModule,
+    AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

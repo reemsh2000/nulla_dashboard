@@ -27,14 +27,26 @@
     
 
         <label class="">Email Address *</label>
-        <input type="text" placeholder="Enter Email Address" class="name"/>
+        <input type="text" placeholder="Enter Email Address" class="name" [(ngModel)]="email"/>
 
         <label class="">Create Password *</label>
-        <input type="text" placeholder="Enter Password" class="name"/>
+        <input type="number" placeholder="Enter Password" class="name" [(ngModel)]="password"/>
 
-       <button class="login-btn">Login Account</button>
+       <button class="login-btn" (click)="login()">Login Account</button>
        <span class="or-span">Or</span>
        <button class="login-btn-google">Login Account</button>
+       <div class="signUp-account">
+
+   <div class="register">
+    <span>If you don`t have a account</span>  <a [routerLink]="['/register']">Sign Up</a>
+   </div>
+    
+<div class="register">
+
+    <span class="reset">If youforget your password</span> 
+       <a [routerLink]="['/reset']">Reset Password</a>
+    </div>
+    </div>
     </div>
    </div>
    
