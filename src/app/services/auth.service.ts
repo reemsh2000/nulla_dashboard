@@ -63,8 +63,10 @@ export class AuthService {
 
   }
   loginWithGoogle() {
-    this.auth.signInWithPopup(new GoogleAuthProvider())
-    this.router.navigate(['/dashborad']);
+    this.auth.signInWithPopup(new GoogleAuthProvider()).then(()=>{
+      this.router.navigate(['/dashborad']);
+    })
+  
   
   }
 }
