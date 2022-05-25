@@ -1,6 +1,5 @@
 import { AppComponent } from "./app.component";
-import { LoginComponent } from "./components/Auth/login/login.component";
-import { SignupComponent } from "./components/Auth/signup/signup.component";
+
 import { CompanyAccountComponent } from "./components/company/company-account/company-account.component";
 import { InterestsComponent } from "./components/company/interests/interests.component";
 import { WelcomepageComponent } from "./components/welcomepage/welcomepage.component";
