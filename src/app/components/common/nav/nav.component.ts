@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
 import { LoaderService } from '../../../services/loader.service';
 
 @Component({
@@ -18,8 +19,11 @@ export class NavComponent implements OnInit {
     this.isMenuopen.emit(this.isOpen);
   }
 
-  constructor(public store: LoaderService) {}
+  constructor(public store: LoaderService ,private authService: AuthService) {}
 
   ngOnInit(): void {}
+  logout(){
+    this.authService.logout();
+  }
 
 }
