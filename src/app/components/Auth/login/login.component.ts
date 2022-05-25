@@ -16,4 +16,8 @@ password:string
 login(){
   this.authService.login(this.email, this.password)
 }
+loginWithGoogle(){
+  this.authService.loginWithGoogle()
+  console.log("hi")
+}
 }
