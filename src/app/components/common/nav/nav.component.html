@@ -20,7 +20,7 @@
   </div>
 
   <div class="user_profile">
-    <span (click)="logout()">Logout</span>
+    <span  *ngIf="login" (click)="logout()">Logout</span>
     <div class="user_image">
 <img src="../../../../assets/images/woman (1).png" /> 
     </div>

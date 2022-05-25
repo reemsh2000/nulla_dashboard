@@ -13,6 +13,7 @@ import {
   providedIn: 'root',
 })
 export class AuthService {
+  loginValue: boolean ;
   constructor(private auth: AngularFireAuth, private router: Router ,public firestore: AngularFirestore ) {
     
   }
@@ -40,6 +41,7 @@ export class AuthService {
   login(email:string,password:string){
     this.auth['signInWithEmailAndPassword'](email,password).then((res: { user: any; })=>{
       localStorage.setItem('token','true')
+      this.loginValue=true
       if(res.user){
         this.router.navigate(['/dashborad']);
       }
@@ -53,8 +55,12 @@ export class AuthService {
  
   }
   logout(){
-  this.auth.signOut();
-  this.router.navigate(['/login']);
+  this.auth.signOut().then(()=>{
+    this.router.navigate(['/login']);
+    this.loginValue=false
+   
+  });
+
   }
   loginWithGoogle() {
     this.auth.signInWithPopup(new GoogleAuthProvider())

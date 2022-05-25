@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
 
   isOpen: boolean = false;
   @Output() isMenuopen = new EventEmitter();
-
+   
  
 
   onMenu() {
@@ -19,11 +19,20 @@ export class NavComponent implements OnInit {
     this.isMenuopen.emit(this.isOpen);
   }
 
-  constructor(public store: LoaderService ,private authService: AuthService) {}
-
+  constructor(public store: LoaderService ,private authService: AuthService) {
+  
+  }
+ 
   ngOnInit(): void {}
+   login = this.authService.loginValue
+
   logout(){
-    this.authService.logout();
+    
+    this.authService.logout()
+    this.login= false
+
+ 
+   
   }
 
 }
