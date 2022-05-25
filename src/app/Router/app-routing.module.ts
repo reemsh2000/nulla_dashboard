@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomepageComponent } from 'app/components/welcomepage/welcomepage.component';
+
 
 const routes: Routes = [
-  {path: 'welcome', component:WelcomepageComponent}
+
 ];
 
 @NgModule({
