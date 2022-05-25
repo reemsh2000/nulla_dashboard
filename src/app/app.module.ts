@@ -34,6 +34,7 @@ import {RouterModule} from '@angular/router';
 import {AngularFireModule} from '@angular/fire/compat'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
     TeamsComponent,
     WelcomepageComponent,
     DasboradComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
