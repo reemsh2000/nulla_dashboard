@@ -17,6 +17,8 @@ export class StaticticsService {
 
   constructor(private dataService: DataService) {
 
+    console.log('*********');
+
     this.getFirstQuestionRef('personal', (questionRef: string) => {
       this.getQuestions(questionRef, (value: any) => {
         this.pesrsonalityQuestions.push(value);
@@ -46,6 +48,7 @@ export class StaticticsService {
         if (res.logic[i].actions[0].details.value.value === questionType) {
           cb(res.logic[i].ref);
           break;
+
         }
       }
     });
