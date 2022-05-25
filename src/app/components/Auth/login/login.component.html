@@ -17,7 +17,7 @@
        <span class="back">Back</span>
       </div>
    <div class="join">
-       <h1 class="login-title">Register Company Account!</h1>
+       <h1 class="login-title">Login Company Account!</h1>
         <p class="login-description">For the purpose of industry regulation, your details are required.</p>
    
    
@@ -27,14 +27,14 @@
     
 
         <label class="">Email Address *</label>
-        <input type="text" placeholder="Enter Email Address" class="name" [(ngModel)]="email"/>
+        <input type="text" placeholder="Enter Email Address" class="name" [(ngModel)]="email" required/>
 
-        <label class="">Create Password *</label>
-        <input type="number" placeholder="Enter Password" class="name" [(ngModel)]="password"/>
+        <label class="">Enter Password *</label>
+        <input type="number" placeholder="Enter Password" class="name" [(ngModel)]="password" required  minlength="6" />
 
        <button class="login-btn" (click)="login()">Login Account</button>
        <span class="or-span">Or</span>
-       <button class="login-btn-google">Login Account</button>
+       <button class="login-btn-google">Login Account Google</button>
        <div class="signUp-account">
 
    <div class="register">
