@@ -4,7 +4,7 @@ export interface Answer {
     question_id: string;
 };
 export interface Question {
-    question: string;
+    title: string;
     id: string;
 }
 
