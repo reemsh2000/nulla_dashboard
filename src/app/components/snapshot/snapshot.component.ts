@@ -1,3 +1,4 @@
+import { SnapshotService } from './../../services/snapshot.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./snapshot.component.css']
 })
 export class SnapshotComponent implements OnInit {
+  isShow:boolean=false
+  constructor(public snapshotService: SnapshotService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
-  
+
 }
