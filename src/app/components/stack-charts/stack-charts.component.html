@@ -1,6 +1,6 @@
 <div class="charts">
   <div class="chart_legend" 
-  *ngIf="(stackService.personalityStatistics$ | async)?.length !== 0"
+  *ngIf="(stackService.chartsStatistics$ | async)?.length !== 0"
   >
     <div class="legend_item">
       <span class="circle agree"> </span>
@@ -16,12 +16,12 @@
     </div>
   </div>
 
-  <div *ngIf="(stackService.personalityStatistics$ | async)?.length === 1">
+  <div *ngIf="(stackService.chartsStatistics$ | async)?.length === 1">
     <p-progressSpinner class="loader"></p-progressSpinner>
   </div>
 
   <div
-    *ngFor="let item of stackService.personalityStatistics$ | async"
+    *ngFor="let item of stackService.chartsStatistics$ | async"
     class="loop"
   >
     <app-stack-chart
