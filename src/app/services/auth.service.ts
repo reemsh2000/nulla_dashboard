@@ -79,7 +79,7 @@ export class AuthService {
       .doc(this.userId)
       .set(Record)
       .then(() => {
-        this.router.navigate(['/dashborad']);
+        this.router.navigate(['/login']);
       })
       .catch((err) => {
         console.error(err);
