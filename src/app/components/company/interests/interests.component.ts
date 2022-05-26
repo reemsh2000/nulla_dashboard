@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/services/auth.service';
 
 @Component({
   selector: 'app-interests',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./interests.component.css']
 })
 export class InterestsComponent implements OnInit {
-
-  constructor() { }
+  goals:string 
+  firsrHear:string
+  platfrom:string
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
   }
+  
+  saveInterestQuestions(){
+    let Record={
+      'goals':this.goals,
+      'firsrHear':this.firsrHear,
+      'platfrom':this.platfrom
 
+    };
+    this.authService.intrestQuestions(Record)
+  }
 }

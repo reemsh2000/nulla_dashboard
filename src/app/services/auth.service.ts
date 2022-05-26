@@ -43,7 +43,7 @@ export class AuthService {
                 console.log('add last');
               });
           }).then(()=>{
-            this.router.navigate(['/companyّ'])
+            this.router.navigate(['/company'])
           });
       }
     );
@@ -67,6 +67,19 @@ export class AuthService {
       .update(Record)
       .then(() => {
         this.router.navigate(['/intrest']);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
+  intrestQuestions(Record: any) {
+    this.firestore
+      .collection('intersetQuestion')
+      .doc(this.userId)
+      .set(Record)
+      .then(() => {
+        this.router.navigate(['/dashborad']);
       })
       .catch((err) => {
         console.error(err);
