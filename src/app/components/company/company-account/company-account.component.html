@@ -29,29 +29,31 @@
 
     <div class="company-form">
       <label class="">Company Name</label>
-      <input type="text" placeholder="Enter Company Name" class="name" />
+      <input type="text" placeholder="Enter Company Name" class="name" [(ngModel)]="companyName" />
 
       <label class="">Company address</label>
-      <input type="text" placeholder="Enter Company address" class="name" />
+      <input type="text" placeholder="Enter Company address" class="name" [(ngModel)]="companyAddress" />
 
       <label class="">Your office</label>
-      <input type="text" placeholder="Enter Your office" class="name" />
+      <input type="text" placeholder="Enter Your office" class="name" [(ngModel)]="office" />
 
       <label class="">Number of employees</label>
       <input
         type="number"
         placeholder="Enter Number of employees"
         class="name"
+        [(ngModel)]="employeeNumber"
       />
       '
       <label class="">Your company holiday dates</label>
       <input
-        type="number"
+        type="date"
         placeholder="Pleas Select"
         class="name"
+        [(ngModel)]="holidayDate"
       />
       '
-      <button class="company-btn">Save & Continue</button>
+      <button class="company-btn" (click)="saveProfileCompany()">Save & Continue</button>
      
     </div>
   </div>
