@@ -29,17 +29,17 @@
   
       <div class="company-form">
         <label class="">What are your goals with Nula?</label>
-        <textarea type="text"  class="name"></textarea>
+        <textarea type="text"  class="name" [(ngModel)]="goals"></textarea>
   
         <label class="">How did you first hear about Nula?</label>
-        <textarea type="text" class="name"></textarea>
+        <textarea type="text" class="name" [(ngModel)]="firsrHear"></textarea>
 
         <label class="">Have your company used before a platfrom for climate?</label>
-        <textarea type="text" class="name"></textarea>
+        <textarea type="text" class="name" [(ngModel)]="platfrom"></textarea>
   
       
       
-        <button class="company-btn">Save & Finish</button>
+        <button class="company-btn" (click)="saveInterestQuestions()">Save & Finish</button>
        
       </div>
     </div>
