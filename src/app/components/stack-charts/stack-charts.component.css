@@ -36,7 +36,7 @@
   background-color: #be3635;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .charts {
     width: 90%;
     margin: 10px auto;

@@ -3,13 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 30px;
-  width: 75%;
+  width: 85%;
 }
 .snapshot {
   display: flex;
   flex-direction: column;
-  width: 25%;
-  height: 220px;
+  width: 20%;
+  height: 200px;
   border: none;
 }
 
@@ -51,7 +51,12 @@
 .snapshot:nth-child(3) .snapshot_question {
   background-color: rgba(100, 146, 91, 0.8);
 }
-@media (max-width: 650px) {
+@media screen and (max-width: 1000px) {
+  .snapshot {
+    width:30%;
+  }
+}
+@media (max-width: 700px) {
   .snapshot_percentage {
     font-size: 15px;
     height: 50px;

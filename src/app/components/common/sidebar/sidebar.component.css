@@ -65,7 +65,12 @@ aside.active .line_menu .title_line {
   fill: rgb(0, 0, 0);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
+  aside .line_menu .title_line {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 700px) {
   aside.active {
     display: flex;
     flex-direction: column;
@@ -96,7 +101,7 @@ aside.active .line_menu .title_line {
   aside.active .line_menu .title_line {
     display: block;
     opacity: 1;
-    width: 100px;
+    width: 200px;
     z-index: 2;
   }
 }
