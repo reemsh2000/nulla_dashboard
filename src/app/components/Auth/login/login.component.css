@@ -162,6 +162,10 @@ label{
     padding-top: 15px;
     /* justify-content: space-between; */
 }
+.loginForm{
+    display: flex;
+    flex-direction:column;
+}
 @media (max-width:700px) {
 
     .welcome-image{

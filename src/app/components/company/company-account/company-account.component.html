@@ -20,7 +20,6 @@
       />
      
       <a [routerLink]="['/ register']"><span class="back">Back</span></a>  
-      <span class="back">Back</span>
     </div>
     <div class="join">
       <h1 class="company-title">Complete Your Company Profile!</h1>
@@ -29,22 +28,23 @@
       </p>
     </div>
 
-    <div class="company-form">
+    <div class="companyform">
+      <form [formGroup]="companyform" class="company-form">
       <label class="">Company Name</label>
-      <input type="text" placeholder="Enter Company Name" class="name" [(ngModel)]="companyName" />
+      <input type="text" placeholder="Enter Company Name" class="name" formControlName="companyName" />
 
       <label class="">Company address</label>
-      <input type="text" placeholder="Enter Company address" class="name" [(ngModel)]="companyAddress" />
+      <input type="text" placeholder="Enter Company address" class="name" formControlName="companyAddress"  />
 
       <label class="">Your office</label>
-      <input type="text" placeholder="Enter Your office" class="name" [(ngModel)]="office" />
+      <input type="text" placeholder="Enter Your office" class="name" formControlName="office" />
 
       <label class="">Number of employees</label>
       <input
         type="number"
         placeholder="Enter Number of employees"
         class="name"
-        [(ngModel)]="employeeNumber"
+        formControlName="employeeNumber"
       />
       '
       <label class="">Your company holiday dates</label>
@@ -52,9 +52,11 @@
         type="date"
         placeholder="Pleas Select"
         class="name"
-        [(ngModel)]="holidayDate"
+        formControlName="holidayDate"
+       
       />
       '
+    </form>
       <button class="company-btn" (click)="saveProfileCompany()">Save & Continue</button>
      
     </div>

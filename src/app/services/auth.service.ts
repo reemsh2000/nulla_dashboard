@@ -26,14 +26,14 @@ export class AuthService {
     });
   }
 
-  register(email: string, password: string, name: string, phone: number) {
-    this.auth['createUserWithEmailAndPassword'](email, password).then(
+  register(form: any) {
+    this.auth['createUserWithEmailAndPassword'](form.email, form.password).then(
       (res: { user: any }) => {
         this.userId = res.user.uid;
         this.firestore
           .collection('admin')
           .doc(res.user.uid)
-          .set({ email, name, phone })
+          .set({})
           .then(() => {
             this.firestore
               .collection('profile-company')
@@ -85,8 +85,8 @@ export class AuthService {
         console.error(err);
       });
   }
-  login(email: string, password: string) {
-    this.auth['signInWithEmailAndPassword'](email, password).then(
+  login(form:any) {
+    this.auth['signInWithEmailAndPassword'](form.email, form.password).then(
       (res: { user: any }) => {
         localStorage.setItem('token', 'true');
         this.loginValue = true;

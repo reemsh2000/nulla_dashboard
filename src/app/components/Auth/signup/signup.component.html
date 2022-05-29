@@ -24,17 +24,22 @@
     </div>
 
     <div class="register-form">
+        <form [formGroup]="proForm" class="register-form-input">
         <label class="">Full Name *</label>
-        <input type="text" placeholder="Enter Full Name" class="name" [(ngModel)]="name" required />
-
-        <label class="">Email Address *</label>
-        <input type="text" placeholder="Enter Email Address" class="name" [(ngModel)]="email" required />
+        <input type="text" placeholder="Enter Full Name" class="name" formControlName="name" />
+        
+               <label class="">Phone Number</label>
+            <input type="number" placeholder="Enter Phone Number" class="name"formControlName="phone" />
+        </form>
+            <form [formGroup]="registerForm"  class="register-form-input"> 
+            <label class="">Email Address *</label>
+        <input type="text" placeholder="Enter Email Address" class="name" formControlName="email" />
 
         <label class="">Create Password *</label>
-        <input type="password" placeholder="Enter Password" class="name" [(ngModel)]="password" required  minlength="6" />
+        <input type="password" placeholder="Enter Password" class="name" formControlName="password" />
+    </form>
 
-        <label class="">Phone Number</label>
-        <input type="number" placeholder="Enter Phone Number" class="name" [(ngModel)]="phone"/>
+       
        <button class="register-btn" (click)="register()">Register Account</button>
        
     </div>

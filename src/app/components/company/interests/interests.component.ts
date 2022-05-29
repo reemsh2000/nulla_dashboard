@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 
 @Component({
@@ -7,21 +8,22 @@ import { AuthService } from 'app/services/auth.service';
   styleUrls: ['./interests.component.css']
 })
 export class InterestsComponent implements OnInit {
-  goals:string 
-  firsrHear:string
-  platfrom:string
+
+  interestCompany = new FormGroup({
+    goals:new FormControl(''),
+    hearAboutUs: new FormControl(''),
+    climate: new FormControl(''),
+ 
+  
+  });
+  
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
   }
   
   saveInterestQuestions(){
-    let Record={
-      'goals':this.goals,
-      'firsrHear':this.firsrHear,
-      'platfrom':this.platfrom
-
-    };
-    this.authService.intrestQuestions(Record)
+ 
+    this.authService.intrestQuestions(this.interestCompany.value)
   }
 }

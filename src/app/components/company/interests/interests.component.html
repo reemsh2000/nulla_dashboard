@@ -26,22 +26,24 @@
             that help us understand how we can help you
         </p>
       </div>
+      <form [formGroup]="interestCompany">
   
       <div class="company-form">
         <label class="">What are your goals with Nula?</label>
-        <textarea type="text"  class="name" [(ngModel)]="goals"></textarea>
+        <textarea type="text"  class="name"formControlName="goals" ></textarea>
   
         <label class="">How did you first hear about Nula?</label>
-        <textarea type="text" class="name" [(ngModel)]="firsrHear"></textarea>
+        <textarea type="text" class="name" formControlName="hearAboutUs" ></textarea>
 
         <label class="">Have your company used before a platfrom for climate?</label>
-        <textarea type="text" class="name" [(ngModel)]="platfrom"></textarea>
+        <textarea type="text" class="name" formControlName="climate"></textarea>
   
       
       
         <button class="company-btn" (click)="saveInterestQuestions()">Save & Finish</button>
        
       </div>
+    </form>
     </div>
   </div>
   
