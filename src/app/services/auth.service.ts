@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -13,7 +14,9 @@ export class AuthService {
     private router: Router,
     public firestore: AngularFirestore
   ) {}
-  userId = '';
+  private userId = new BehaviorSubject<string>('');
+  public userId$ = this.userId.asObservable();
+
 
   checkAuth() {
     this.auth.onAuthStateChanged((user: any) => {
@@ -52,7 +55,7 @@ export class AuthService {
   admin(Record: any) {
     this.firestore
       .collection('admin')
-      .doc(this.userId)
+      .doc(this.userId.getValue())
       .update(Record)
       .then(() => {})
       .catch((err) => {
@@ -63,7 +66,7 @@ export class AuthService {
   profileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
-      .doc(this.userId)
+      .doc(this.userId.getValue())
       .update(Record)
       .then(() => {
         this.router.navigate(['/intrest']);
@@ -76,7 +79,7 @@ export class AuthService {
   intrestQuestions(Record: any) {
     this.firestore
       .collection('intersetQuestion')
-      .doc(this.userId)
+      .doc(this.userId.getValue())
       .set(Record)
       .then(() => {
         this.router.navigate(['/login']);
