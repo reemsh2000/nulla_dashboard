@@ -39,7 +39,6 @@ export class SnapshotService {
         for (let i = 0; i < questions.properties.fields?.length; i++) {
           refs.forEach((ref: string) => {
             if (questions.properties.fields[i].ref === ref) {
-              console.log('ref', questions.properties.fields[i]);
               this.highlightQuestions.push(questions.properties.fields[i]);
             }
           });
@@ -82,8 +81,6 @@ export class SnapshotService {
     this.highlightStatistics.next([
       ...this.highlightStatistics.getValue(),
       { agree: agreePer, title },
-    ]);
-    console.log(this.highlightStatistics.getValue());
-    
+    ]);    
   }
 }
