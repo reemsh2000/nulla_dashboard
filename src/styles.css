@@ -27,7 +27,7 @@ body {
 body {
   --body: #fff;
   --text: rgb(104, 104, 104);
-  --shadow:   1px 2px 1px #ccc ;
+  --shadow:   1px 2px 8px #ccc ;
   --primary: #1B5758;
   --secondary:#ececec;
   --main:#000;

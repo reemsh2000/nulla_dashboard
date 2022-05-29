@@ -8,20 +8,5 @@ import { StaticticsService } from '../../services/statictics.service';
 })
 export class StackChartsComponent {
   constructor(public stackService: StaticticsService) {
-    let questionsPersonal = this.stackService.pesrsonalityQuestions;
-    let questionsLead = this.stackService.leadQuestions;
-    let queestionsDriver = this.stackService.driverQuestions;
-    this.stackService.getQuestionStatistics(
-      questionsPersonal,
-      'Personality'
-    );
-    this.stackService.getQuestionStatistics(
-      questionsLead,
-      'Lead question'
-    );
-    this.stackService.getQuestionStatistics(
-      queestionsDriver,
-      'driver'
-    );
   }
 }

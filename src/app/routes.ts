@@ -5,11 +5,12 @@ import { InterestsComponent } from "./components/company/interests/interests.com
 import { WelcomepageComponent } from "./components/welcomepage/welcomepage.component";
 import {DasboradComponent} from './components/dasborad/dasborad.component'
 export const routingTable = [
-    { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+    { path: '', redirectTo: 'dashborad', pathMatch: 'full'},
     {path:'dashborad',component:DasboradComponent},
-  {path:'welcome',component: WelcomepageComponent},
- 
-  {path:'company',component: CompanyAccountComponent},
-  {path:'intrest',component:InterestsComponent}
+  // {path:'welcome',component: WelcomepageComponent},
+  // {path:'login',component: LoginComponent},
+  // {path:'register',component: SignupComponent},
+  // {path:'company',component: CompanyAccountComponent},
+  // {path:'intrest',component:InterestsComponent}
  
   ]

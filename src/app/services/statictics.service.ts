@@ -6,8 +6,8 @@ import { Question, Statistics } from '../Interfaces/interfaces'
   providedIn: 'root',
 })
 export class StaticticsService {
-  private personalityStatistics = new BehaviorSubject<Statistics[]>([]);
-  public personalityStatistics$ = this.personalityStatistics.asObservable();
+  private chartsStatistics = new BehaviorSubject<Statistics[]>([]);
+  public chartsStatistics$ = this.chartsStatistics.asObservable();
 
   pesrsonalityQuestions: Question[] = [];
   leadQuestions: Question[] = [];
@@ -16,16 +16,15 @@ export class StaticticsService {
 
 
   constructor(private dataService: DataService) {
-
     this.getFirstQuestionRef('personal', (questionRef: string) => {
-      this.getQuestions(questionRef, (value: any) => {
+      this.getQuestions(questionRef, "personal", (value: any) => {
         this.pesrsonalityQuestions.push(value);
       });
     });
     this.getFirstQuestionRef(
       'lead_question',
       (questionRef: string) => {
-        this.getQuestions(questionRef, (value: any) => {
+        this.getQuestions(questionRef, "lead_question", (value: any) => {
           this.leadQuestions.push(value);
         });
       }
@@ -33,7 +32,7 @@ export class StaticticsService {
     this.getFirstQuestionRef(
       'driver',
       (questionRef: string) => {
-        this.getQuestions(questionRef, (value: any) => {
+        this.getQuestions(questionRef, "driver", (value: any) => {
           this.driverQuestions.push(value);
         });
       }
@@ -46,6 +45,7 @@ export class StaticticsService {
         if (res.logic[i].actions[0].details.value.value === questionType) {
           cb(res.logic[i].ref);
           break;
+
         }
       }
     });
@@ -54,7 +54,7 @@ export class StaticticsService {
   //  Get the  questions for the stack chartPersonality
 
 
-  getQuestions(firstRef: string, cb: any): void {
+  getQuestions(firstRef: string, questionsGroup: string, cb: any): void {
     let personalityQuestion: Question[] = [];
     this.dataService.getQuestions().subscribe((res: any) => {
       res.fields.forEach((questions: any) => {
@@ -65,8 +65,12 @@ export class StaticticsService {
             });
           }
         }
-        return;
       });
+      // console.log("pers",res);
+
+      questionsGroup === "personal" && this.getQuestionStatistics(this.pesrsonalityQuestions, 'Personality');
+      questionsGroup === "lead_question" && this.getQuestionStatistics(this.leadQuestions, 'Lead Question');
+      questionsGroup === "driver" && this.getQuestionStatistics(this.driverQuestions, 'Driver');
     });
   }
 
@@ -81,6 +85,7 @@ export class StaticticsService {
         surveyResponse.answers.forEach((answer: any) => {
           questions.forEach((question: any) => {
             if (answer.field.id === question.id) {
+
               switch (answer.choice.label) {
                 case 'Strongly agree':
                 case 'Agree':
@@ -107,8 +112,8 @@ export class StaticticsService {
       agreePer = Math.round((agree / total) * 100),
       neutralPer = Math.round((neutral / total) * 100),
       disagreePer = Math.round((disagree / total) * 100);
-    this.personalityStatistics.next([
-      ...this.personalityStatistics.getValue(),
+    this.chartsStatistics.next([
+      ...this.chartsStatistics.getValue(),
       { agree: agreePer, neutral: neutralPer, disagree: disagreePer, title },
     ]);
   }

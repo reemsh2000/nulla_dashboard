@@ -17,7 +17,7 @@ export class DemographicService {
     this.staticticsService.getFirstQuestionRef(
       'demographic',
       (questionRef: string) => {
-        this.staticticsService.getQuestions(questionRef, (question: any) => {
+        this.staticticsService.getQuestions(questionRef,"demographic", (question: any) => {
           this.getDemographicQuestionsAndAnswers(question);
         });
       }

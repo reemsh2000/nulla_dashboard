@@ -10,8 +10,8 @@ import { SurveysComponent } from './components/Dashborad/surveys/surveys.compone
 import { RecommendationsComponent } from './components/Dashborad/recommendations/recommendations.component';
 import { CompanyAccountComponent } from './components/company/company-account/company-account.component';
 import { InterestsComponent } from './components/company/interests/interests.component';
-import { HttpClientModule } from '@angular/common/http';
-import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { environment } from '../environments/environment';
 
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
@@ -21,23 +21,24 @@ import { SnapshotComponent } from './components/snapshot/snapshot.component';
 import { SearchComponent } from './components/search/search.component';
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
 import { FormsModule } from '@angular/forms';
-import {routingTable} from './routes'
-import {ChartModule} from 'primeng/chart';
+import { routingTable } from './routes'
+import { ChartModule } from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
 import { DasboradComponent } from './components/dasborad/dasborad.component';
-import {RouterModule} from '@angular/router';
-import {AngularFireModule} from '@angular/fire/compat'
+import { RouterModule } from '@angular/router';
+import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
     AuthImageSideComponent,
-  
+
     SurveysComponent,
     RecommendationsComponent,
     CompanyAccountComponent,
@@ -69,13 +70,19 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
     ProgressSpinnerModule,
     FormsModule,
     BrowserAnimationsModule,
-   
-    
+
+
     // FontAwesomeModule,
     // FaIconLibrary, initialize
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CacheInterceptorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

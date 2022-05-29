@@ -1,17 +1,9 @@
-<div class="snapshot-container">
-  <div class="snapshot snapshot_one">
-    <p class="snapshot_percentage one">75%</p>
-    <p class="snapshot_question one">I care about social impact.</p>
+<div class="snapshot_container" *ngIf="(snapshotService.highlightStatistics$ | async)?.length !== 0"
+>
+  <div class="snapshot" *ngFor="let item of snapshotService.highlightStatistics$ | async"
+  >
+    <p class="snapshot_percentage ">{{item.agree}}%</p>
+    <p class="snapshot_question ">{{item.title}}</p>
   </div>
 
-  <div class="snapshot snapshot_two">
-    <p class="snapshot_percentage two">68%</p>
-    <p class="snapshot_question two">I care about climate change.</p>
-  </div>
-  <div class="snapshot snapshot_three">
-    <p class="snapshot_percentage three">52%</p>
-    <p class="snapshot_question three">
-      I believe my organisation is going enough to fight climate change.
-    </p>
-  </div>
 </div>
