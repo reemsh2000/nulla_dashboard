@@ -35,6 +35,7 @@ import {AngularFireModule} from '@angular/fire/compat'
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     ResetpasswordComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot(routingTable),

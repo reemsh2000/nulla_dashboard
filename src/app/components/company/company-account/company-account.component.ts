@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 
 @Component({
@@ -9,23 +10,22 @@ import { AuthService } from 'app/services/auth.service';
 export class CompanyAccountComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
-  companyName:string;
-  companyAddress: string;
-  office:string;
-  employeeNumber:Number;
-  holidayDate:Date;
+ 
+  companyform = new FormGroup({
+    companyName:new FormControl(''),
+    companyAddress: new FormControl(''),
+    office: new FormControl(''),
+    employeeNumber: new FormControl(''),
+    holidayDate: new FormControl('')
+  
+  });
   ngOnInit(): void {
   }
   saveProfileCompany(){
-    let Record={
-      'companyName':this.companyName,
-      'companyAddress':this.companyAddress,
-      'office':this.office,
-      'employeeNumber':this.employeeNumber,
-      'holidayDate':this.holidayDate
+ 
+ 
 
-    }
-    this.authService.profileCompany(Record)
+    this.authService.profileCompany(this.companyform.value)
   }
  
 }

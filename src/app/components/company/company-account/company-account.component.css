@@ -115,13 +115,19 @@ label{
     border-radius:6px;
     border: none;
     padding:25px 0px;
-    width:80%;
+    width:70%;
     margin-top:4%;
     font-size:16px;
     font-weight: bold;
-    margin-bottom:40%
+    margin-bottom:40%;
+    color: #fff;
+    margin-left: 15%;
 }
-
+.company-form{
+  margin-left: 15%;
+    display: flex;
+    flex-direction:column
+}
 
 @media (max-width:700px) {
     .welcome-image{

@@ -24,17 +24,18 @@
     </div>
 
     <div class="login-form">
-    
+     <form [formGroup]="profileForm" class="loginForm">
 
         <label class="">Email Address *</label>
-        <input type="text" placeholder="Enter Email Address" class="name" [(ngModel)]="email" required/>
+        <input type="text" placeholder="Enter Email Address" class="name"   formControlName="email" />
 
         <label class="">Enter Password *</label>
-        <input type="password" placeholder="Enter Password" class="name" [(ngModel)]="password" required  minlength="6" />
+        <input type="password" placeholder="Enter Password" class="name"  formControlName="password" />
 
        <button class="login-btn" (click)="login()">Login Account</button>
        <span class="or-span">Or</span>
        <button class="login-btn-google" (click)="loginWithGoogle()">Login Account Google</button>
+    </form>
        <div class="signUp-account">
 
    <div class="register">

@@ -98,9 +98,11 @@ color: #fff;
     
 }
 .name{
-    width: 80%;
+    width: 85%;
     padding:20px 20px;
-    border-radius:6px
+    border-radius:6px;
+  
+    
 }
 label{
     color:#696F79;
@@ -114,10 +116,11 @@ label{
     border-radius:6px;
     border: none;
     padding:25px 0px;
-    width:80%;
+    width:85%;
     margin-top:4%;
     font-size:16px;
     font-weight: bold;
+    color: #fff
 }
 .register-btn-google{
     color:#000000;
@@ -136,7 +139,11 @@ label{
     padding-left: 35%;
     padding-top:15px
 }
-
+.register-form-input{
+   
+      display: flex;
+      flex-direction:column
+  }
 
 @media (max-width:700px) {
 
