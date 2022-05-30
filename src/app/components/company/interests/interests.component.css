@@ -121,7 +121,9 @@ label{
     margin-bottom:40%
 }
 
-
+.handle-error{
+    color: #f00
+}
 @media (max-width:700px) {
     .welcome-image{
         display:none;visibility:hidden;
