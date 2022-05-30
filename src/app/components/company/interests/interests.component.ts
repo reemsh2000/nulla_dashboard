@@ -16,6 +16,7 @@ export class InterestsComponent implements OnInit {
  
   
   });
+  massage: string;
   
   constructor(private authService:AuthService) { }
 
@@ -25,7 +26,11 @@ export class InterestsComponent implements OnInit {
     return this.interestCompany.controls;
   }
   saveInterestQuestions(){
+ if(this.interestCompany.valid){
+  this.authService.intrestQuestions(this.interestCompany.value)
+ }else{
+   this.massage='You should enter value in all feilds'
+ }
  
-    this.authService.intrestQuestions(this.interestCompany.value)
   }
 }

@@ -169,6 +169,13 @@ label{
 .handle-error{
     color: red;
 }
+.massage{
+    color: #f00;
+    padding-top:15px ;
+text-align: center;
+padding-left:100px
+
+}
 @media (max-width:700px) {
 
     .welcome-image{

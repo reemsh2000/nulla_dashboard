@@ -8,6 +8,7 @@ import { AuthService } from 'app/services/auth.service';
   styleUrls: ['./company-account.component.css']
 })
 export class CompanyAccountComponent implements OnInit {
+  massage: string;
 
   constructor(private authService: AuthService) { }
  
@@ -25,10 +26,14 @@ export class CompanyAccountComponent implements OnInit {
     return this.companyform.controls;
   }
   saveProfileCompany(){
- 
+ if(this.companyform.valid){
+  this.authService.profileCompany(this.companyform.value)
+ }else{
+   this.massage='You should enter all feilds'
+ }
  
 
-    this.authService.profileCompany(this.companyform.value)
+ 
   }
  
 }
