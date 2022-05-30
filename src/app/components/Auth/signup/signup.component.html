@@ -28,29 +28,29 @@
         <label class="">Full Name *</label>
         <input type="text" placeholder="Enter Full Name" class="name" formControlName="name"  required />
         <div *ngIf="r['name'].touched && r['name'].invalid">
-            <div *ngIf="r['name'].errors && r['name'].errors['required']">Name is required.</div>
+            <div *ngIf="r['name'].errors && r['name'].errors['required']" class="handle-error">Name is required.</div>
  
          </div>
                <label class="">Phone Number</label>
             <input type="number" placeholder="Enter Phone Number" class="name"formControlName="phone" />
             <div *ngIf="r['phone'].touched && r['phone'].invalid">
-                <div *ngIf="r['phone'].errors && r['phone'].errors['required']">phone is required.</div>
+                <div *ngIf="r['phone'].errors && r['phone'].errors['required']" class="handle-error">phone is required.</div>
      
              </div>
         </form>
             <form [formGroup]="registerForm"  class="register-form-input"> 
             <label class="">Email Address *</label>
-        <input type="text" placeholder="Enter Email Address" class="name" formControlName="email" />
+        <input type="text" placeholder="Enter Email Address" class="name" formControlName="email" required />
         <div *ngIf="f['email'].touched && f['email'].invalid">
-            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
-            <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['required']" class="handle-error">Email is required.</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']" class="handle-error">Please, enter valid email address.</div>
          </div>
 
         <label class="">Create Password *</label>
         <input type="password" placeholder="Enter Password" class="name" formControlName="password" required minlength="3" />
         <div *ngIf="f['password'].touched && f['password'].invalid">
-            <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
-            <div *ngIf="f['password'].errors && f['password'].errors['password']">Please, enter valid password.</div>
+            <div *ngIf="f['password'].errors && f['password'].errors['required']" class="handle-error">Password is required.</div>
+            <div *ngIf="f['password'].errors && f['password'].errors['password']" class="handle-error">Please, enter valid password.</div>
          </div>
     </form>
   
