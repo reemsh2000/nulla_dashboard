@@ -14,9 +14,10 @@ export class AuthService {
     private router: Router,
     public firestore: AngularFirestore
   ) {}
-  private userId = new BehaviorSubject<string>('');
-  public userId$ = this.userId.asObservable();
+  // private userId = new BehaviorSubject<string>('');
+  // public userId$ = this.userId.asObservable();
 
+  userId=''
 
   checkAuth() {
     this.auth.onAuthStateChanged((user: any) => {
@@ -55,7 +56,7 @@ export class AuthService {
   admin(Record: any) {
     this.firestore
       .collection('admin')
-      .doc(this.userId.getValue())
+      .doc(this.userId)
       .update(Record)
       .then(() => {})
       .catch((err) => {
@@ -66,7 +67,7 @@ export class AuthService {
   profileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
-      .doc(this.userId.getValue())
+      .doc(this.userId)
       .update(Record)
       .then(() => {
         this.router.navigate(['/intrest']);
@@ -79,7 +80,7 @@ export class AuthService {
   intrestQuestions(Record: any) {
     this.firestore
       .collection('intersetQuestion')
-      .doc(this.userId.getValue())
+      .doc(this.userId)
       .set(Record)
       .then(() => {
         this.router.navigate(['/login']);
