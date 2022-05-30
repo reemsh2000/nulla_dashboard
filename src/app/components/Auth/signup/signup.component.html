@@ -24,24 +24,40 @@
     </div>
 
     <div class="register-form">
-        <form [formGroup]="proForm" class="register-form-input">
+        <form [formGroup]="proForm" class="register-form-input" name="regform">
         <label class="">Full Name *</label>
-        <input type="text" placeholder="Enter Full Name" class="name" formControlName="name" />
-        
+        <input type="text" placeholder="Enter Full Name" class="name" formControlName="name"  required />
+        <div *ngIf="r['name'].touched && r['name'].invalid">
+            <div *ngIf="r['name'].errors && r['name'].errors['required']">Name is required.</div>
+ 
+         </div>
                <label class="">Phone Number</label>
             <input type="number" placeholder="Enter Phone Number" class="name"formControlName="phone" />
+            <div *ngIf="r['phone'].touched && r['phone'].invalid">
+                <div *ngIf="r['phone'].errors && r['phone'].errors['required']">phone is required.</div>
+     
+             </div>
         </form>
             <form [formGroup]="registerForm"  class="register-form-input"> 
             <label class="">Email Address *</label>
         <input type="text" placeholder="Enter Email Address" class="name" formControlName="email" />
+        <div *ngIf="f['email'].touched && f['email'].invalid">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+            <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+         </div>
 
         <label class="">Create Password *</label>
-        <input type="password" placeholder="Enter Password" class="name" formControlName="password" />
+        <input type="password" placeholder="Enter Password" class="name" formControlName="password" required minlength="3" />
+        <div *ngIf="f['password'].touched && f['password'].invalid">
+            <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+            <div *ngIf="f['password'].errors && f['password'].errors['password']">Please, enter valid password.</div>
+         </div>
     </form>
+  
 
        
        <button class="register-btn" (click)="register()">Register Account</button>
-       
+ 
     </div>
    </div>
    
