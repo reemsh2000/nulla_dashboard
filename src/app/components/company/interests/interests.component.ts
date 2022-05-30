@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { AuthService } from 'app/services/auth.service';
 export class InterestsComponent implements OnInit {
 
   interestCompany = new FormGroup({
-    goals:new FormControl(''),
-    hearAboutUs: new FormControl(''),
-    climate: new FormControl(''),
+    goals:new FormControl('',Validators.required),
+    hearAboutUs: new FormControl('',Validators.required),
+    climate: new FormControl('',Validators.required),
  
   
   });
@@ -21,7 +21,9 @@ export class InterestsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+  get f(){
+    return this.interestCompany.controls;
+  }
   saveInterestQuestions(){
  
     this.authService.intrestQuestions(this.interestCompany.value)
