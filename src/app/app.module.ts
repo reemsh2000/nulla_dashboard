@@ -36,6 +36,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileComponent } from './components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +61,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     WelcomepageComponent,
     DasboradComponent,
     ResetpasswordComponent,
+    ProfileComponent,
   ],
   imports: [
     ReactiveFormsModule,
