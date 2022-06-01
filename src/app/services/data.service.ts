@@ -22,22 +22,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getQuestions() {
-    // let getLocal = JSON.parse(localStorage.getItem(this.surveyId) || '{}')
-    // this.questions.next(getLocal);
-    // console.log('--------------');
-    // console.log(this.questions.getValue());
-    // if (getLocal === {}) {
-    //   this.http.get(`${this.apiUrl}${this.surveyId}`, {
-    //     headers: this.headers,
-    //   }).subscribe(res => {
-    //     localStorage.setItem(this.surveyId, JSON.stringify(res))
-    //     this.questions.next(res)
-    //   })
-    // } else {
-    //   this.questions.next(getLocal)
-    // }
-    //   return this.questions$
-
     return this.http.get(`${this.apiUrl}${this.surveyId}`, {
       headers: this.headers,
     });
