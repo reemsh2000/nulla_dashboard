@@ -47,7 +47,7 @@ export class AuthService {
                 console.log('add last');
               });
           }).then(()=>{
-            this.router.navigate(['/company'])
+            this.router.navigate(['/welcome'])
           });
       }
     );

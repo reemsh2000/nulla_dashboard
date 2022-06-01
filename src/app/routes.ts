@@ -8,7 +8,7 @@ import {DasboradComponent} from './components/dasborad/dasborad.component'
 import { ResetpasswordComponent } from "./components/resetpassword/resetpassword.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 export const routingTable = [
-    { path: '', redirectTo: 'welcome', pathMatch: 'full'},
+    { path: '', redirectTo: 'register', pathMatch: 'full'},
     {path:'dashborad',component:DasboradComponent},
   {path:'welcome',component: WelcomepageComponent},
   {path:'login',component: LoginComponent},
