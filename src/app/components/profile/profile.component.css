@@ -81,31 +81,38 @@ table {
   margin-left: 25%;
   margin-top: 10%;
 }
-.admin-information{
+.admin-information {
   display: flex;
   flex-direction: row;
   width: 45%;
-  
+
   border-radius: 50px;
   box-shadow: 2px 2px 2px 2px #ddd;
   text-align: center;
-  justify-content:space-between;
+  justify-content: space-between;
   color: #000;
   margin-left: 25%;
   margin-top: 10%;
   padding-bottom: 25px;
   padding-left: 150px;
 }
-.profile-img{
+.profile-img {
   width: 50%;
   height: 50%;
   border: 1px solid #eee;
   border-radius: 50px;
-margin-top: 8%;
-background-color: #cecece;
-
+  margin-top: 8%;
+  background-color: #cecece;
 }
 @media (max-width: 700px) {
+  .admin-information {
+    width: 100%;
+
+    margin-left: 2%;
+
+    padding-left: 50px;
+  }
+
   .basic-info {
     width: 100%;
   }
