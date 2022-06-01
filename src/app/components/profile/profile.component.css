@@ -4,7 +4,7 @@
   justify-content: space-around;
   justify-items: space-around;
   width: 100%;
-  margin-left: 25%;
+  
   margin-right: 50%;
   padding-top: 100px;
 }
@@ -49,8 +49,10 @@ padding-left: 50px;
   flex-direction: column;
 }
 .bacic-word{
-    padding-left: 120px;
+    padding-left: 150px;
     color: #000000;
+ 
+    width: 100%;
 }
 .profile-save-btn {
   padding: 10px 0px;
@@ -58,7 +60,7 @@ padding-left: 50px;
   color:#fff;
   border: none;
   border-radius: 25px;
-  width: 15%;
+  width: 50%;
   margin-left: 50%;
 }
 
@@ -67,33 +69,52 @@ padding-left: 50px;
     display: flex;
     flex-direction: column;
 }
+.profile-skip-btn{
+    background-color: #cecece;
+    border-radius: 25px;border:none;
+    padding: 10px 0px;
+  
+    color:#fff;
+    border: none;
+margin-left: 2%;
+    width: 50%;
+}
 @media (max-width:700px) {
     .basic-info {
-
         width: 100%;
+      }
+      .profile-inputs{
+          margin-top: -50%;
+          margin-left: 20%;
+         
 
-    
-        
       }
       .bacic-word{
         padding-left: 0px;
       
-        margin-left:-50%
+        margin-left:12%
     }
+
+    
     .profile-save-btn {
      
       background-color: #89b758;
       
-      margin-left: -80%;
+     width:25%;
+     margin-left:0px
     }
     .admin-profile-name {
         display: flex;
       
         width:25%;
         flex-direction:column;
-       justify-content:space-around
-      
+       justify-content:space-around;
+    
        
+      }
+      .profile-skip-btn{
+          width: 25%;
+          margin-right:153px
       }
       .info-input {
         width: 72%;
@@ -104,4 +125,15 @@ padding-left: 50px;
         display: flex;
         flex-direction: column;
     }
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+     
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding-top: 0px;
+       height:1000px
+      }
 }
