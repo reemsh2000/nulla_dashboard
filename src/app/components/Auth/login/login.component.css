@@ -173,7 +173,8 @@ label{
     color: #f00;
     padding-top:15px ;
 text-align: center;
-padding-left:100px
+
+padding-right: 150px;
 
 }
 @media (max-width:700px) {

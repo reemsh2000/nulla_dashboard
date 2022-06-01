@@ -135,7 +135,7 @@ label{
     color: #f00;
     padding-top:15px ;
 text-align: center;
-padding-right: 150px;
+
 }
 @media (max-width:700px) {
     .welcome-image{
