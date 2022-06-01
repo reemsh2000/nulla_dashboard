@@ -1,45 +1,51 @@
-
-
-<div class="profile-container">
+<div class="profile-container" *ngIf="completeform">
   <div class="basic-info">
     <h3 class="bacic-word">Basic Info</h3>
     <button class="profile-save-btn">Save</button>
     <button class="profile-skip-btn">Skip</button>
-
   </div>
   <div class="profile-inputs">
     <div class="admin-profile-name">
-        <div class="label-profile">
-      <label for="admin-profile-name" class="label">First Name</label>
-      <input type="text"  class="input-half"/>
-        </div>
-        <div class="label-profile">
-      <label for="admin-profile-name" class="label">Last Name</label>
-      <input type="text" class="input-half" />
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">First Name</label>
+        <input type="text" class="input-half" />
+      </div>
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">Last Name</label>
+        <input type="text" class="input-half" />
       </div>
     </div>
     <div class="admin-profile-three">
-    <label class="label">Title</label>
-    <input type="text" class="info-input" />
+      <label class="label">Title</label>
+      <input type="text" class="info-input" />
 
-    <label class="label">Email</label>
-    <input type="text" class="info-input" />
+      <label class="label">Email</label>
+      <input type="text" class="info-input" />
 
-    <label class="label">Phone Number</label>
-    <input type="number" class="info-input" /> <br />
-</div>
+      <label class="label">Phone Number</label>
+      <input type="number" class="info-input" /> <br />
+    </div>
     <div class="admin-profile-name">
-        <div class="label-profile">
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">Nationality</label>
 
-   
-      <label for="admin-profile-name" class="label">Nationality</label>
-     
-      <input type="text" />
+        <input type="text" />
+      </div>
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">Gender</label>
+        <input type="text" />
+      </div>
     </div>
-    <div class="label-profile">
-      <label for="admin-profile-name" class="label">Gender</label>
-      <input type="text" />
-    </div>
-    </div>
+  </div>
+</div>
+
+<div *ngIf="!completeform" class="admin-information">
+  <div>
+    <img src="../../../assets/images/woman (1).png" class="profile-img"/><br /><br />
+   <h1>
+     Rawand Hosam Jaradh
+   </h1><br /><br />
+   <span class=""><strong>E-mail :</strong> rawandgaradh@gmail.com</span><br /><br />
+   <span><strong>Phone :</strong> +927 592320456</span>
   </div>
 </div>
