@@ -66,7 +66,6 @@ export class StaticticsService {
           }
         }
       });
-      // console.log("pers",res);
 
       questionsGroup === "personal" && this.getQuestionStatistics(this.pesrsonalityQuestions, 'Personality');
       questionsGroup === "lead_question" && this.getQuestionStatistics(this.leadQuestions, 'Lead Question');

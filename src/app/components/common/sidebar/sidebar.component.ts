@@ -18,7 +18,6 @@ export class SidebarComponent {
   @Input() isSideSmall: boolean = false;
 
   constructor(public section: AsideService) {
-    // console.log(section.sectionName);
   }
  
    sideBarArray= [
