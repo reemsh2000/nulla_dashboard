@@ -9,6 +9,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   loginValue: boolean;
+  completeform: boolean;
+  adminInfo: any;
+  item: any;
   constructor(
     private auth: AngularFireAuth,
     private router: Router,
@@ -17,7 +20,7 @@ export class AuthService {
   // private userId = new BehaviorSubject<string>('');
   // public userId$ = this.userId.asObservable();
 
-  userId=''
+  userId = '';
 
   checkAuth() {
     this.auth.onAuthStateChanged((user: any) => {
@@ -45,9 +48,19 @@ export class AuthService {
               .set({})
               .then(() => {
                 console.log('add last');
+              })
+              .then(() => {
+                this.firestore
+                  .collection('profile')
+                  .doc(res.user.uid)
+                  .set({})
+                  .then(() => {
+                    console.log('add last');
+                  });
               });
-          }).then(()=>{
-            this.router.navigate(['/welcome'])
+          })
+          .then(() => {
+            this.router.navigate(['/welcome']);
           });
       }
     );
@@ -70,6 +83,7 @@ export class AuthService {
       .doc(this.userId)
       .update(Record)
       .then(() => {
+        this.completeform = true;
         this.router.navigate(['/intrest']);
       })
       .catch((err) => {
@@ -89,10 +103,10 @@ export class AuthService {
         console.error(err);
       });
   }
-  login(form:any) {
+  login(form: any) {
     this.auth['signInWithEmailAndPassword'](form.email, form.password).then(
       (res: { user: any }) => {
-        localStorage.setItem('token', 'true');
+        localStorage.setItem('token', this.userId);
         this.loginValue = true;
         if (res.user) {
           this.router.navigate(['/dashborad']);
@@ -115,5 +129,21 @@ export class AuthService {
     this.auth.signInWithPopup(new GoogleAuthProvider()).then(() => {
       this.router.navigate(['/dashborad']);
     });
+  }
+  profile(Record: any) {
+    this.firestore
+      .collection('profile')
+      .doc(this.userId)
+      .set(Record)
+      .then(() => {
+        this.completeform = true;
+        this.router.navigate(['/profile']);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  getProfileData() {
+    return this.firestore.collection('profile').doc(this.userId).get();
   }
 }
