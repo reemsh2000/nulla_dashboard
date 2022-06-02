@@ -14,8 +14,8 @@ export class DataService {
   apiUrl = 'https://us-central1-nulla-316b1.cloudfunctions.net/app/';
 
   constructor(private http: HttpClient) {}
-
+  
   getStatistics() {
-    return this.http.get(`${this.apiUrl}survey-statistics`);
+    return this.http.get(`${this.apiUrl}survey-statistics/${this.surveyId}`);
   }
 }
