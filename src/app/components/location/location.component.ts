@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
- @Component({
+@Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.css'],
 })
-export class LocationComponent  {
+export class LocationComponent {
   isShow: boolean = false;
   locationStaticticsData: any = {
     labels: [],
