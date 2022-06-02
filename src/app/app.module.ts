@@ -37,6 +37,7 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MatTableModule } from '@angular/material/table'  
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProfileComponent,
   ],
   imports: [
+    MatTableModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

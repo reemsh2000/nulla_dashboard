@@ -60,15 +60,7 @@
         <div *ngIf="f['employeeNumber'].errors && f['employeeNumber'].errors['required']" class="handle-error">employee Number is required.</div>
        
      </div>
-      <label class="">Your company holiday dates</label>
-      <input
-        type="date"
-        placeholder="Pleas Select"
-        class="name"
-        formControlName="holidayDate"
-        
-       
-      />
+     
       <div *ngIf="f['holidayDate'].touched && f['holidayDate'].invalid">
         <div *ngIf="f['holidayDate'].errors && f['holidayDate'].errors['required']" class="handle-error">holiday Date is required.</div>
        

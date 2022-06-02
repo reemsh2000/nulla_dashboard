@@ -17,7 +17,7 @@ export class CompanyAccountComponent implements OnInit {
     companyAddress: new FormControl('',Validators.required),
     office: new FormControl('',Validators.required),
     employeeNumber: new FormControl('',Validators.required),
-    holidayDate: new FormControl('',Validators.required)
+
   
   });
   ngOnInit(): void {
