@@ -1,5 +1,7 @@
-import { SnapshotService } from './../../services/snapshot.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Statistics } from 'app/Interfaces/interfaces';
+import { DataService } from 'app/services/data.service';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Component({
@@ -7,13 +9,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './snapshot.component.html',
   styleUrls: ['./snapshot.component.css']
 })
-export class SnapshotComponent implements OnInit {
+export class SnapshotComponent  {
   isShow:boolean=false
-  constructor(public snapshotService: SnapshotService) {
+  private highlightStatistics = new BehaviorSubject<Statistics[]>([]);
+  public highlightStatistics$ = this.highlightStatistics.asObservable();
 
+  constructor(public dataService: DataService) {
+    this.dataService.getStatistics().subscribe((res: any) => {
+      this.highlightStatistics.next(res.snapshotStatistics);
+    });
   }
 
-  ngOnInit(): void {
-  }
 
 }

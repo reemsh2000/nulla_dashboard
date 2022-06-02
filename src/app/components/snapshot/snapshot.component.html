@@ -1,9 +1,9 @@
-<div class="snapshot_container" *ngIf="(snapshotService.highlightStatistics$ | async)?.length !== 0"
+<div
+  class="snapshot_container"
+  *ngIf="(highlightStatistics$ | async)?.length !== 0"
 >
-  <div class="snapshot" *ngFor="let item of snapshotService.highlightStatistics$ | async"
-  >
-    <p class="snapshot_percentage ">{{item.agree}}%</p>
-    <p class="snapshot_question ">{{item.title}}</p>
+  <div class="snapshot" *ngFor="let item of highlightStatistics$ | async">
+    <p class="snapshot_percentage">{{ item.agree }}%</p>
+    <p class="snapshot_question">{{ item.title }}</p>
   </div>
-
 </div>
