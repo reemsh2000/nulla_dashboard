@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { DemographicQuestion, Question } from '../../Interfaces/interfaces';
-import { BehaviorSubject } from 'rxjs';
+
 @Component({
   selector: 'app-age-statistics',
   templateUrl: './age-statistics.component.html',
