@@ -85,7 +85,6 @@ table {
   display: flex;
   flex-direction: row;
   width: 45%;
-
   border-radius: 50px;
   box-shadow: 2px 2px 2px 2px #ddd;
   text-align: center;
@@ -96,14 +95,7 @@ table {
   padding-bottom: 25px;
   padding-left: 150px;
 }
-.profile-img {
-  width: 50%;
-  height: 50%;
-  border: 1px solid #eee;
-  border-radius: 50px;
-  margin-top: 8%;
-  background-color: #cecece;
-}
+
 @media (max-width: 700px) {
   .admin-information {
     width: 100%;

@@ -37,7 +37,8 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table';
+import { AdminpageComponent } from './components/adminpage/adminpage.component'  
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { MatTableModule } from '@angular/material/table'
     DasboradComponent,
     ResetpasswordComponent,
     ProfileComponent,
+    AdminpageComponent,
   ],
   imports: [
     MatTableModule,
