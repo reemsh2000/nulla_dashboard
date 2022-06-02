@@ -137,7 +137,7 @@ export class AuthService {
       .set(Record)
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/adminpage']);
       })
       .catch((err) => {
         console.error(err);

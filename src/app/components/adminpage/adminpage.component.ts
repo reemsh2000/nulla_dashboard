@@ -10,7 +10,9 @@ export class AdminpageComponent implements OnInit {
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+ 
+  }
 
   getdata() {
     this.authService.getProfileData().subscribe((data: { data: () => any }) => {
