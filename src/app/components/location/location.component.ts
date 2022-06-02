@@ -1,18 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import {
-  DemographicQuestion,
-  Question,
-  Statistics,
-} from '../../Interfaces/interfaces';
-import { DemographicService } from 'app/services/demographic.service';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.css'],
 })
-export class LocationComponent implements OnInit {
+export class LocationComponent {
   isShow: boolean = false;
   locationStaticticsData: any = {
     labels: [],
@@ -25,41 +19,23 @@ export class LocationComponent implements OnInit {
     ],
   };
 
-  private locationQuestion = new BehaviorSubject<DemographicQuestion>({
-    question: '',
-    answers: [],
-    title: '',
-    questionId: '',
-  });
-  public locationQuestion$ = this.locationQuestion.asObservable();
-  ngOnInit(): void {}
+  constructor(private dataService: DataService) {
+    this.dataService.getStatistics().subscribe((res: any) => {
+      const question = res?.DemographicStatistics.find(
+        (x: any) => x.question.title === 'location'
+      );
 
-  constructor(
-    public dataService: DataService,
-    private demographicService: DemographicService
-  ) {
-    this.demographicService.demographicQuestionsAndAnswers$.subscribe((val) => {
-      this.locationQuestion.next(
-        val.filter((val) => val.title == 'location')[0]
-      );
-      this.demographicService.getLocationStatistics(
-        this.locationQuestion.getValue()
-      );
-    });
-    this.demographicService.locationStatistics$.subscribe((val) => {
-      let keys = Object.keys(val);
-      let values = Object.values(val);
       this.locationStaticticsData = {
-        labels: keys,
+        labels: question.question.answers,
         datasets: [
           {
             label: 'Location destibution',
-            data: values,
-            backgroundColor: '#58A364',
+            data: question.questionStatistic,
+            backgroundColor: '#09240D',
           },
         ],
       };
-      if (keys.length) {
+      if (question.question.answers.length) {
         this.isShow = true;
       }
     });

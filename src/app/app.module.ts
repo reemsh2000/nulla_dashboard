@@ -5,9 +5,6 @@ import { AppRoutingModule } from './Router/app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthImageSideComponent } from './components/common/auth-image-side/auth-image-side.component';
 
-import { ImportSurveyComponent } from './components/Dashborad/import-survey/import-survey.component';
-import { SurveysComponent } from './components/Dashborad/surveys/surveys.component';
-import { RecommendationsComponent } from './components/Dashborad/recommendations/recommendations.component';
 import { CompanyAccountComponent } from './components/company/company-account/company-account.component';
 import { InterestsComponent } from './components/company/interests/interests.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -38,9 +35,6 @@ import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
   declarations: [
     AppComponent,
     AuthImageSideComponent,
-
-    SurveysComponent,
-    RecommendationsComponent,
     CompanyAccountComponent,
     InterestsComponent,
     StackChartComponent,

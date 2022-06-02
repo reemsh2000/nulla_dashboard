@@ -16,6 +16,7 @@
     "@firebase/database-compat": "^0.1.8",
     "axios": "^0.27.2",
     "compression": "^1.7.4",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.18.0"
