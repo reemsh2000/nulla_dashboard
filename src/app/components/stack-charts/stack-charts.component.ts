@@ -1,5 +1,7 @@
+import { Statistics } from 'app/Interfaces/interfaces';
+import { DataService } from 'app/services/data.service';
 import { Component } from '@angular/core';
-import { StaticticsService } from '../../services/statictics.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-stack-charts',
@@ -7,6 +9,12 @@ import { StaticticsService } from '../../services/statictics.service';
   styleUrls: ['./stack-charts.component.css'],
 })
 export class StackChartsComponent {
-  constructor(public stackService: StaticticsService) {
+  private chartsStatistics = new BehaviorSubject<Statistics[]>([]);
+  public chartsStatistics$ = this.chartsStatistics.asObservable();
+
+  constructor(public dataService: DataService) {
+    this.dataService.getStatistics().subscribe((res: any) => {
+      this.chartsStatistics.next(res.personalityStaistics);
+    });
   }
 }
