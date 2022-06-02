@@ -9,6 +9,6 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/survey-statistics", getSurveyStatistics);
+app.get("/survey-statistics/:surveyId", getSurveyStatistics);
 
 exports.app = functions.https.onRequest(app);
