@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
@@ -15,7 +16,8 @@ export class AuthService {
   constructor(
     private auth: AngularFireAuth,
     private router: Router,
-    public firestore: AngularFirestore
+    public firestore: AngularFirestore,
+    private http: HttpClient
   ) {}
   // private userId = new BehaviorSubject<string>('');
   // public userId$ = this.userId.asObservable();
@@ -103,16 +105,13 @@ export class AuthService {
         console.error(err);
       });
   }
+  apiUrl = 'https://us-central1-nulla-316b1.cloudfunctions.net/app/';
   login(form: any) {
-    this.auth['signInWithEmailAndPassword'](form.email, form.password).then(
-      (res: { user: any }) => {
-        localStorage.setItem('token', this.userId);
-        this.loginValue = true;
-        if (res.user) {
-          this.router.navigate(['/dashborad']);
-        }
-      }
-    );
+    console.log('send loginD');
+
+    this.http.post(`${this.apiUrl}/login`, form).subscribe((res) => {
+      console.log(res);
+    });
   }
   ResetPassword(email: string) {
     this.auth.sendPasswordResetEmail(email).then(() => {
