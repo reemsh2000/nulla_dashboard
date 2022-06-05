@@ -8,7 +8,7 @@
     margin-left:10%;
     margin-top:2%;
     box-shadow: 2px 2px #dddd;
-    height:800px;
+    height:850px;
     margin-bottom: 15%;
 
 }
@@ -18,7 +18,7 @@
     background-image:url(../../../../assets/images/unsplash_t8MgrNitecE.png);
     background-size: cover;
     background-repeat:no-repeat;
-    height:800px;
+    height:850px;
 
 text-align:center;
 
@@ -121,7 +121,16 @@ label{
     margin-bottom:40%
 }
 
+.handle-error{
+    color: #f00
+}
+.massage{
+    color: #f00;
+    padding-top:15px ;
+text-align: center;
+padding-right: 150px;
 
+}
 @media (max-width:700px) {
     .welcome-image{
         display:none;visibility:hidden;

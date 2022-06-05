@@ -1,0 +1,42 @@
+<div class="profile-container" *ngIf="!completeformprofile">
+  <div class="basic-info">
+    <h3 class="bacic-word">Basic Info</h3>
+    <button class="profile-save-btn" (click)="save()">Save</button>
+    <button class="profile-skip-btn" (click)="skip()">Skip</button>
+  </div>
+  <div class="profile-inputs">
+    <from [formGroup]="profileForm">
+    <div class="admin-profile-name">
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">First Name</label>
+        <input type="text" class="input-half"  formControlName="firstName" />
+      </div>
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">Last Name</label>
+        <input type="text" class="input-half"  formControlName="lastName" />
+      </div>
+    </div>
+    <div class="admin-profile-three">
+      <label class="label">Postion Title</label>
+      <input type="text" class="info-input"  formControlName="title" />
+
+      <label class="label">Email</label>
+      <input type="text" class="info-input"  formControlName="email"/>
+
+      <label class="label">Phone Number</label>
+      <input type="number" class="info-input" formControlName="phone" /> <br />
+    </div>
+    <div class="admin-profile-name">
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label" >Nationality</label>
+
+        <input type="text"  formControlName="nationality"/>
+      </div>
+      <div class="label-profile">
+        <label for="admin-profile-name" class="label">Gender</label>
+        <input type="text"  formControlName="gender" />
+      </div>
+    </div>
+  </from>
+  </div>
+</div>

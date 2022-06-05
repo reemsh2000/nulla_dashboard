@@ -18,7 +18,7 @@
           src="../../../../assets/images/arrow_back_ios_24px.png"
           class="arrow-back"
         />
-        <span class="back">Back</span>
+        <a [routerLink]="['/company']"><span class="back">Back</span></a>  
       </div>
       <div class="join">
         <h1 class="company-title">Let us know why you are here</h1>
@@ -26,22 +26,33 @@
             that help us understand how we can help you
         </p>
       </div>
+      <form [formGroup]="interestCompany">
   
       <div class="company-form">
         <label class="">What are your goals with Nula?</label>
-        <textarea type="text"  class="name"></textarea>
-  
+        <textarea type="text"  class="name" formControlName="goals" ></textarea>
+        <div *ngIf="f['goals'].touched && f['goals'].invalid">
+          <div *ngIf="f['goals'].errors && f['goals'].errors['required']" class="handle-error">goals is required.</div>
+         
+       </div>
         <label class="">How did you first hear about Nula?</label>
-        <textarea type="text" class="name"></textarea>
-
+        <textarea type="text" class="name" formControlName="hearAboutUs" ></textarea>
+        <div *ngIf="f['hearAboutUs'].touched && f['hearAboutUs'].invalid">
+          <div *ngIf="f['hearAboutUs'].errors && f['hearAboutUs'].errors['required']" class="handle-error">Hear AboutUs is required.</div>
+          
+       </div>
         <label class="">Have your company used before a platfrom for climate?</label>
-        <textarea type="text" class="name"></textarea>
-  
+        <textarea type="text" class="name" formControlName="climate"></textarea>
+        <div *ngIf="f['climate'].touched && f['climate'].invalid">
+          <div *ngIf="f['climate'].errors && f['climate'].errors['required']" class="handle-error">climate is required.</div>
+        
+       </div>
+       <p class="massage">{{massage}}</p>
       
-      
-        <button class="company-btn">Save & Finish</button>
-       
+        <button class="company-btn" (click)="saveInterestQuestions()">Save & Finish</button>
+        
       </div>
+    </form>
     </div>
   </div>
   
