@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './Router/app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +18,7 @@ import { SnapshotComponent } from './components/snapshot/snapshot.component';
 import { SearchComponent } from './components/search/search.component';
 import { AgeStatisticsComponent } from './components/age-statistics/age-statistics.component';
 import { FormsModule } from '@angular/forms';
-import { routingTable } from './routes'
+import { routingTable } from './routes';
 import { ChartModule } from 'primeng/chart';
 import { NavComponent } from './components/common/nav/nav.component';
 import { LocationComponent } from './components/location/location.component';
@@ -27,10 +27,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomepageComponent } from './components/welcomepage/welcomepage.component';
 import { DasboradComponent } from './components/dasborad/dasborad.component';
 import { RouterModule } from '@angular/router';
-import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
+import {MessageService} from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +55,7 @@ import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
     TeamsComponent,
     WelcomepageComponent,
     DasboradComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -64,20 +70,19 @@ import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
     ProgressSpinnerModule,
     FormsModule,
     BrowserAnimationsModule,
-
-
-    // FontAwesomeModule,
-    // FaIconLibrary, initialize
-
+    MessagesModule,
+    MessageModule,
+    // MessageService
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CacheInterceptorInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
+    MessageService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   // constructor(library: FaIconLibrary){
