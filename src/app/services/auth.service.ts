@@ -17,7 +17,7 @@ export class AuthService {
     private auth: AngularFireAuth,
     private router: Router,
     public firestore: AngularFirestore,
-    private http: HttpClient
+  
   ) {}
   // private userId = new BehaviorSubject<string>('');
   // public userId$ = this.userId.asObservable();
@@ -105,13 +105,14 @@ export class AuthService {
         console.error(err);
       });
   }
-  apiUrl = 'https://us-central1-nulla-316b1.cloudfunctions.net/app/';
-  login(form: any) {
-    console.log('send loginD');
 
-    this.http.post(`${this.apiUrl}/login`, form).subscribe((res) => {
-      console.log(res);
-    });
+  login(form: any) {
+   this.auth.signInWithEmailAndPassword(form.email, form.password).then((res)=>{
+     
+
+     console.log("res");
+     this.router.navigate(['/dashborad']);
+   })
   }
   ResetPassword(email: string) {
     this.auth.sendPasswordResetEmail(email).then(() => {
