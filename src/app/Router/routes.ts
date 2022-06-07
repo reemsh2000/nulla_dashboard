@@ -9,7 +9,7 @@ import { ResetpasswordComponent } from '../components/resetpassword/resetpasswor
 import { ProfileComponent } from '../components/profile/profile.component';
 import { AdminpageComponent } from '../components/adminpage/adminpage.component';
 export const routingTable = [
-  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'welcome', component: WelcomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: SignupComponent },
