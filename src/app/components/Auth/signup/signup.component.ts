@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
         this.authService.register(this.registerForm.value)
         console.log(this.registerForm.value)
        
-        this.authService.admin(this.proForm.value)
+        this.authService.addAdminNameAndPhone(this.proForm.value)
      
        }else{
          this.massage='you should enter value'
