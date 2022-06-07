@@ -33,6 +33,6 @@ export class ProfileComponent implements OnInit {
     console.log(this.completeformprofile);
   }
   skip() {
-    this.router.navigate(['/dashborad']);
+    this.router.navigate(['/dashboard']);
   }
 }

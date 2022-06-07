@@ -17,8 +17,12 @@ export class AuthService {
     private router: Router,
     public firestore: AngularFirestore
   ) {}
-  // private userId = new BehaviorSubject<string>('');
-  // public userId$ = this.userId.asObservable();
+  private errorMsg = new BehaviorSubject<string>('');
+  public errorMsg$ = this.errorMsg.asObservable();
+
+  public get getErrorMsg(): string {
+    return this.errorMsg.getValue();
+  }
 
   userId = '';
 
@@ -103,19 +107,19 @@ export class AuthService {
         console.error(err);
       });
   }
-
-  async login(form: any) {
-    console.log('form');
-    console.log(form);
-    await this.auth['signInWithEmailAndPassword'](
-      form.email,
-      form.password
-    ).then((res: { user: any }) => {
-      console.log('done');
-      
-        this.router.navigate(['/dashborad']);
-     
-    });
+  login(form: any) {
+    this.auth['signInWithEmailAndPassword'](form.email, form.password)
+      .then((res: { user: any }) => {
+        localStorage.setItem('token', this.userId);
+        this.loginValue = true;
+        if (localStorage.getItem('token') === this.userId) {
+          this.router.navigate(['/dashboard']);
+        }
+        this.errorMsg.next('');
+      })
+      .catch((err) => {
+        this.errorMsg.next('Invalid Email or Password');
+      });
   }
 
   ResetPassword(email: string) {
@@ -131,7 +135,7 @@ export class AuthService {
   }
   loginWithGoogle() {
     this.auth.signInWithPopup(new GoogleAuthProvider()).then(() => {
-      this.router.navigate(['/dashborad']);
+      this.router.navigate(['/dashboard']);
     });
   }
   addProfileInformation(Record: any) {
