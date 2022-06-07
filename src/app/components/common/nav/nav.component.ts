@@ -41,7 +41,7 @@ export class NavComponent implements OnInit {
       if (Object.keys(data).length) {
         this.router.navigate(['/adminpage']);
       } else {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/dashboard/profile']);
       }
     });
   }
