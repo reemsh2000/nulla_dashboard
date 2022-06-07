@@ -66,7 +66,7 @@ export class AuthService {
     );
   }
 
-  admin(Record: any) {
+  addAdminNameAndPhone(Record: any) {
     this.firestore
       .collection('admin')
       .doc(this.userId)
@@ -77,7 +77,7 @@ export class AuthService {
       });
   }
 
-  profileCompany(Record: any) {
+  addProfileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
       .doc(this.userId)
@@ -91,7 +91,7 @@ export class AuthService {
       });
   }
 
-  intrestQuestions(Record: any) {
+  addIntrestQuestions(Record: any) {
     this.firestore
       .collection('intersetQuestion')
       .doc(this.userId)
@@ -103,22 +103,21 @@ export class AuthService {
         console.error(err);
       });
   }
-  login(form: any) {
-    
-    this.auth['signInWithEmailAndPassword'](form.email, form.password).then(
-      (res: { user: any }) => {
-        localStorage.setItem('token', this.userId);
-        
-        this.loginValue = true;
+
+  async login(form: any) {
+    console.log('form');
+    console.log(form);
+    await this.auth['signInWithEmailAndPassword'](
+      form.email,
+      form.password
+    ).then((res: { user: any }) => {
+      console.log('done');
       
-        if (localStorage.getItem('token') === this.userId) {
-          
-          this.router.navigate(['/dashborad']);
-        }
-      }
+        this.router.navigate(['/dashborad']);
      
-    );
+    });
   }
+
   ResetPassword(email: string) {
     this.auth.sendPasswordResetEmail(email).then(() => {
       this.router.navigate(['/login']);
@@ -135,7 +134,7 @@ export class AuthService {
       this.router.navigate(['/dashborad']);
     });
   }
-  profile(Record: any) {
+  addProfileInformation(Record: any) {
     this.firestore
       .collection('profile')
       .doc(this.userId)

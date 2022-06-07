@@ -27,7 +27,7 @@ export class InterestsComponent implements OnInit {
   }
   saveInterestQuestions(){
  if(this.interestCompany.valid){
-  this.authService.intrestQuestions(this.interestCompany.value)
+  this.authService.addIntrestQuestions(this.interestCompany.value)
  }else{
    this.massage='You should enter value in all feilds'
  }

@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
  
   }
   save() {
-    this.authService.profile(this.profileForm.value);
+    this.authService.addProfileInformation(this.profileForm.value);
     this.completeformprofile = !this.authService.completeform;
     console.log(this.completeformprofile);
   }
