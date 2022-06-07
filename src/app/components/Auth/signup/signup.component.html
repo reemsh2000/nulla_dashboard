@@ -12,10 +12,9 @@
    
     </div>
     <div class="join-container">
-      <div class="nav-welcome">
-          <img  src="../../../../assets/images/arrow_back_ios_24px.png" class="arrow-back"/>
-          <a [routerLink]="['/login']"><span class="back">Back</span></a>  
-      </div>
+      <!-- <div class="nav-welcome">
+          <a [routerLink]="['/login']"><span class="back">Sign In</span></a>
+      </div> -->
    <div class="join">
        <h1 class="register-title">Register Company Account!</h1>
         <p class="register-description">For the purpose of industry regulation, your details are required.</p>
@@ -55,8 +54,14 @@
     </form>
   
 
-       <a [routerLink]="['/login']">login</a>
+     
        <button class="register-btn" (click)="register()">Register Account</button>
+       <div class="register">
+
+        <span class="reset">If you already account </span> 
+           <a [routerLink]="['/login']">Sign In</a>
+           
+        </div>
        <p class="massage">{{massage}}</p>
  
     </div>
