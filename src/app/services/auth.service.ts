@@ -19,7 +19,8 @@ export class AuthService {
   ) {}
   private errorMsg = new BehaviorSubject<string>('');
   public errorMsg$ = this.errorMsg.asObservable();
-
+private email = new BehaviorSubject<any>('');
+public email$=this.email.asObservable()
   public get getErrorMsg(): string {
     return this.errorMsg.getValue();
   }
@@ -30,6 +31,9 @@ export class AuthService {
     this.auth.onAuthStateChanged((user: any) => {
       if (user) {
         console.log(user.uid);
+        console.log(user.email);
+        this.email.next(user.email)
+
         this.userId = user.uid;
       } else {
         console.log('no authentication');
@@ -110,12 +114,7 @@ export class AuthService {
   login(form: any) {
     this.auth['signInWithEmailAndPassword'](form.email, form.password)
       .then((res: { user: any }) => {
-        localStorage.setItem('token', this.userId);
-        this.loginValue = true;
-        if (localStorage.getItem('token') === this.userId) {
-          this.router.navigate(['/dashboard']);
-        }
-        this.errorMsg.next('');
+        this.router.navigate(['/dashboard']);
       })
       .catch((err) => {
         this.errorMsg.next('Invalid Email or Password');
@@ -153,5 +152,13 @@ export class AuthService {
   }
   getProfileData() {
     return this.firestore.collection('profile').doc(this.userId).get();
+  }
+  getUserEmail() {
+    console.log('go to get email', this.auth.currentUser);
+    return this.auth.currentUser;
+  }
+  getUserName() {
+    console.log('user id', this.userId);
+    return this.firestore.collection('admin').doc(this.userId).get();
   }
 }

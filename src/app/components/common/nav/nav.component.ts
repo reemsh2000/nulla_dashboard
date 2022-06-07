@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
 import { LoaderService } from '../../../services/loader.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -16,22 +17,33 @@ export class NavComponent implements OnInit {
     this.isOpen = !this.isOpen;
     this.isMenuopen.emit(this.isOpen);
   }
-
+  emailUser: any;
   constructor(
     public store: LoaderService,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) {
+  
+    this.authService.email$.subscribe((data)=>{
+      
+      this.emailUser=data
+      
+    });
+    
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('user');
+  }
+
   login = this.authService.loginValue;
+
 
   logout() {
     this.authService.logout();
     this.login = false;
   }
   profile() {
-    // console.log(typeof(this.authService.item))
     console.log('this.authService.item');
     console.log();
 
