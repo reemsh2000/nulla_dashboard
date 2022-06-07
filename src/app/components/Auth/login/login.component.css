@@ -4,21 +4,22 @@
     justify-content:space-around;
     border: 1px solid #dddd;
     /* background-color: rgb(31, 35, 85); */
-    width: 80%;
-    margin-left:10%;
+    width: 70%;
+    margin-left:15%;
     margin-top:2%;
     box-shadow: 2px 2px #dddd;
-    /* height:1000px; */
-    margin-bottom: 15%;
+    height:600px;
+    margin-bottom: 25%;
 
 }
 .welcome-image{
+    width: 60%;
     display:flex;
     flex-direction:column;
     background-image:url(../../../../assets/images/unsplash_t8MgrNitecE.png);
     background-size: cover;
     background-repeat:no-repeat;
-    height:1000px;
+    height:600px;
 
 text-align:center;
 
@@ -46,7 +47,8 @@ text-align:center;
 .paragraph-welcome{
     color: #fff;
     padding:50px 80px;
-    line-height: 1.8
+    line-height: 1.8;
+    font-size:14px
 
 }
 
@@ -79,15 +81,16 @@ color: #fff;
 .login-title
 {
     color:#000000;
-    padding-top:80px;
+    padding-top:50px;
     text-align: center;
+    font-size:18px
 }
 .login-description{
     color: #8692A6;
     text-align: center;
     line-height:1.3;
     padding-top:20px;
-    font-size:18px;
+    font-size:14px;
 }
 .login-form
 {
@@ -99,13 +102,13 @@ color: #fff;
 }
 .name{
     width: 80%;
-    padding:20px 20px;
+    padding:12px 20px;
     border-radius:6px
 }
 label{
     color:#696F79;
     font-weight:bold;
-    font-size:16px;
+    font-size:12px;
     padding:20px 0px;
 }
 
@@ -113,11 +116,12 @@ label{
     background-color:#356431;
     border-radius:6px;
     border: none;
-    padding:25px 0px;
+    padding:12px 0px;
     width:80%;
-    margin-top:4%;
-    font-size:16px;
-    font-weight: bold;
+    margin-top:8%;
+    font-size:14px;
+
+    color: #fff;
 }
 .login-btn-google{
     color:#000000;
@@ -125,11 +129,11 @@ label{
     border: 1px solid #ddd;
     background-color:#fff;
    font-size:16px;
-    padding:25px 0px;
+    padding:12px 0px;
     width:80%;
-    font-weight: bold;
-    margin-top:4%;
-    /* margin-bottom: 40%; */
+    
+    color: #000000;
+
 
 }
 .or-span{
@@ -137,6 +141,14 @@ label{
     padding-top:15px
 }
 
+.reset{
+    font-size:14px;
+
+
+}
+.reset a{
+    padding-left: 12px;
+}
 .signUp-account{
     display: flex;
     flex-direction:column;
@@ -150,17 +162,21 @@ label{
 
   
 }
-.signUp-account a{
-    /* text-decoration: none; */
-    color: #356431;
-    /* padding-top: 15px; */
-    padding-left: 15px;
-}
+
 .register{
     display: flex;
     flex-direction:row;
-    padding-top: 15px;
-    /* justify-content: space-between; */
+    /* padding-top: 12px; */
+    padding-right: 15px;
+    font-size:14px;
+    line-height: 2;
+    margin-left: -12%;
+ 
+}
+.register a{
+    
+    color: #356431;
+    padding-left:15px
 }
 .loginForm{
     display: flex;
