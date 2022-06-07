@@ -4,21 +4,21 @@
     justify-content:space-around;
     border: 1px solid #dddd;
     /* background-color: rgb(31, 35, 85); */
-    width: 80%;
-    margin-left:10%;
-    margin-top:2%;
+    width: 70%;
+    margin-left:15%;
+    margin-top:0.5%;
     box-shadow: 2px 2px #dddd;
-    height:1020px;
-    margin-bottom: 15%;
+    height:700px;
 
 }
 .welcome-image{
+    width: 60%;
     display:flex;
     flex-direction:column;
     background-image:url(../../../../assets/images/unsplash_t8MgrNitecE.png);
     background-size: cover;
     background-repeat:no-repeat;
-    height:1020px;
+    height:700px;
 
 text-align:center;
 
@@ -44,9 +44,10 @@ text-align:center;
     width: 30px;
 }
 .paragraph-welcome{
-    color: #fff;
+   color: #fff;
     padding:50px 80px;
-    line-height: 1.8
+    line-height: 1.8;
+    font-size: 14px;
 
 }
 
@@ -81,32 +82,35 @@ color: #fff;
 {
     color:#000000;
  
+    color:#000000;
+    padding-top:20px;
     text-align: center;
+    font-size:18px
 }
 .company-description{
     color: #8692A6;
     text-align: center;
     line-height:1.3;
     padding-top:20px;
-    font-size:18px;
+    font-size:14px;
 }
 .company-form
 {
     display:flex;
     flex-direction:column;
     justify-content: space-evenly;
-    margin-left: 15%;
+    margin-left: 12%;
     
 }
 .name{
-    width: 80%;
-    padding:20px 20px;
+    width: 90%;
+    padding:15px 20px;
     border-radius:6px
 }
 label{
     color:#696F79;
     font-weight:bold;
-    font-size:16px;
+    font-size:14px;
     padding:20px 0px;
 }
 
@@ -114,19 +118,18 @@ label{
     background-color:#356431;
     border-radius:6px;
     border: none;
-    padding:25px 0px;
-    width:70%;
-    margin-top:4%;
-    font-size:16px;
-    font-weight: bold;
-    margin-bottom:40%;
+    padding:12px 0px;
+    width:90%;
+    margin-top:8%;
+    font-size:14px;
+
     color: #fff;
-    margin-left: 15%;
 }
 .company-form{
-  margin-left: 15%;
+  margin-left: -0.5%;
     display: flex;
-    flex-direction:column
+    flex-direction:column;
+    /* background-color: #8692A6; */
 }
 .handle-error{
     color: red;
