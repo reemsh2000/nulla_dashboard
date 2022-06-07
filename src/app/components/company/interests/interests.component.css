@@ -13,6 +13,7 @@
 
 }
 .welcome-image{
+    width: 60%;
     display:flex;
     flex-direction:column;
     background-image:url(../../../../assets/images/unsplash_t8MgrNitecE.png);
