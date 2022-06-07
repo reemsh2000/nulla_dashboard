@@ -70,7 +70,7 @@ export class AuthService {
     );
   }
 
-  admin(Record: any) {
+  addAdminNameAndPhone(Record: any) {
     this.firestore
       .collection('admin')
       .doc(this.userId)
@@ -81,7 +81,7 @@ export class AuthService {
       });
   }
 
-  profileCompany(Record: any) {
+  addProfileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
       .doc(this.userId)
@@ -95,7 +95,7 @@ export class AuthService {
       });
   }
 
-  intrestQuestions(Record: any) {
+  addIntrestQuestions(Record: any) {
     this.firestore
       .collection('intersetQuestion')
       .doc(this.userId)
@@ -121,6 +121,7 @@ export class AuthService {
         this.errorMsg.next('Invalid Email or Password');
       });
   }
+
   ResetPassword(email: string) {
     this.auth.sendPasswordResetEmail(email).then(() => {
       this.router.navigate(['/login']);
@@ -137,7 +138,7 @@ export class AuthService {
       this.router.navigate(['/dashboard']);
     });
   }
-  profile(Record: any) {
+  addProfileInformation(Record: any) {
     this.firestore
       .collection('profile')
       .doc(this.userId)

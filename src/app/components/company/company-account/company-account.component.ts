@@ -27,7 +27,7 @@ export class CompanyAccountComponent implements OnInit {
   }
   saveProfileCompany(){
  if(this.companyform.valid){
-  this.authService.profileCompany(this.companyform.value)
+  this.authService.addProfileCompany(this.companyform.value)
  }else{
    this.massage='You should enter all feilds'
  }
