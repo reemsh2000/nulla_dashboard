@@ -11,5 +11,6 @@ export class AppComponent {
   constructor(private auth: AuthService) {
     
     this.auth.checkAuth();
+    
   }
 }

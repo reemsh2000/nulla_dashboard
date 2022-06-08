@@ -8,18 +8,15 @@ import { AuthService } from 'app/services/auth.service';
 export class AdminpageComponent implements OnInit {
   admin: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+    this.authService.getProfileData().subscribe((data: { data: () => any }) => {
+      this.admin = data.data();
+    });
+  }
 
   ngOnInit(): void {
  
   }
 
-  getdata() {
-    this.authService.getProfileData().subscribe((data: { data: () => any }) => {
-      this.admin = data.data();
-      console.log('data', typeof this.admin);
-      console.log('data', Object.keys(this.admin).length);
-      console.log(data.data());
-    });
-  }
+ 
 }

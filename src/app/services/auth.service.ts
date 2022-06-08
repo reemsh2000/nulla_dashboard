@@ -19,8 +19,12 @@ export class AuthService {
   ) {}
   private errorMsg = new BehaviorSubject<string>('');
   public errorMsg$ = this.errorMsg.asObservable();
-private email = new BehaviorSubject<any>('');
-public email$=this.email.asObservable()
+  private email = new BehaviorSubject<any>('');
+  public email$ = this.email.asObservable();
+
+  private username = new BehaviorSubject<any>(null);
+  public username$ = this.username.asObservable();
+
   public get getErrorMsg(): string {
     return this.errorMsg.getValue();
   }
@@ -31,24 +35,26 @@ public email$=this.email.asObservable()
     this.auth.onAuthStateChanged((user: any) => {
       if (user) {
         console.log(user.uid);
-        console.log(user.email);
-        this.email.next(user.email)
+
+        this.email.next(user.email);
 
         this.userId = user.uid;
+        this.getUserName();
       } else {
         console.log('no authentication');
       }
     });
   }
 
-  register(form: any) {
+  register(form: any, Record: any) {
+    console.log(Record);
     this.auth['createUserWithEmailAndPassword'](form.email, form.password).then(
       (res: { user: any }) => {
         this.userId = res.user.uid;
         this.firestore
           .collection('admin')
           .doc(res.user.uid)
-          .set({})
+          .set({ Record })
           .then(() => {
             this.firestore
               .collection('profile-company')
@@ -67,6 +73,7 @@ public email$=this.email.asObservable()
                   });
               });
           })
+
           .then(() => {
             this.router.navigate(['/welcome']);
           });
@@ -74,22 +81,11 @@ public email$=this.email.asObservable()
     );
   }
 
-  addAdminNameAndPhone(Record: any) {
-    this.firestore
-      .collection('admin')
-      .doc(this.userId)
-      .update(Record)
-      .then(() => {})
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
   addProfileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
       .doc(this.userId)
-      .update(Record)
+      .set(Record)
       .then(() => {
         this.completeform = true;
         this.router.navigate(['/intrest']);
@@ -153,12 +149,18 @@ public email$=this.email.asObservable()
   getProfileData() {
     return this.firestore.collection('profile').doc(this.userId).get();
   }
-  getUserEmail() {
-    console.log('go to get email', this.auth.currentUser);
-    return this.auth.currentUser;
-  }
+  // getUserEmail() {
+
+  //   return this.auth.currentUser;
+  // }
   getUserName() {
-    console.log('user id', this.userId);
-    return this.firestore.collection('admin').doc(this.userId).get();
+    return this.firestore
+      .collection('admin')
+      .doc(this.userId)
+      .get()
+      .subscribe((data) => {
+        this.username.next(data.data());
+        console.log('data', data.data());
+      });
   }
 }

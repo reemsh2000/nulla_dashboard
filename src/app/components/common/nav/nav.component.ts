@@ -18,6 +18,7 @@ export class NavComponent implements OnInit {
     this.isMenuopen.emit(this.isOpen);
   }
   emailUser: any;
+  userName:any
   constructor(
     public store: LoaderService,
     private authService: AuthService,
@@ -25,10 +26,14 @@ export class NavComponent implements OnInit {
   ) {
   
     this.authService.email$.subscribe((data)=>{
-      
       this.emailUser=data
       
     });
+
+  this.authService.username$.subscribe((data)=>{
+    this.userName = data.Record.name
+  
+  })
     
   }
 

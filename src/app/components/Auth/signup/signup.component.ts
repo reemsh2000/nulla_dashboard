@@ -33,10 +33,8 @@ export class SignupComponent implements OnInit {
   }
   register(){
        if(this.proForm.valid && this.registerForm.valid){
-        this.authService.register(this.registerForm.value)
-        console.log(this.registerForm.value)
-       
-        this.authService.addAdminNameAndPhone(this.proForm.value)
+        this.authService.register(this.registerForm.value,this.proForm.value)
+        // this.authService.addAdminNameAndPhone(this.proForm.value)
      
        }else{
          this.massage='you should enter value'
