@@ -37,7 +37,7 @@
   padding: 12px 0px;
 }
 .label {
-  padding-top: 15px;
+  padding-top: 18px;
   padding-bottom: 15px;
 }
 .label-profile {
@@ -126,7 +126,7 @@ table {
   .profile-save-btn {
     background-color: #89b758;
 
-    width: 25%;
+    width: 100%;
     margin-left: 0px;
   }
   .admin-profile-name {
@@ -159,5 +159,51 @@ table {
     margin-right: 0%;
     padding-top: 0px;
     height: 1000px;
+  }
+}
+@media (max-width: 768px) {
+  .profile-save-btn {
+    margin-left: 30%;
+  }
+  .info-input {
+    width: 90%;
+    padding: 12px 0px;
+  }
+  .admin-profile-three {
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+  }
+  .admin-profile-name {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .admin-profile-name input {
+    padding: 12px 0px;
+    width: 83%;
+    margin-left: 8%;
+  }
+  .labels {
+    padding-left: 60px;
+    padding-top: 15px;
+    padding-bottom: 18px;
+  }
+  .basic-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-left: 0px;
+    padding-bottom: 50px;
+    margin-left: -12%;
+  }
+  .profile-container {
+height:900px
+  }
+  .labelss{
+    padding-left: 60px;
+    padding-bottom: 15px;
+    padding-top: 20px;
   }
 }
