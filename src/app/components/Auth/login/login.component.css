@@ -104,7 +104,6 @@ label {
   color: #356431;
 }
 
-
 .loginForm {
   display: flex;
   flex-direction: column;
@@ -134,18 +133,15 @@ label {
   }
   .welcome-container {
     border: 1px solid #dddd;
-   
-  
-    
+
     width: 100%;
     box-shadow: 2px 2px #dddd;
     padding: 0px;
     margin: 0px;
   }
-  .join{
-   padding-top: 15px;
+  .join {
+    padding-top: 15px;
     margin-left: -35%;
-
   }
   .join-container {
     width: 100%;
