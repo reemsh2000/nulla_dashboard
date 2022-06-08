@@ -11,9 +11,10 @@
 .basic-info {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 50%;
-  padding-left: 50px;
+  justify-content: space-between;
+  width: 100%;
+  /* background-color: #a6af9d; */
+  /* padding-left: 50px; */
   padding-bottom: 50px;
 }
 
@@ -31,6 +32,8 @@
 .admin-profile-name input {
   padding: 12px 0px;
   width: 290%;
+  margin-left:2%;
+  
 }
 .info-input {
   width: 61%;
@@ -56,8 +59,8 @@
   color: #fff;
   border: none;
   border-radius: 25px;
-  width: 50%;
-  margin-left: 50%;
+  width: 25%;
+  /* margin-left: -20%; */
 }
 
 .admin-profile-three {
@@ -74,7 +77,12 @@
   color: #fff;
   border: none;
   margin-left: 2%;
-  width: 50%;
+  width: 25%;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 table {
   width: 50%;
@@ -104,19 +112,20 @@ table {
 
     padding-left: 50px;
   }
-
-  .basic-info {
-    width: 100%;
+  .bacic-word {
+    margin-left: 20%;
+    color: #f02121;
+    padding-left: 16px;
+    padding-bottom: 50px;
   }
+.btns{
+  padding-bottom: 50px;
+}
   .profile-inputs {
     margin-top: -50%;
     margin-left: 20%;
   }
-  .bacic-word {
-    padding-left: 0px;
 
-    margin-left: 12%;
-  }
   table {
     width: 100%;
     margin-left: 0%;
@@ -125,8 +134,8 @@ table {
 
   .profile-save-btn {
     background-color: #89b758;
-
-    width: 100%;
+    padding: 0 20px;
+    /* width: 50%; */
     margin-left: 0px;
   }
   .admin-profile-name {
@@ -135,17 +144,25 @@ table {
     width: 25%;
     flex-direction: column;
     justify-content: space-around;
+    margin-left: -15%;
   }
   .profile-skip-btn {
-    width: 25%;
     margin-right: 153px;
+    padding: 0 20px;
   }
   .info-input {
     width: 72%;
-    padding: 12px 0px;
+    padding: 10px 0px;
+
+    margin-left: -15%;
+  }
+  .labels {
+    margin-left: -6%;
+  }
+  .label {
+    margin-left: -15%;
   }
   .admin-profile-three {
-    margin-left: 0%;
     display: flex;
     flex-direction: column;
   }
@@ -199,9 +216,9 @@ table {
     margin-left: -12%;
   }
   .profile-container {
-height:900px
+    height: 900px;
   }
-  .labelss{
+  .labelss {
     padding-left: 60px;
     padding-bottom: 15px;
     padding-top: 20px;
