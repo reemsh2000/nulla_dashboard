@@ -92,30 +92,26 @@ label {
   }
   .welcome-container {
     border: 1px solid #dddd;
-margin-left: -15%;
-/* background-color: rgb(211, 110, 110); */
+    margin-left: -15%;
     width: 100%;
     box-shadow: 2px 2px #dddd;
     padding: 0px;
     margin: 0px;
     height: 650px;
-    
   }
-  .join{
-   padding-top: 15px;
+  .join {
+    padding-top: 15px;
     margin-left: -25%;
-
   }
-  .register-description{
+  .register-description {
     width: 100%;
-   
+
     margin-left: -15%;
   }
   .register-title {
     color: #000000;
     padding-top: 10px;
-    text-align: left
-    ;
+    text-align: left;
     font-size: 18px;
   }
   .register-form {
@@ -128,6 +124,4 @@ margin-left: -15%;
   .join-container {
     width: 100%;
   }
-
-  
 }
