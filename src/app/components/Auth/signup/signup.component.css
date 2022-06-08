@@ -4,7 +4,7 @@
   width: 75%;
   margin: 15px auto;
   box-shadow: 2px 2px #dddd;
-  height: 580px;
+  height: 600px;
   margin-bottom: 70%;
 }
 .auth_image {
@@ -92,16 +92,42 @@ label {
   }
   .welcome-container {
     border: 1px solid #dddd;
-
+margin-left: -15%;
+/* background-color: rgb(211, 110, 110); */
     width: 100%;
     box-shadow: 2px 2px #dddd;
     padding: 0px;
     margin: 0px;
+    height: 650px;
+    
+  }
+  .join{
+   
+    margin-left: -25%;
+
+  }
+  .register-description{
+    width: 100%;
+   
+    margin-left: -15%;
+  }
+  .register-title {
+    color: #000000;
+    padding-top: 10px;
+    text-align: left
+    ;
+    font-size: 18px;
+  }
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: -35%;
+    /* background-color:#f00 */
   }
   .join-container {
     width: 100%;
   }
-  .register-btn-google {
-    margin-bottom: 40%;
-  }
+
+  
 }
