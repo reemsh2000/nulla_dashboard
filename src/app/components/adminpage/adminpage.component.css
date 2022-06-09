@@ -8,6 +8,8 @@
   width: 50%;
   padding: 15px 0px;
   line-height: 3;
+  margin-left: 25%;
+  margin-top: 10%;
 }
 .information-admin h3 {
   color: #000000;
@@ -39,6 +41,8 @@
     width: 100%;
     padding: 15px 0px;
     line-height: 3;
+    margin-left: 0%;
+    margin-top: 0%;
   }
 }
 @media (max-width: 320px) {
@@ -51,6 +55,8 @@
     width: 100%;
     padding: 15px 0px;
     line-height: 3;
+    margin-left: 0%;
+    margin-top: 0%;
 
   }
   .information-admin h3 {
@@ -69,5 +75,7 @@
   .information-admin {
     width: 100%;
     margin-top: 8%;
+    margin-left: 10%;
+    margin-top: 0%;
   }
 }
