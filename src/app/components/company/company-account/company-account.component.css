@@ -4,7 +4,7 @@
   width: 75%;
   margin: 15px auto;
   box-shadow: 2px 2px #dddd;
-  height: 580px;
+  height: 600px;
   margin-bottom: 70%;
 }
 .auth_image {
@@ -68,7 +68,7 @@ label {
   border: none;
   padding: 12px 0px;
   width: 90%;
-  margin-top: 8%;
+  margin-top: 2%;
   font-size: 14px;
 
   color: #fff;
@@ -107,5 +107,11 @@ label {
   }
   .company-btn {
     margin-bottom: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    width: 100%;
   }
 }

@@ -14,9 +14,5 @@ export class AdminpageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
- 
-  }
-
- 
+  ngOnInit(): void {}
 }
