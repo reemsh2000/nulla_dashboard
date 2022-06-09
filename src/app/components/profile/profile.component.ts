@@ -1,3 +1,4 @@
+import { AsideService } from 'app/services/aside.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
@@ -20,7 +21,13 @@ export class ProfileComponent implements OnInit {
     gender: new FormControl(''),
   });
   admin: any;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private asideService: AsideService
+  ) {
+    this.asideService.setSection('Profile');
+  }
 
   ngOnInit(): void {}
   save() {
