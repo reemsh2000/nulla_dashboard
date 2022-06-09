@@ -18,10 +18,5 @@ export const routingTable = [
   { path: 'resetpassword', component: ResetpasswordComponent },
   { path: 'dashboard', component: DasboradComponent },
   { path: 'dashboard/profile', component: ProfileComponent },
-<<<<<<< Updated upstream
   { path: 'dashboard/adminpage', component: AdminpageComponent },
-=======
-  { path: 'adminpage', component: AdminpageComponent },
-  { path: 'admin', component: AdminpageComponent },
->>>>>>> Stashed changes
 ];
