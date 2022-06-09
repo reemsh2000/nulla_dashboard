@@ -1,18 +1,13 @@
 .profile-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  justify-items: space-around;
   width: 100%;
-  height: 1000px;
-  margin-top: -5%;
-}
+  height: 1000px;}
 .basic-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-
 }
 .labels {
   margin-left: 11%;
@@ -28,13 +23,11 @@
   display: flex;
   flex-direction: column;
   margin-top: -15%;
- 
+
   margin-left: 15%;
 }
 .admin-profile-name {
   display: flex;
-
-  /* width: 59%; */
   flex-direction: column;
   justify-content: space-around;
 }
@@ -112,11 +105,10 @@ table {
   padding-bottom: 25px;
   padding-left: 150px;
 }
-@media (min-width:320px) {
-  .bacic-word{
+@media (min-width: 320px) {
+  .bacic-word {
     color: #000;
   }
-  
 }
 @media (max-width: 700px) {
   .admin-information {
@@ -193,13 +185,11 @@ table {
     height: 1000px;
     margin-top: 0%;
   }
-  .basic-info{
-    margin-top:-12%
+  .basic-info {
+    margin-top: -12%;
   }
 }
 @media (max-width: 768px) {
-
-
   .profile-save-btn {
     margin-left: 30%;
   }
@@ -236,7 +226,6 @@ table {
     padding-left: 0px;
     padding-bottom: 50px;
     margin-left: -12%;
-   
   }
   .profile-container {
     height: 900px;
