@@ -126,7 +126,60 @@
 .ngo img {
   width: 20%;
 }
+@media (min-width: 320px) {
+  .welcome-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid #dddd;
+    /* background-color: rgb(31, 35, 85); */
+    width: 0%;
+    margin-left: 0%;
+    margin-top: 0.5%;
+    box-shadow: 2px 2px #dddd;
+    height: 600px;
+  }
+  .nav-welcome {
+    margin-top: 0%;
+    padding-top: 0px;
+    padding-left: 0%;
 
+    padding-bottom: 0px;
+  }
+  .company-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+    color: #045758;
+    font-size: 8px;
+  }
+  .account {
+    padding-left: 0px;
+  }
+
+  .company-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+    color: #045758;
+    font-size: 8px;
+  }
+}
+@media (min-width: 425px) {
+  .account {
+    padding-left: 0px;
+  }
+  .nav-welcome {
+    margin-top: 0%;
+    padding-top: 0px;
+    padding-left: 5%;
+    padding-bottom: 0px;
+  }
+  .join-para {
+    padding-right: 50px;
+    font-size: 8px;
+  }
+}
 @media (max-width: 700px) {
   .welcome-image {
     display: none;
@@ -136,12 +189,12 @@
   }
   .join-title {
     color: #000000;
-    padding-top: 15px;
+    padding-top: 1px;
     text-align: center;
     font-size: 18px;
   }
   .nav-welcome {
-    margin-top: -35%;
+    margin-top: 0%;
     padding-top: 0px;
     padding-left: 20%;
 
@@ -152,7 +205,7 @@
     flex-direction: column;
     justify-content: space-around;
     border: 1px solid #dddd;
-    /* height:1060px; */
+
     width: 100%;
     box-shadow: 2px 2px #dddd;
     padding: 0px;
@@ -167,8 +220,8 @@
   }
   .account {
     color: #8692a6;
-    padding-left: 100px;
-    padding-top: 0px;
+
+    padding-top: 10px;
   }
   .join-container {
     width: 100%;

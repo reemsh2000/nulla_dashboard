@@ -104,6 +104,7 @@ label {
   }
   .join-container {
     width: 100%;
+    margin-left: -50%;
   }
   .company-btn {
     margin-bottom: 40%;

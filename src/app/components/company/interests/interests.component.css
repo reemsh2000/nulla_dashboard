@@ -8,20 +8,10 @@
   margin-left: 10%;
   margin-top: 2%;
   box-shadow: 2px 2px #dddd;
-  height: 850px;
+  height: 600px;
   margin-bottom: 15%;
 }
-.welcome-image {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  background-image: url(../../../../assets/images/unsplash_t8MgrNitecE.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 850px;
 
-  text-align: center;
-}
 .logo {
   height: 100px;
   width: 200px;
@@ -73,6 +63,7 @@
 .company-title {
   color: #000000;
   padding-top: 80px;
+  font-size:18px;
   text-align: center;
 }
 .company-description {
@@ -80,7 +71,7 @@
   text-align: center;
   line-height: 1.3;
   padding-top: 20px;
-  font-size: 18px;
+  font-size: 16px;
 }
 .company-form {
   display: flex;
@@ -90,13 +81,13 @@
 }
 .name {
   width: 80%;
-  padding: 20px 20px;
+  padding: 5px;
   border-radius: 6px;
 }
 label {
   color: #696f79;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   padding: 20px 0px;
 }
 
@@ -106,9 +97,11 @@ label {
   border: none;
   padding: 25px 0px;
   width: 80%;
+  padding: 15px;
   margin-top: 4%;
   font-size: 16px;
   font-weight: bold;
+  color: #fff;
   margin-bottom: 40%;
 }
 
@@ -147,5 +140,33 @@ label {
 @media (max-width: 768px) {
   .welcome-container {
     width: 100%;
+    margin-left: 0%;
+    margin-top:0%;
   }
+  .name {
+    width: 100%;
+    padding: 5px;
+    border-radius: 6px;
+  }
+  .company-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: -2%;
+    margin-right:15%
+  }
+  .company-btn {
+    background-color: #356431;
+    border-radius: 6px;
+    border: none;
+    padding: 25px 0px;
+    width: 100%;
+    padding: 15px;
+    margin-top: 4%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40%;
+  }
+  
 }
