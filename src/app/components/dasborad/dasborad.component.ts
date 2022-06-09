@@ -1,22 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AsideService } from 'app/services/aside.service';
 
 @Component({
   selector: 'app-dasborad',
   templateUrl: './dasborad.component.html',
-  styleUrls: ['./dasborad.component.css']
+  styleUrls: ['./dasborad.component.css'],
 })
-export class DasboradComponent  {
-
+export class DasboradComponent {
+  openMenu: boolean=false ;
   title = 'nulla';
-  openMenu: boolean = false;
-  displayResult=false;
-  checkMenu(event: boolean) {
-    this.openMenu = event;
-  }
+  displayResult = false;
 
-  constructor() { }
-  checkImport(event:any){
-    this.displayResult=event;
+  constructor(private asideService: AsideService) {
+    this.asideService.openAside$.subscribe((val) => {
+      this.openMenu = val;
+    });
   }
-
+  checkImport(event: any) {
+    this.displayResult = event;
+  }
 }
