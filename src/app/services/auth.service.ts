@@ -34,20 +34,15 @@ export class AuthService {
   checkAuth() {
     this.auth.onAuthStateChanged((user: any) => {
       if (user) {
-        console.log(user.uid);
-
         this.email.next(user.email);
 
         this.userId = user.uid;
         this.getUserName();
-      } else {
-        console.log('no authentication');
       }
     });
   }
 
   register(form: any, Record: any) {
-    console.log(Record);
     this.auth['createUserWithEmailAndPassword'](form.email, form.password).then(
       (res: { user: any }) => {
         this.userId = res.user.uid;
@@ -61,16 +56,10 @@ export class AuthService {
               .doc(res.user.uid)
               .set({})
               .then(() => {
-                console.log('add last');
-              })
-              .then(() => {
                 this.firestore
                   .collection('profile')
                   .doc(res.user.uid)
                   .set({})
-                  .then(() => {
-                    console.log('add last');
-                  });
               });
           })
 
@@ -160,7 +149,6 @@ export class AuthService {
       .get()
       .subscribe((data) => {
         this.username.next(data.data());
-        console.log('data', data.data());
       });
   }
 }

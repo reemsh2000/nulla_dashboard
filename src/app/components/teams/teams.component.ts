@@ -23,7 +23,6 @@ export class TeamsComponent {
       const question = res?.DemographicStatistics.find(
         (x: any) => x.question.title === 'teams'
       );
-      console.log(Object.values(question.questionStatistic));
 
       this.teamsStaticticsData = {
         labels: question.question.answers,

@@ -18,42 +18,31 @@ export class NavComponent implements OnInit {
     this.isMenuopen.emit(this.isOpen);
   }
   emailUser: any;
-  userName:any
+  userName: any;
   constructor(
     public store: LoaderService,
     private authService: AuthService,
     private router: Router
   ) {
-  
-    this.authService.email$.subscribe((data)=>{
-      this.emailUser=data
-      
+    this.authService.email$.subscribe((data) => {
+      this.emailUser = data;
     });
 
-  this.authService.username$.subscribe((data)=>{
-    this.userName = data.Record.name
-  
-  })
-    
+    this.authService.username$.subscribe((data) => {
+      this.userName = data.Record.name;
+    });
   }
 
-  ngOnInit(): void {
-    console.log('user');
-  }
+  ngOnInit(): void {}
 
   login = this.authService.loginValue;
-
 
   logout() {
     this.authService.logout();
     this.login = false;
   }
   profile() {
-    console.log('this.authService.item');
-    console.log();
-
     this.authService.getProfileData().subscribe((res: any) => {
-      console.log();
       let data = res.data();
       if (Object.keys(data).length) {
         this.router.navigate(['/dashboard/adminpage']);

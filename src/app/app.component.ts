@@ -21,7 +21,6 @@ export class AppComponent {
     this.router.events.subscribe((route) => {
       if (route instanceof NavigationEnd) {
         if (route.url.includes('dashboard')) {
-          console.log('route,', route.url);
           this.dashboardPages = true;
         } else {
           this.dashboardPages = false;

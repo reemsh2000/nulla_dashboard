@@ -26,7 +26,6 @@ export class ProfileComponent implements OnInit {
   save() {
     this.authService.addProfileInformation(this.profileForm.value);
     this.completeformprofile = !this.authService.completeform;
-    console.log(this.completeformprofile);
   }
   skip() {
     this.router.navigate(['/dashboard']);
