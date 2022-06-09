@@ -15,6 +15,8 @@ export class DasboradComponent {
     this.asideService.openAside$.subscribe((val) => {
       this.openMenu = val;
     });
+    this.asideService.setSection('Dashboard');
+
   }
   checkImport(event: any) {
     this.displayResult = event;

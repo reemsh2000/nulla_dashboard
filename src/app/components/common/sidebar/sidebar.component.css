@@ -1,4 +1,4 @@
-a{
+a {
   color: inherit;
 }
 aside {
@@ -56,7 +56,7 @@ aside.active .line_menu .title_line {
 }
 
 .line_menu.active {
-  color:  var(--primary);
+  color: var(--primary);
   font-weight: 500;
 }
 
@@ -72,12 +72,15 @@ aside.active .line_menu .title_line {
   aside .line_menu .title_line {
     font-size: 10px;
   }
+  .line_menu {
+    padding: 4px;
+  }
 }
 @media screen and (max-width: 700px) {
   aside.active {
     display: flex;
     flex-direction: column;
-    width:100%;
+    width: 100%;
   }
 
   aside.active .line_menu {

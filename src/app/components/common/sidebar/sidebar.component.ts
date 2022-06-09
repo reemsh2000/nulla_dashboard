@@ -25,11 +25,6 @@ export class SidebarComponent {
       route: '/dashboard',
     },
     {
-      icon: PrimeIcons.DOWNLOAD,
-      label: 'Import Survey',
-      route: '/dashboard',
-    },
-    {
       icon: PrimeIcons.USERS,
       label: 'Teams',
       route: '/dashboard',
@@ -48,7 +43,7 @@ export class SidebarComponent {
     {
       icon: PrimeIcons.USER,
       label: 'Profile',
-      route: '/profile',
+      route: '/dashboard/profile',
     },
   ];
 }

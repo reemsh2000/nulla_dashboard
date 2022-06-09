@@ -1,18 +1,16 @@
 <aside [class.active]="isSideSmall">
-  <div
-    routerLink=""
+  <a
+    [routerLink]="row.route"
     routerLinkActive="true"
     *ngFor="let row of sideBarArray"
     class="line_menu"
     [class.active]="section.sectionName === row.label"
   >
-    <a [routerLink]="row.route" class="line_menu" >
-      <div class="icon_line">
-        <i [ngClass]="[row.icon, 'row_icon']"></i>
-      </div>
-      <div class="title_line">
-        <span>{{ row.label }}</span>
-      </div>
-    </a>
-  </div>
+    <div class="icon_line">
+      <i [ngClass]="[row.icon, 'row_icon']"></i>
+    </div>
+    <div class="title_line">
+      <span>{{ row.label }}</span>
+    </div>
+  </a>
 </aside>
