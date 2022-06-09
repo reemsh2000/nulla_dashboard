@@ -30,6 +30,7 @@
 .profile-inputs {
   display: flex;
   flex-direction: column;
+  margin-top: -10%;
 }
 .admin-profile-name {
   display: flex;
