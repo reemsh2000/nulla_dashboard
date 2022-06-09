@@ -5,32 +5,27 @@ import { AuthService } from 'app/services/auth.service';
 @Component({
   selector: 'app-interests',
   templateUrl: './interests.component.html',
-  styleUrls: ['./interests.component.css']
+  styleUrls: ['./interests.component.css'],
 })
 export class InterestsComponent implements OnInit {
-
   interestCompany = new FormGroup({
-    goals:new FormControl('',Validators.required),
-    hearAboutUs: new FormControl('',Validators.required),
-    climate: new FormControl('',Validators.required),
- 
-  
+    goals: new FormControl('', Validators.required),
+    hearAboutUs: new FormControl('', Validators.required),
+    climate: new FormControl('', Validators.required),
   });
   massage: string;
-  
-  constructor(private authService:AuthService) { }
 
-  ngOnInit(): void {
-  }
-  get f(){
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {}
+  get f() {
     return this.interestCompany.controls;
   }
-  saveInterestQuestions(){
- if(this.interestCompany.valid){
-  this.authService.addIntrestQuestions(this.interestCompany.value)
- }else{
-   this.massage='You should enter value in all feilds'
- }
- 
+  saveInterestQuestions() {
+    if (this.interestCompany.valid) {
+      this.authService.addIntrestQuestions(this.interestCompany.value);
+    } else {
+      this.massage = 'You should enter value in all feilds';
+    }
   }
 }

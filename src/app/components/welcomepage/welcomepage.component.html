@@ -1,33 +1,38 @@
 <div class="welcome-container">
   <app-auth-image-side class="auth_image"></app-auth-image-side>
- <div class="join-container">
-   <div class="nav-welcome">
-    <span class="account">Already have an account? <a class="login" [routerLink]="['/login']">Sign In</a></span>
-   </div>
-<div class="join">
+  <div class="join-container">
+    <div class="nav-welcome">
+      <span class="account"
+        >Already have an account?
+        <a class="login" [routerLink]="['/login']">Sign In</a></span
+      >
+    </div>
+    <div class="join">
+      <h3 class="join-title">Join Us!</h3>
+      <p class="join-para">
+        To begin this journey, tell us what type of company account you’d be
+        opening.
+      </p>
+      <div class="company">
+        <img src="../../../assets/images/Polygon 1.png" />
+        <div class="company-description">
+          <a class="company-title" [routerLink]="['/login']">Personal</a><br />
+          <p class="para-company">
+            Personal account to manage all you activities.
+          </p>
+        </div>
+        <img src="../../../assets/images/arrow-right.png" class="arrow" />
+      </div>
 
-
-<h3 class="join-title">Join Us!</h3>
-<p class="join-para">To begin this journey, tell us what type of company account you’d be opening.</p>
-<div class="company">
-  <img src="../../../assets/images/Polygon 1.png">
-  <div class="company-description">
-    <a class="company-title" [routerLink]="['/login']">Personal</a><br/>
-    <p class="para-company">Personal account to manage all you activities.</p>
+      <div class="ngo">
+        <img src="../../../assets/images/Polygon 2.png" />
+        <div class="company-description">
+          <a class="company-title" [routerLink]="['/company']">Company</a><br />
+          <p class="para-company">
+            Personal account to manage all you activities.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-  <img src="../../../assets/images/arrow-right.png" class="arrow"/>
-</div>
-
-
-<div class="ngo">
-  <img src="../../../assets/images/Polygon 2.png">
-  <div class="company-description">
-    <a class="company-title" [routerLink]="['/company']">Company</a><br/>
-    <p class="para-company">Personal account to manage all you activities.</p>
-  </div>
-
-</div>
-
-</div>
- </div>
 </div>

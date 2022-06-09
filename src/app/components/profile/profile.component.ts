@@ -20,13 +20,9 @@ export class ProfileComponent implements OnInit {
     gender: new FormControl(''),
   });
   admin: any;
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  }
-
-  ngOnInit(): void {
- 
-  }
+  ngOnInit(): void {}
   save() {
     this.authService.addProfileInformation(this.profileForm.value);
     this.completeformprofile = !this.authService.completeform;

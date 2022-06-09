@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
     email: new FormControl('', Validators.email),
     password: new FormControl('', Validators.minLength(6)),
   });
-  massage: string="";
+  massage: string = '';
   get f() {
     return this.profileForm.controls;
   }
@@ -20,10 +20,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   login() {
     if (this.profileForm.valid) {
-    this.authService.login(this.profileForm.value);
-    this.authService.errorMsg$.subscribe((msg) => {
-      this.massage = msg;
-    });
+      this.authService.login(this.profileForm.value);
+      this.authService.errorMsg$.subscribe((msg) => {
+        this.massage = msg;
+      });
     } else {
       this.massage = 'You should enter email and password';
     }

@@ -32,8 +32,7 @@
 .admin-profile-name input {
   padding: 12px 0px;
   width: 290%;
-  margin-left:2%;
-  
+  margin-left: 2%;
 }
 .info-input {
   width: 61%;
@@ -118,9 +117,9 @@ table {
     padding-left: 16px;
     padding-bottom: 50px;
   }
-.btns{
-  padding-bottom: 50px;
-}
+  .btns {
+    padding-bottom: 50px;
+  }
   .profile-inputs {
     margin-top: -50%;
     margin-left: 20%;

@@ -155,8 +155,7 @@ label {
     justify-content: space-around;
     border: 1px solid #dddd;
     width: 100%;
-
-    margin:  auto;
+    margin: auto;
     box-shadow: 2px 2px #dddd;
     height: 600px;
   }
