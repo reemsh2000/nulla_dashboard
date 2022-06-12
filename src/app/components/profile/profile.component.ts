@@ -54,9 +54,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {}
   save() {
     this.authService.addProfileInformation(this.profileForm.value);
+    console.log('rawand',this.profileForm.value);
     this.completeformprofile = !this.authService.completeform;
   }
   skip() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/dashboard/profile']);
   }
 }

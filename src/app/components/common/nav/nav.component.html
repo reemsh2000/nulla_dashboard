@@ -25,7 +25,7 @@
 <img src="../../../../assets/images/user (2).png" (click)="profile()"/> 
     </div>
 
-    <div class="profile_contact">
+    <div class="profile_contact"*ngIf="userName">
       <span class="admin_name">{{userName}}</span>
       <span class="admin_email">{{emailUser }}</span>
       

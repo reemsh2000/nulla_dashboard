@@ -8,7 +8,7 @@ import { LoginComponent } from './components/Auth/login/login.component';
 import { SignupComponent } from './components/Auth/signup/signup.component';
 import { CompanyAccountComponent } from './components/company/company-account/company-account.component';
 import { InterestsComponent } from './components/company/interests/interests.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { environment } from '../environments/environment';
 
@@ -31,18 +31,15 @@ import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-<<<<<<< HEAD
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatTableModule } from '@angular/material/table';
-=======
 import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import {MessageService} from 'primeng/api';
->>>>>>> 9e40e3a345055932e1f293f7a6562a0e62783109
 
 @NgModule({
   declarations: [
@@ -67,13 +64,9 @@ import {MessageService} from 'primeng/api';
     TeamsComponent,
     WelcomepageComponent,
     DasboradComponent,
-<<<<<<< HEAD
     ResetpasswordComponent,
     ProfileComponent,
-
-=======
     ErrorMessageComponent,
->>>>>>> 9e40e3a345055932e1f293f7a6562a0e62783109
   ],
   imports: [
     MatTableModule,
@@ -90,13 +83,6 @@ import {MessageService} from 'primeng/api';
     ProgressSpinnerModule,
     FormsModule,
     BrowserAnimationsModule,
-<<<<<<< HEAD
-
-    // FontAwesomeModule,
-    // FaIconLibrary, initialize
-  ],
-  providers: [],
-=======
     MessagesModule,
     MessageModule,
     // MessageService
@@ -109,7 +95,6 @@ import {MessageService} from 'primeng/api';
     },
     MessageService
   ],
->>>>>>> 9e40e3a345055932e1f293f7a6562a0e62783109
   bootstrap: [AppComponent],
 })
 export class AppModule {
