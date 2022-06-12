@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
     private router: Router,
     private asideService: AsideService
   ) {
+    this.authService.getProfileData()
     this.asideService.setSection('Profile');
 
     this.authService.email$.subscribe((data) => {

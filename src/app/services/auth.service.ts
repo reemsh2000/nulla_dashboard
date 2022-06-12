@@ -41,7 +41,7 @@ export class AuthService {
 
         this.userId = user.uid;
         this.getUserName();
-        this. getProfileData()
+       
       }
     });
   }
