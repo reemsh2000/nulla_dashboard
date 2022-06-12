@@ -7,7 +7,7 @@ import { WelcomepageComponent } from '../components/welcomepage/welcomepage.comp
 import { DasboradComponent } from '../components/dasborad/dasborad.component';
 import { ResetpasswordComponent } from '../components/resetpassword/resetpassword.component';
 import { ProfileComponent } from '../components/profile/profile.component';
-import { AdminpageComponent } from '../components/adminpage/adminpage.component';
+
 export const routingTable = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'welcome', component: WelcomepageComponent },
@@ -18,5 +18,5 @@ export const routingTable = [
   { path: 'resetpassword', component: ResetpasswordComponent },
   { path: 'dashboard', component: DasboradComponent },
   { path: 'dashboard/profile', component: ProfileComponent },
-  { path: 'dashboard/adminpage', component: AdminpageComponent },
+ 
 ];

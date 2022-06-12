@@ -138,10 +138,7 @@ export class AuthService {
   getProfileData() {
     return this.firestore.collection('profile').doc(this.userId).get();
   }
-  // getUserEmail() {
 
-  //   return this.auth.currentUser;
-  // }
   getUserName() {
     return this.firestore
       .collection('admin')
