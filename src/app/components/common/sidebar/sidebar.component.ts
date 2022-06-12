@@ -27,18 +27,17 @@ export class SidebarComponent {
     {
       icon: PrimeIcons.USERS,
       label: 'Teams',
-      route: '/dashboard',
+      route: '/dashboard/teams',
     },
     {
       icon: PrimeIcons.REPLY,
       label: 'Recommendations',
-      route: '/dashboard',
+      route: '/dashboard/recommendations',
     },
     {
       icon: PrimeIcons.BOOK,
       label: 'Reports',
-      route:"/dashboard"
-
+      route: 'dashboard/repots',
     },
     {
       icon: PrimeIcons.USER,
