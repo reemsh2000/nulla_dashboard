@@ -1,25 +1,6 @@
 <div class="welcome-container">
-  <div class="welcome-image">
-    <img src="../../../assets/images/logo.png" class="logo" />
-    <img src="../../../assets/images/“.png" class="comma" />
-
-    <p class="paragraph-welcome">
-      We believe it’s time we changed the way we talk about climate action from
-      being the elephant in <br />the room, to a part of everyday life
-    </p>
-    <div class="verctor-name">
-      <span class="name">Charlotte Horler</span>
-      <img src="../../../assets/images/Vector 1.png" class="vector" />
-    </div>
-  </div>
+  <app-auth-image-side class="auth_image"></app-auth-image-side>
   <div class="join-container">
-    <div class="nav-welcome">
-      <img
-        src="../../../../assets/images/arrow_back_ios_24px.png"
-        class="arrow-back"
-      />
-      <span class="back">Back</span>
-    </div>
     <div class="join">
       <h1 class="company-title">Complete Your Company Profile!</h1>
       <p class="company-description">
@@ -27,32 +8,92 @@
       </p>
     </div>
 
-    <div class="company-form">
-      <label class="">Company Name</label>
-      <input type="text" placeholder="Enter Company Name" class="name" />
+    <div class="companyform">
+      <form [formGroup]="companyform" class="company-form">
+        <label class="">Company Name</label>
+        <input
+          type="text"
+          placeholder="Enter Company Name"
+          class="name"
+          formControlName="companyName"
+        />
+        <div *ngIf="f['companyName'].touched && f['companyName'].invalid">
+          <div
+            *ngIf="
+              f['companyName'].errors && f['companyName'].errors['required']
+            "
+            class="handle-error"
+          >
+            Company name is required.
+          </div>
+        </div>
+        <label class="">Company address</label>
+        <input
+          type="text"
+          placeholder="Enter Company address"
+          class="name"
+          formControlName="companyAddress"
+        />
+        <div *ngIf="f['companyAddress'].touched && f['companyAddress'].invalid">
+          <div
+            *ngIf="
+              f['companyAddress'].errors &&
+              f['companyAddress'].errors['required']
+            "
+            class="handle-error"
+          >
+            Address is required.
+          </div>
+        </div>
+        <label class="">Your office</label>
+        <input
+          type="text"
+          placeholder="Enter Your office"
+          class="name"
+          formControlName="office"
+        />
+        <div *ngIf="f['office'].touched && f['office'].invalid">
+          <div
+            *ngIf="f['office'].errors && f['office'].errors['required']"
+            class="handle-error"
+          >
+            office is required.
+          </div>
+        </div>
+        <label class="">Number of employees</label>
+        <input
+          type="number"
+          placeholder="Enter Number of employees"
+          class="name"
+          formControlName="employeeNumber"
+        />
+        <div *ngIf="f['employeeNumber'].touched && f['employeeNumber'].invalid">
+          <div
+            *ngIf="
+              f['employeeNumber'].errors &&
+              f['employeeNumber'].errors['required']
+            "
+            class="handle-error"
+          >
+            employee Number is required.
+          </div>
+        </div>
 
-      <label class="">Company address</label>
-      <input type="text" placeholder="Enter Company address" class="name" />
-
-      <label class="">Your office</label>
-      <input type="text" placeholder="Enter Your office" class="name" />
-
-      <label class="">Number of employees</label>
-      <input
-        type="number"
-        placeholder="Enter Number of employees"
-        class="name"
-      />
-      '
-      <label class="">Your company holiday dates</label>
-      <input
-        type="number"
-        placeholder="Pleas Select"
-        class="name"
-      />
-      '
-      <button class="company-btn">Save & Continue</button>
-     
+        <div *ngIf="f['holidayDate'].touched && f['holidayDate'].invalid">
+          <div
+            *ngIf="
+              f['holidayDate'].errors && f['holidayDate'].errors['required']
+            "
+            class="handle-error"
+          >
+            holiday Date is required.
+          </div>
+        </div>
+      </form>
+      <p class="massage">{{ massage }}</p>
+      <button class="company-btn" (click)="saveProfileCompany()">
+        Save & Continue
+      </button>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SideBarRow } from '../../../Interfaces/interfaces';
-import { PrimeIcons} from 'primeng/api';
+import { PrimeIcons } from 'primeng/api';
 // import { SideBarRow } from '../../../Interfaces';
 
 import { AsideService } from '../../../services/aside.service';
@@ -10,48 +10,44 @@ import { AsideService } from '../../../services/aside.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-
   isSection: string = 'survey';
   @Input() isSideSmall: boolean = false;
 
-  constructor(public section: AsideService) {
-  }
- 
-   sideBarArray= [
-     {
-        icon: PrimeIcons.HOME,
-        label: 'Dashboard'
-     },
-     {
-       icon:PrimeIcons.TH_LARGE,
-       label: 'Past Surveys'
-     },
-     {
-      icon: PrimeIcons.DOWNLOAD,
-      label: 'Import Survey'
+  constructor(public section: AsideService) {}
+
+  sideBarArray = [
+    {
+      icon: PrimeIcons.HOME,
+      label: 'Dashboard',
+      route: '/dashboard',
     },
     {
       icon: PrimeIcons.USERS,
-      label: 'Teams'
+      label: 'Teams',
+      route: '/dashboard/teams',
     },
     {
       icon: PrimeIcons.REPLY,
-      label: 'Recommendations'
-    },
-  {
-      icon:PrimeIcons.BOOK,
-      label: 'Reports'
+      label: 'Recommendations',
+      route: '/dashboard/recommendations',
     },
     {
-      icon:PrimeIcons.USER,
-      label: 'Profile'
+      icon: PrimeIcons.BOOK,
+      label: 'Reports',
+      route: 'dashboard/repots',
     },
-
-
-   ];
-
-
+    {
+      icon: PrimeIcons.USER,
+      label: 'Profile',
+      route: '/dashboard/profile',
+    },
+    {
+      icon: PrimeIcons.ARROW_CIRCLE_LEFT,
+      label: 'Logout',
+      route: '/login',
+    },
+  ];
 }

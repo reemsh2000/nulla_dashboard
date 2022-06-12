@@ -1,11 +1,10 @@
-<aside [class.active]="isSideSmall" >
-  <div
-    routerLink=""
+<aside [class.active]="isSideSmall">
+  <a
+    [routerLink]="row.route"
     routerLinkActive="true"
     *ngFor="let row of sideBarArray"
     class="line_menu"
     [class.active]="section.sectionName === row.label"
-
   >
     <div class="icon_line">
       <i [ngClass]="[row.icon, 'row_icon']"></i>
@@ -13,5 +12,5 @@
     <div class="title_line">
       <span>{{ row.label }}</span>
     </div>
-  </div>
+  </a>
 </aside>

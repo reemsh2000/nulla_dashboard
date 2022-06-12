@@ -1,47 +1,58 @@
 <div class="welcome-container">
-    <div class="welcome-image">
-      <img src="../../../assets/images/logo.png" class="logo" />
-      <img src="../../../assets/images/“.png" class="comma" />
-  
-      <p class="paragraph-welcome">
-        We believe it’s time we changed the way we talk about climate action from
-        being the elephant in <br />the room, to a part of everyday life
+  <app-auth-image-side class="auth_image"></app-auth-image-side>
+  <div class="join-container">
+    <div class="join">
+      <h1 class="company-title">Let us know why you are here</h1>
+      <p class="company-description">
+        that help us understand how we can help you
       </p>
-      <div class="verctor-name">
-        <span class="name">Charlotte Horler</span>
-        <img src="../../../assets/images/Vector 1.png" class="vector" />
-      </div>
     </div>
-    <div class="join-container">
-      <div class="nav-welcome">
-        <img
-          src="../../../../assets/images/arrow_back_ios_24px.png"
-          class="arrow-back"
-        />
-        <span class="back">Back</span>
-      </div>
-      <div class="join">
-        <h1 class="company-title">Let us know why you are here</h1>
-        <p class="company-description">
-            that help us understand how we can help you
-        </p>
-      </div>
-  
+    <form [formGroup]="interestCompany">
       <div class="company-form">
         <label class="">What are your goals with Nula?</label>
-        <textarea type="text"  class="name"></textarea>
-  
+        <textarea type="text" class="name" formControlName="goals"></textarea>
+        <div *ngIf="f['goals'].touched && f['goals'].invalid">
+          <div
+            *ngIf="f['goals'].errors && f['goals'].errors['required']"
+            class="handle-error"
+          >
+             required.
+          </div>
+        </div>
         <label class="">How did you first hear about Nula?</label>
-        <textarea type="text" class="name"></textarea>
+        <textarea
+          type="text"
+          class="name"
+          formControlName="hearAboutUs"
+        ></textarea>
+        <div *ngIf="f['hearAboutUs'].touched && f['hearAboutUs'].invalid">
+          <div
+            *ngIf="
+              f['hearAboutUs'].errors && f['hearAboutUs'].errors['required']
+            "
+            class="handle-error"
+          >
+            required.
+          </div>
+        </div>
+        <label class=""
+          >Have your company used before a platfrom for climate?</label
+        >
+        <textarea type="text" class="name" formControlName="climate"></textarea>
+        <div *ngIf="f['climate'].touched && f['climate'].invalid">
+          <div
+            *ngIf="f['climate'].errors && f['climate'].errors['required']"
+            class="handle-error"
+          >
+            required.
+          </div>
+        </div>
+        <p class="massage">{{ massage }}</p>
 
-        <label class="">Have your company used before a platfrom for climate?</label>
-        <textarea type="text" class="name"></textarea>
-  
-      
-      
-        <button class="company-btn">Save & Finish</button>
-       
+        <button class="company-btn" (click)="saveInterestQuestions()">
+          Save & Finish
+        </button>
       </div>
-    </div>
+    </form>
   </div>
-  
+</div>

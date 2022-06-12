@@ -1,5 +1,5 @@
-import { DataService } from 'app/services/data.service';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AsideService } from 'app/services/aside.service';
 
 @Component({
   selector: 'app-dasborad',
@@ -7,25 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./dasborad.component.css'],
 })
 export class DasboradComponent {
+  openMenu: boolean=false ;
   title = 'nulla';
-  showErrorMsg: boolean = false;
-  openMenu: boolean = false;
   displayResult = false;
-  constructor(private dataService: DataService) {}
-  checkMenu(event: boolean) {
-    this.openMenu = event;
-  }
 
+  constructor(private asideService: AsideService) {
+    this.asideService.openAside$.subscribe((val) => {
+      this.openMenu = val;
+    });
+    this.asideService.setSection('Dashboard');
+
+  }
   checkImport(event: any) {
-    this.dataService.getStatistics().subscribe(
-      (response: any) => {
-        this.displayResult = event;
-        this.showErrorMsg = false;
-      },
-      (error) => {
-        this.showErrorMsg = true;
-        this.displayResult = false;
-      }
-    );
+    this.displayResult = event;
   }
 }

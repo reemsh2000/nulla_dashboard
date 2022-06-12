@@ -1,3 +1,6 @@
+a {
+  color: inherit;
+}
 aside {
   width: 100%;
   height: 100%;
@@ -53,7 +56,7 @@ aside.active .line_menu .title_line {
 }
 
 .line_menu.active {
-  color:  var(--primary);
+  color: var(--primary);
   font-weight: 500;
 }
 
@@ -64,25 +67,33 @@ aside.active .line_menu .title_line {
 .line_menu.active i {
   fill: rgb(0, 0, 0);
 }
-
+.icon_line{
+  margin-top: 4px;
+}
 @media screen and (max-width: 1000px) {
   aside .line_menu .title_line {
     font-size: 10px;
+  }
+  .line_menu {
+    padding: 4px;
   }
 }
 @media screen and (max-width: 700px) {
   aside.active {
     display: flex;
     flex-direction: column;
-    width:100%;
+    width: 100%;
   }
 
   aside.active .line_menu {
-    width: 170px;
+    width: 150px;
+    height: 40px;
     border-radius: 15px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
+    margin: 15px 0;
+    padding: 13px;
   }
 
   aside .line_menu .title_line {

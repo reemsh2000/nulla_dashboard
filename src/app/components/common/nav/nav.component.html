@@ -20,13 +20,15 @@
   </div>
 
   <div class="user_profile">
+    <span  *ngIf="login" (click)="logout()">Logout</span>
     <div class="user_image">
-<img src="../../../../assets/images/woman (1).png" /> 
+<img src="../../../../assets/images/user (2).png" (click)="profile()"/> 
     </div>
 
-    <div class="profile_contact">
-      <span class="admin_name">Charlotte Horler</span>
-      <span class="admin_email">Charlotte@nulla.com</span>
+    <div class="profile_contact"*ngIf="userName">
+      <span class="admin_name">{{userName}}</span>
+      <span class="admin_email">{{emailUser }}</span>
+      
     </div>
   </div>
 </nav>
