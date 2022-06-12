@@ -20,14 +20,16 @@ export class ProfileComponent implements OnInit {
     gender: new FormControl(''),
   });
   admin: any;
-  setEmail:any
+  setEmail:any;
+  setName:any;
+  setPhone:any;
   constructor(
     private authService: AuthService,
     private router: Router,
     private asideService: AsideService
   ) {
     this.asideService.setSection('Profile');
-    
+
     this.authService.email$.subscribe((data) => {
       this.setEmail=data
       this.profileForm.setValue({
@@ -40,15 +42,28 @@ export class ProfileComponent implements OnInit {
       });
     });
     this.authService.username$.subscribe((data) => {
+      this.setName=data?.Record?.name;
+      this.setPhone=data?.Record?.phone
       this.profileForm.setValue({
         email: this.setEmail,
-        name: data.Record.name,
+        name:this.setName ,
         title: '',
-        phone: data.Record.phone,
+        phone:this.setPhone ,
         nationality: '',
         gender: '',
       });
     });
+    this.authService.profileData$.subscribe((data) => {
+      this.profileForm.setValue({
+        email: this.setEmail,
+        name: this.setName,
+        title: data?.title,
+        phone: this.setPhone,
+        nationality:data?.nationality,
+        gender: data?.gender,
+      });
+    })
+  
   }
 
   ngOnInit(): void {}

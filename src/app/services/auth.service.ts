@@ -25,6 +25,9 @@ export class AuthService {
   private username = new BehaviorSubject<any>(null);
   public username$ = this.username.asObservable();
 
+  private profileData = new BehaviorSubject<any>(null);
+  public profileData$ = this.profileData.asObservable();
+
   public get getErrorMsg(): string {
     return this.errorMsg.getValue();
   }
@@ -38,6 +41,7 @@ export class AuthService {
 
         this.userId = user.uid;
         this.getUserName();
+        this. getProfileData()
       }
     });
   }
@@ -136,7 +140,11 @@ export class AuthService {
       });
   }
   getProfileData() {
-    return this.firestore.collection('profile').doc(this.userId).get();
+    return this.firestore.collection('profile').doc(this.userId).get().subscribe((data)=>{
+      this.profileData.next(data.data())
+      console.log(this.profileData,"profile data")
+      console.log(data.data(),"data")
+    });
   }
 
   getUserName() {

@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
     });
 
     this.authService.username$.subscribe((data) => {
-      this.userName = data.Record.name;
+      this.userName = data?.Record?.name;
     });
   }
 
@@ -42,13 +42,19 @@ export class NavComponent implements OnInit {
     this.login = false;
   }
   profile() {
-    this.authService.getProfileData().subscribe((res: any) => {
-      let data = res.data();
-      if (Object.keys(data).length) {
-        this.router.navigate(['/dashboard/profile']);
-      } else {
-        this.router.navigate(['/dashboard/profile']);
-      }
-    });
-  }
+    // this.authService.profileData$.subscribe((res) => {
+    //   let data = res.data()
+    // })
+  //   this.authService.getProfileData().subscribe((res: any) => {
+  //     let data = res.data();
+  //     if (Object.keys(data).length) {
+  //       this.router.navigate(['/dashboard/profile']);
+  //     } else {
+  //       this.router.navigate(['/dashboard/profile']);
+  //     }
+  //   });
+  // }
+  console.log("hi")
+}
+
 }
