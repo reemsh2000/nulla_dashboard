@@ -1,5 +1,5 @@
 <app-nav (isMenuopen)="checkMenu($event)" *ngIf="dashboardPages"></app-nav>
-<div [class.content]="dashboardPages">
+<div [class.content]="dashboardPages"[class.auth]="!dashboardPages" >
   <app-sidebar
     [isSideSmall]="openMenu"
     class="bowl_aside"
