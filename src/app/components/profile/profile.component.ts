@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private asideService: AsideService
+    public asideService: AsideService
   ) {
     this.authService.getProfileData()
     this.asideService.setSection('Profile');

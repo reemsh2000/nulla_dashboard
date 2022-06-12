@@ -13,6 +13,9 @@ export class AsideService {
  setOpenAside = (val: boolean) => {    
     this.openAside.next(val);
   }
+  getOpenAsideValue = () => {
+    return this.openAside.getValue();
+  }
   get sectionName(): string {
     return this.isTypeSection.getValue();
   }
