@@ -45,5 +45,10 @@ export class SidebarComponent {
       label: 'Profile',
       route: '/dashboard/profile',
     },
+    {
+      icon: PrimeIcons.ARROW_CIRCLE_LEFT,
+      label: 'Logout',
+      route: '/login',
+    },
   ];
 }
