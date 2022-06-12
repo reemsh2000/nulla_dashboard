@@ -40,6 +40,8 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import {MessageService} from 'primeng/api';
+import { ReportsComponent } from './components/reports/reports.component';
+import { RecommentionComponent } from './components/recommention/recommention.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import {MessageService} from 'primeng/api';
     ResetpasswordComponent,
     ProfileComponent,
     ErrorMessageComponent,
+    ReportsComponent,
+    RecommentionComponent,
   ],
   imports: [
     MatTableModule,

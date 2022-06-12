@@ -7,6 +7,9 @@ import { WelcomepageComponent } from '../components/welcomepage/welcomepage.comp
 import { DasboradComponent } from '../components/dasborad/dasborad.component';
 import { ResetpasswordComponent } from '../components/resetpassword/resetpassword.component';
 import { ProfileComponent } from '../components/profile/profile.component';
+import { TeamsComponent } from 'app/components/teams/teams.component';
+import { RecommentionComponent } from 'app/components/recommention/recommention.component';
+import { ReportsComponent } from 'app/components/reports/reports.component';
 
 export const routingTable = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,5 +21,7 @@ export const routingTable = [
   { path: 'resetpassword', component: ResetpasswordComponent },
   { path: 'dashboard', component: DasboradComponent },
   { path: 'dashboard/profile', component: ProfileComponent },
- 
+  { path: 'dashboard/teams', component: TeamsComponent },
+  { path: 'dashboard/recommention', component: RecommentionComponent },
+  { path: 'dashboard/repots', component: ReportsComponent },
 ];
