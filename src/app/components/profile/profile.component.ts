@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   completeformprofile: boolean;
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    name: new FormControl(''),
     title: new FormControl(''),
     email: new FormControl(''),
     phone: new FormControl(''),
@@ -21,12 +20,35 @@ export class ProfileComponent implements OnInit {
     gender: new FormControl(''),
   });
   admin: any;
+  setEmail:any
   constructor(
     private authService: AuthService,
     private router: Router,
     private asideService: AsideService
   ) {
     this.asideService.setSection('Profile');
+    
+    this.authService.email$.subscribe((data) => {
+      this.setEmail=data
+      this.profileForm.setValue({
+        email: this.setEmail,
+        name: '',
+        title: '',
+        phone: '',
+        nationality: '',
+        gender: '',
+      });
+    });
+    this.authService.username$.subscribe((data) => {
+      this.profileForm.setValue({
+        email: this.setEmail,
+        name: data.Record.name,
+        title: '',
+        phone: data.Record.phone,
+        nationality: '',
+        gender: '',
+      });
+    });
   }
 
   ngOnInit(): void {}
