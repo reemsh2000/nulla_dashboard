@@ -41,7 +41,8 @@ import { MessageModule } from 'primeng/message';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import {MessageService} from 'primeng/api';
 import { ReportsComponent } from './components/reports/reports.component';
-import { RecommentionComponent } from './components/recommention/recommention.component';
+import { RecommendationComponent } from './components/recommendation/recommendation.component';
+import { TeamsPageComponent } from './components/teams-page/teams-page.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { RecommentionComponent } from './components/recommention/recommention.co
     ProfileComponent,
     ErrorMessageComponent,
     ReportsComponent,
-    RecommentionComponent,
+    RecommendationComponent,
+    TeamsPageComponent,
   ],
   imports: [
     MatTableModule,

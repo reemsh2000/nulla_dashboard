@@ -1,3 +1,4 @@
+import { TeamsPageComponent } from './../components/teams-page/teams-page.component';
 import { AppComponent } from '../app.component';
 import { LoginComponent } from '../components/Auth/login/login.component';
 import { SignupComponent } from '../components/Auth/signup/signup.component';
@@ -7,10 +8,8 @@ import { WelcomepageComponent } from '../components/welcomepage/welcomepage.comp
 import { DasboradComponent } from '../components/dasborad/dasborad.component';
 import { ResetpasswordComponent } from '../components/resetpassword/resetpassword.component';
 import { ProfileComponent } from '../components/profile/profile.component';
-import { TeamsComponent } from 'app/components/teams/teams.component';
-import { RecommentionComponent } from 'app/components/recommention/recommention.component';
 import { ReportsComponent } from 'app/components/reports/reports.component';
-
+import { RecommendationComponent } from 'app/components/recommendation/recommendation.component';
 export const routingTable = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'welcome', component: WelcomepageComponent },
@@ -21,7 +20,7 @@ export const routingTable = [
   { path: 'resetpassword', component: ResetpasswordComponent },
   { path: 'dashboard', component: DasboradComponent },
   { path: 'dashboard/profile', component: ProfileComponent },
-  { path: 'dashboard/teams', component: TeamsComponent },
-  { path: 'dashboard/recommention', component: RecommentionComponent },
+  { path: 'dashboard/teams', component: TeamsPageComponent },
+  { path: 'dashboard/recommendations', component: RecommendationComponent },
   { path: 'dashboard/repots', component: ReportsComponent },
 ];
