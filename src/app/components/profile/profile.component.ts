@@ -20,19 +20,19 @@ export class ProfileComponent implements OnInit {
     gender: new FormControl(''),
   });
   admin: any;
-  setEmail:any;
-  setName:any;
-  setPhone:any;
+  setEmail: any;
+  setName: any;
+  setPhone: any;
   constructor(
     private authService: AuthService,
     private router: Router,
     public asideService: AsideService
   ) {
-    this.authService.getProfileData()
+    this.authService.getProfileData();
     this.asideService.setSection('Profile');
 
     this.authService.email$.subscribe((data) => {
-      this.setEmail=data
+      this.setEmail = data;
       this.profileForm.setValue({
         email: this.setEmail,
         name: '',
@@ -43,13 +43,13 @@ export class ProfileComponent implements OnInit {
       });
     });
     this.authService.username$.subscribe((data) => {
-      this.setName=data?.Record?.name;
-      this.setPhone=data?.Record?.phone
+      this.setName = data?.Record?.name;
+
       this.profileForm.setValue({
         email: this.setEmail,
-        name:this.setName ,
+        name: this.setName,
         title: '',
-        phone:this.setPhone ,
+        phone: '',
         nationality: '',
         gender: '',
       });
@@ -59,18 +59,17 @@ export class ProfileComponent implements OnInit {
         email: this.setEmail,
         name: this.setName,
         title: data?.title,
-        phone: this.setPhone,
-        nationality:data?.nationality,
+        phone: data?.phone,
+        nationality: data?.nationality,
         gender: data?.gender,
       });
-    })
-  
+    });
   }
 
   ngOnInit(): void {}
   save() {
     this.authService.addProfileInformation(this.profileForm.value);
-    console.log('rawand',this.profileForm.value);
+    console.log('rawand', this.profileForm.value);
     this.completeformprofile = !this.authService.completeform;
   }
   skip() {

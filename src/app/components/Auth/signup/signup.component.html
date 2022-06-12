@@ -32,21 +32,21 @@
             Name is required.
           </div>
         </div>
-        <label class="">Phone Number</label>
+        <!-- <label class="">Phone Number</label>
         <input
           type="number"
           placeholder="Enter Phone Number"
           class="name"
           formControlName="phone"
-        />
-        <div *ngIf="r['phone'].touched && r['phone'].invalid">
+        /> -->
+        <!-- <div *ngIf="r['phone'].touched && r['phone'].invalid">
           <div
             *ngIf="r['phone'].errors && r['phone'].errors['required']"
             class="handle-error"
           >
             phone is required.
           </div>
-        </div>
+        </div> -->
       </form>
       <form [formGroup]="registerForm" class="register-form-input">
         <label class="">Email Address *</label>
@@ -81,7 +81,26 @@
           required
           minlength="3"
         />
+        <label class="">Confirm Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="name"
+          formControlName="confirmpassword"
+          required
+          minlength="3"
+        />
+        <div *ngIf="showErrorDifferenetPass" class="handle-error">
+          Passwords don't match
+        </div>
+
         <div *ngIf="f['password'].touched && f['password'].invalid">
+          <div
+            *ngIf="f['password'].errors && f['password'].errors['required']"
+            class="handle-error"
+          >
+            Password is required.
+          </div>
           <div
             *ngIf="f['password'].errors && f['password'].errors['required']"
             class="handle-error"
