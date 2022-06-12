@@ -35,7 +35,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatTableModule } from '@angular/material/table';
-import { AdminpageComponent } from './components/adminpage/adminpage.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +61,7 @@ import { AdminpageComponent } from './components/adminpage/adminpage.component';
     DasboradComponent,
     ResetpasswordComponent,
     ProfileComponent,
-    AdminpageComponent,
+
   ],
   imports: [
     MatTableModule,

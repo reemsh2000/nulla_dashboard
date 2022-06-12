@@ -45,7 +45,7 @@ export class NavComponent implements OnInit {
     this.authService.getProfileData().subscribe((res: any) => {
       let data = res.data();
       if (Object.keys(data).length) {
-        this.router.navigate(['/dashboard/adminpage']);
+        this.router.navigate(['/dashboard/profile']);
       } else {
         this.router.navigate(['/dashboard/profile']);
       }
