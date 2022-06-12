@@ -3,6 +3,9 @@
   flex-direction: column;
   margin: 100px 100px 0 250px;
 }
+.aisdesmall {
+  margin: 100px 100px 0 100px;
+}
 .basic-info {
   display: flex;
   flex-direction: row;
@@ -76,5 +79,4 @@
     width: 80%;
     margin: auto;
   }
-
 }
