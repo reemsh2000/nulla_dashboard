@@ -45,6 +45,11 @@ export class SidebarComponent {
       route: '/dashboard/profile',
     },
     {
+      icon: PrimeIcons.USER,
+      label: 'All Questions',
+      route: 'dashboard/allquestions',
+    },
+    {
       icon: PrimeIcons.ARROW_CIRCLE_LEFT,
       label: 'Logout',
       route: '/login',
