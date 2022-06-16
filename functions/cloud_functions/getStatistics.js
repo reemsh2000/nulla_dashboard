@@ -2,7 +2,7 @@ const axios = require("axios");
 const getPersonalityStatistics = require("./utils/personality/getPersonalityStatistics");
 const getSnapshotStatistics = require("./utils/snapshot/getSnapshotStatistics");
 const getDemographicStatistics = require("./utils/demographic/getDemographicStatistics");
-
+const getEachPersonalStat = require("./utils/personality/getEachPersonalStat");
 const getSurveyStatistics = async (req, res) => {
   const apiEndPoint = "https://api.typeform.com/forms/";
   const headers = {
@@ -20,7 +20,13 @@ const getSurveyStatistics = async (req, res) => {
   const personalityStaistics = getPersonalityStatistics(questions, answers);
   const snapshotStatistics = getSnapshotStatistics(questions, answers);
   const DemographicStatistics = getDemographicStatistics(questions, answers);
-  res.json({ personalityStaistics, snapshotStatistics, DemographicStatistics });
+  const questionsStatistics = getEachPersonalStat(questions, answers);
+  res.json({
+    personalityStaistics,
+    snapshotStatistics,
+    DemographicStatistics,
+    questionsStatistics,
+  });
 };
 
 module.exports = getSurveyStatistics;
