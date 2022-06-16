@@ -8,19 +8,19 @@ const getEachPersonalStat = (questions, answers) => {
   driverQuestions.forEach((question) => {
     questionsStatistics.push({
       ...calculatePersonalityStatistics([question], answers, "Driver"),
-      question,
+      question: question.title,
     });
   });
   personalQuestions.forEach((question) => {
     questionsStatistics.push({
       ...calculatePersonalityStatistics([question], answers, "Personal"),
-      question,
+      question:question.title,
     });
   });
   leadQuestions.forEach((question) => {
     questionsStatistics.push({
       ...calculatePersonalityStatistics([question], answers, "Lead"),
-      question,
+      question:question.title,
     });
   });
   return questionsStatistics;
