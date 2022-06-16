@@ -1,31 +1,31 @@
-[debug] [2022-06-05T10:27:50.006Z] ----------------------------------------------------------------------
-[debug] [2022-06-05T10:27:50.008Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
-[debug] [2022-06-05T10:27:50.009Z] CLI Version:   10.5.0
-[debug] [2022-06-05T10:27:50.009Z] Platform:      win32
-[debug] [2022-06-05T10:27:50.009Z] Node Version:  v16.13.0
-[debug] [2022-06-05T10:27:50.010Z] Time:          Sun Jun 05 2022 13:27:50 GMT+0300 (توقيت شرق أوروبا الصيفي)
-[debug] [2022-06-05T10:27:50.010Z] ----------------------------------------------------------------------
+[debug] [2022-06-16T08:35:38.793Z] ----------------------------------------------------------------------
+[debug] [2022-06-16T08:35:38.794Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --only functions
+[debug] [2022-06-16T08:35:38.794Z] CLI Version:   10.9.2
+[debug] [2022-06-16T08:35:38.794Z] Platform:      darwin
+[debug] [2022-06-16T08:35:38.794Z] Node Version:  v16.15.1
+[debug] [2022-06-16T08:35:38.796Z] Time:          Thu Jun 16 2022 11:35:38 GMT+0300 (Eastern European Summer Time)
+[debug] [2022-06-16T08:35:38.796Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-06-05T10:27:50.113Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-06-05T10:27:50.113Z] > authorizing via signed-in user (hello@nula.work)
+[debug] [2022-06-16T08:35:38.823Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-16T08:35:38.823Z] > authorizing via signed-in user (hello@nula.work)
 [info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
-[debug] [2022-06-05T10:27:50.166Z] [hub] writing locator at C:\Users\hp\AppData\Local\Temp\hub-nulla-316b1.json
-[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
-[info] +  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
-[debug] [2022-06-05T10:27:50.196Z] defaultcredentials: writing to file C:\Users\hp\AppData\Roaming\firebase\hello_nula_work_application_default_credentials.json
-[debug] [2022-06-05T10:27:50.198Z] Setting GAC to C:\Users\hp\AppData\Roaming\firebase\hello_nula_work_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\hp\\AppData\\Roaming\\firebase\\hello_nula_work_application_default_credentials.json"}}
-[debug] [2022-06-05T10:27:50.203Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nulla-316b1/adminSdkConfig [none]
-[debug] [2022-06-05T10:27:50.608Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nulla-316b1/adminSdkConfig 200
-[debug] [2022-06-05T10:27:50.609Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nulla-316b1/adminSdkConfig {"projectId":"nulla-316b1","storageBucket":"nulla-316b1.appspot.com","locationId":"us-central"}
-[debug] [2022-06-05T10:27:50.644Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-06-05T10:27:50.645Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2022-06-05T10:27:50.645Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\hp\\.cache\\firebase\\emulators\\ui-v1.6.5\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\hp\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.6.5\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[debug] [2022-06-16T08:35:38.839Z] [hub] writing locator at /tmp/hub-nulla-316b1.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-06-16T08:35:38.907Z] defaultcredentials: writing to file /Users/reemshamia/.config/firebase/hello_nula_work_application_default_credentials.json
+[debug] [2022-06-16T08:35:38.909Z] Setting GAC to /Users/reemshamia/.config/firebase/hello_nula_work_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/reemshamia/.config/firebase/hello_nula_work_application_default_credentials.json"}}
+[debug] [2022-06-16T08:35:38.911Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nulla-316b1/adminSdkConfig [none]
+[debug] [2022-06-16T08:35:39.936Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nulla-316b1/adminSdkConfig 200
+[debug] [2022-06-16T08:35:39.936Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nulla-316b1/adminSdkConfig {"projectId":"nulla-316b1","databaseURL":"https://nulla-316b1-default-rtdb.firebaseio.com","storageBucket":"nulla-316b1.appspot.com","locationId":"us-central"}
+[debug] [2022-06-16T08:35:39.968Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-06-16T08:35:39.968Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-06-16T08:35:39.968Z] Starting Emulator UI with command {"binary":"node","args":["/Users/reemshamia/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/reemshamia/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
 [info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2022-06-05T10:27:50.883Z] Web / API server started at localhost:4000
+[debug] [2022-06-16T08:35:40.044Z] Web / API server started at localhost:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
-[info] i  functions: Watching "C:\Users\hp\Pictures\nulla_dashboard\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\hp\\Pictures\\nulla_dashboard\\functions\" for Cloud Functions..."}}
-[debug] [2022-06-05T10:27:50.930Z] Validating nodejs source
-[debug] [2022-06-05T10:27:55.069Z] > [functions] package.json contents: {
+[info] i  functions: Watching "/Users/reemshamia/Desktop/nulla_dashboard/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/reemshamia/Desktop/nulla_dashboard/functions\" for Cloud Functions..."}}
+[debug] [2022-06-16T08:35:40.235Z] Validating nodejs source
+[debug] [2022-06-16T08:35:41.020Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -53,9 +53,15 @@
   },
   "private": true
 }
-[debug] [2022-06-05T10:27:55.069Z] Building nodejs source
-[debug] [2022-06-05T10:27:55.069Z] Analyzing nodejs backend spec
-[info] +  functions[us-central1-app]: http function initialized (http://localhost:5001/nulla-316b1/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/nulla-316b1/us-central1/app)."}}
+[debug] [2022-06-16T08:35:41.021Z] Building nodejs source
+[debug] [2022-06-16T08:35:41.021Z] Analyzing nodejs backend spec
+[debug] [2022-06-16T08:35:41.022Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-06-16T08:35:41.418Z] Serving at port 9005
+
+[debug] [2022-06-16T08:35:41.475Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-06-16T08:35:41.479Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions[us-central1-app]: http function initialized (http://127.0.0.1:5001/nulla-316b1/us-central1/app). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/nulla-316b1/us-central1/app)."}}
 [info] 
 ┌─────────────────────────────────────────────────────────────┐
 │ ✔  All emulators ready! It is now safe to connect your app. │
@@ -65,10 +71,41 @@
 ┌───────────┬────────────────┬─────────────────────────────────┐
 │ Emulator  │ Host:Port      │ View in Emulator UI             │
 ├───────────┼────────────────┼─────────────────────────────────┤
-│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+│ Functions │ 127.0.0.1:5001 │ http://localhost:4000/functions │
 └───────────┴────────────────┴─────────────────────────────────┘
   Emulator Hub running at localhost:4400
   Other reserved ports: 4500
 
 Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
  
+[debug] [2022-06-16T08:41:11.730Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-06-16T08:41:11.732Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-06-16T08:41:11.732Z] Accepted request GET /nulla-316b1/us-central1/app/survey-statistics/UzkZtaLj --> us-central1-app
+[debug] [2022-06-16T08:41:11.745Z] [worker-pool] addWorker(us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-app)"}}
+[debug] [2022-06-16T08:41:11.745Z] [worker-pool] Adding worker with key us-central1-app, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-app, total=1"}}
+[debug] [2022-06-16T08:41:11.745Z] [worker-pool] submitWork(triggerId=us-central1-app) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-app)"}}
+[debug] [2022-06-16T08:41:11.750Z] [worker-us-central1-app-6458c1b5-0570-425a-9375-2e5e2b746998]: Assigning socketPath: /tmp/fire_emu_7962.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-6458c1b5-0570-425a-9375-2e5e2b746998]: Assigning socketPath: /tmp/fire_emu_7962.sock"}}
+[debug] [2022-06-16T08:41:11.750Z] [worker-us-central1-app-6458c1b5-0570-425a-9375-2e5e2b746998]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-6458c1b5-0570-425a-9375-2e5e2b746998]: BUSY"}}
+[debug] [2022-06-16T08:41:12.374Z] [runtime-status] [7962] Functions runtime initialized. {"cwd":"/Users/reemshamia/Desktop/nulla_dashboard/functions","node_version":"16.15.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Functions runtime initialized. {\"cwd\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions\",\"node_version\":\"16.15.1\"}"}}
+[debug] [2022-06-16T08:41:12.377Z] [runtime-status] [7962] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Disabled runtime features: undefined"}}
+[debug] [2022-06-16T08:41:12.378Z] [runtime-status] [7962] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.2.0","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.2.0\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-06-16T08:41:12.379Z] [runtime-status] [7962] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.21.2","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.21.2\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-06-16T08:41:12.379Z] [runtime-status] [7962] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-06-16T08:41:12.379Z] [runtime-status] [7962] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.21.2","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.21.2\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-06-16T08:41:12.403Z] [runtime-status] [7962] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-06-16T08:41:12.403Z] [runtime-status] [7962] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.21.2","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.21.2\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-06-16T08:41:12.403Z] [runtime-status] [7962] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.21.2","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.21.2\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-06-16T08:41:12.404Z] [runtime-status] [7962] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.2.0","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.2.0\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-06-16T08:41:12.404Z] [runtime-status] [7962] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.21.2","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.21.2\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-06-16T08:41:12.404Z] [runtime-status] [7962] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.2.0","resolution":"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.2.0\",\"resolution\":\"/Users/reemshamia/Desktop/nulla_dashboard/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-06-16T08:41:12.473Z] [runtime-status] [7962] Beginning invocation function app! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Beginning invocation function app!"}}
+[info] i  functions: Beginning execution of "app" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Beginning execution of \"app\""}}
+[debug] [2022-06-16T08:41:12.473Z] [runtime-status] [7962] Running app in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Running app in signature http"}}
+[debug] [2022-06-16T08:41:12.474Z] [runtime-status] [7962] Attempting to listen to socketPath: /tmp/fire_emu_7962.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Attempting to listen to socketPath: /tmp/fire_emu_7962.sock"}}
+[debug] [2022-06-16T08:41:12.480Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-06-16T08:41:12.480Z] [functions] Got req.url=/nulla-316b1/us-central1/app/survey-statistics/UzkZtaLj, mapping to path=/survey-statistics/UzkZtaLj {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/nulla-316b1/us-central1/app/survey-statistics/UzkZtaLj, mapping to path=/survey-statistics/UzkZtaLj"}}
+[debug] [2022-06-16T08:41:12.483Z] [runtime-status] [7962] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Ephemeral server handling GET request"}}
+[debug] [2022-06-16T08:41:12.499Z] [runtime-status] [7962] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"[runtime-status] [7962] Ephemeral server survived."}}
+[info] i  functions: Finished "app" in ~4s {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-app"},"extension":{},"message":"Finished \"app\" in ~4s"}}
+[debug] [2022-06-16T08:41:17.347Z] [worker-us-central1-app-6458c1b5-0570-425a-9375-2e5e2b746998]: IDLE {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-app-6458c1b5-0570-425a-9375-2e5e2b746998]: IDLE"}}
+[debug] [2022-06-16T08:41:17.348Z] [work-queue] {"queueLength":0,"workRunningCount":0}
