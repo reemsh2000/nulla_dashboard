@@ -10,7 +10,7 @@ import { ResetpasswordComponent } from '../components/resetpassword/resetpasswor
 import { ProfileComponent } from '../components/profile/profile.component';
 import { ReportsComponent } from 'app/components/reports/reports.component';
 import { RecommendationComponent } from 'app/components/recommendation/recommendation.component';
-import { AllQuestionsComponent } from 'app/components/all-questions/all-questions.component';
+import { QuestionStatisticComponent } from 'app/components/question-statistic/question-statistic.component';
 export const routingTable = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'welcome', component: WelcomepageComponent },
@@ -24,5 +24,5 @@ export const routingTable = [
   { path: 'dashboard/teams', component: TeamsPageComponent },
   { path: 'dashboard/recommendations', component: RecommendationComponent },
   { path: 'dashboard/repots', component: ReportsComponent },
-  { path: 'dashboard/allquestions', component: AllQuestionsComponent },
+  { path: 'dashboard/allquestions', component: QuestionStatisticComponent },
 ];
