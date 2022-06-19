@@ -1,29 +1,25 @@
 <div class="questions-container">
-
-
-<div class="container">
+  <div class="container">
     <div class="questions">
-        <h3>How old are you?</h3>
-        <p class="question-type">Personal</p>
+      <h3>{{ question.question }}</h3>
+      <p class="question-type">{{question.title}}</p>
     </div>
     <div class="questions-statistics">
-       <div class="statistics">
-           <p>Agree</p>
-           <p>Neutral</p>
-           <p>DisAgree</p>
-       </div>
-       <div class="statistics-diagram">
-            <p class="statistics-agree"></p>
-            <p class="statistics-natural"></p>
-            <p class="statistics-disagree"></p>
-       </div>
-       <div class="statistics-squre">
-           <p class="statistics-squre-agree">50%</p>
-           <p class="statistics-squre-natural">20%</p>
-           <p class="statistics-squre-disagree">30%</p>
-       </div>
-
+      <div class="statistics">
+        <p>Agree</p>
+        <p>Neutral</p>
+        <p>DisAgree</p>
+      </div>
+      <div class="statistics-diagram">
+        <p class="statistics-agree"></p>
+        <p class="statistics-natural"></p>
+        <p class="statistics-disagree"></p>
+      </div>
+      <div class="statistics-squre">
+        <p class="statistics-squre-agree">{{ question.agree }}</p>
+        <p class="statistics-squre-natural">{{ question.neutral }}</p>
+        <p class="statistics-squre-disagree">{{ question.disagree }}</p>
+      </div>
     </div>
   </div>
-  
 </div>
