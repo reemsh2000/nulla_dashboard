@@ -3,6 +3,17 @@
   *ngIf="(highlightStatistics$ | async)?.length !== 0"
 >
   <div class="snapshot" *ngFor="let item of highlightStatistics$ | async">
+   <div *ngIf="item.title ==='I care about social impact'" class="img-snapshot">
+    <img class="img" src="https://cdn-icons.flaticon.com/png/512/4435/premium/4435056.png?token=exp=1655628367~hmac=370916ff172ac03d1b46863061db64e5" />
+   </div>
+   <div *ngIf="item.title ==='I care about climate change'" class="img-snapshot">
+    <img class="img" src="
+    https://cdn-icons.flaticon.com/png/512/5347/premium/5347672.png?token=exp=1655628289~hmac=f1283cecb67ac1ec2c28df165849be13" />
+   </div>
+   <div *ngIf="item.title ==='My organisation is doing enough to fight climate change'" class="img-snapshot">
+    <img  class="img" src="https://cdn-icons.flaticon.com/png/512/3985/premium/3985226.png?token=exp=1655628330~hmac=c5b155232126a654758b14f87614a586" />
+   </div>
+       <p class="persentage">Persentage</p>
     <p class="snapshot_percentage">{{ item.agree }}%</p>
     <p class="snapshot_question">{{ item.title }}</p>
   </div>
