@@ -1,0 +1,33 @@
+.main_container {
+  width: 80%;
+  transition: 0.3s ease-in-out;
+  margin: 80px 100px 10px 20%;
+  height: 100%;
+}
+
+.main_container.active {
+  width: calc(100% - 75px);
+  margin-left: 75px;
+}
+.search_comp {
+  width: 80%;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 100px;
+}
+@media screen and (max-width: 700px) {
+  .content {
+    width: 95%;
+    margin: 65px auto;
+  }
+  .main_container {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .main_container.active {
+    display: none;
+    visibility: hidden;
+  }
+}

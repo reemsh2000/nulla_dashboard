@@ -1,0 +1,11 @@
+<div class="main_container" [class.active]="openMenu">
+  <app-search
+    (importEvent)="checkImport($event)"
+    class="search_comp"
+  ></app-search>
+  <div *ngIf="displayResult">
+    <div class="snapshot" *ngFor="let question of allQuestions$ | async">
+      <app-stat-question [question]="question"></app-stat-question>
+    </div>
+  </div>
+</div>

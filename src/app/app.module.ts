@@ -43,7 +43,8 @@ import {MessageService} from 'primeng/api';
 import { ReportsComponent } from './components/reports/reports.component';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
 import { TeamsPageComponent } from './components/teams-page/teams-page.component';
-import { AllQuestionsComponent } from './components/all-questions/all-questions.component';
+import { QuestionStatisticComponent } from './components/question-statistic/question-statistic.component';
+import { EachQuestionStatisticComponent } from './components/each-question-statistic/each-question-statistic.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { AllQuestionsComponent } from './components/all-questions/all-questions.
     ReportsComponent,
     RecommendationComponent,
     TeamsPageComponent,
-    AllQuestionsComponent,
+    QuestionStatisticComponent,
+    EachQuestionStatisticComponent,
   ],
   imports: [
     MatTableModule,
