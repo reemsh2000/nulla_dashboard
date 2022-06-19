@@ -1,25 +1,40 @@
 <div class="questions-container">
-  <div class="container">
-    <div class="questions">
-      <h3>{{ question.question }}</h3>
-      <p class="question-type">{{question.title}}</p>
+  <div class="questions">
+    <p>{{ question.question }}</p>
+    <p class="question-type">{{ question.title }}</p>
+  </div>
+  <div class="questions-statistics">
+    <div class="statistics">
+      <p class="stat_val">Agree</p>
+      <div class="line">
+        <p
+          class="statistic agree"
+          [ngStyle]="{ width: question?.agree + '%' }"
+        ></p>
+      </div>
+      <p class="statistics-squre agree">{{ question.agree }}%</p>
     </div>
-    <div class="questions-statistics">
-      <div class="statistics">
-        <p>Agree</p>
-        <p>Neutral</p>
-        <p>DisAgree</p>
+    <div class="statistics">
+      <p class="stat_val">Neutral</p>
+      <div class="line">
+        <p
+          class="statistic natural"
+          [ngStyle]="{ width: question?.neutral + '%' }"
+        ></p>
       </div>
-      <div class="statistics-diagram">
-        <p class="statistics-agree"></p>
-        <p class="statistics-natural"></p>
-        <p class="statistics-disagree"></p>
+
+      <p class="statistics-squre natural">{{ question.neutral }}%</p>
+    </div>
+    <div class="statistics">
+      <p class="stat_val">Disagree</p>
+      <div class="line">
+        <p
+          class="statistic disagree"
+          [ngStyle]="{ width: question?.disagree + '%' }"
+        ></p>
       </div>
-      <div class="statistics-squre">
-        <p class="statistics-squre-agree">{{ question.agree }}</p>
-        <p class="statistics-squre-natural">{{ question.neutral }}</p>
-        <p class="statistics-squre-disagree">{{ question.disagree }}</p>
-      </div>
+
+      <p class="statistics-squre disagree">{{ question.disagree }}%</p>
     </div>
   </div>
 </div>
