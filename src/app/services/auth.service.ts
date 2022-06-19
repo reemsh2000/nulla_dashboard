@@ -142,8 +142,6 @@ export class AuthService {
   getProfileData() {
     return this.firestore.collection('profile').doc(this.userId).get().subscribe((data)=>{
       this.profileData.next(data.data())
-      console.log(this.profileData,"profile data")
-      console.log(data.data(),"data")
     });
   }
 
