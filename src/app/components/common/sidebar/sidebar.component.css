@@ -11,6 +11,11 @@ aside.active {
   align-items: center;
   flex-direction: column;
 }
+.close {
+  display: none;
+  visibility: hidden;
+}
+
 .line_menu {
   margin-top: 10px;
   cursor: pointer;
@@ -67,10 +72,13 @@ aside.active .line_menu .title_line {
 .line_menu.active i {
   fill: rgb(0, 0, 0);
 }
-.icon_line{
+.icon_line {
   margin-top: 4px;
 }
 @media screen and (max-width: 1000px) {
+  .close {
+    display: block;
+  }
   aside .line_menu .title_line {
     font-size: 10px;
   }
@@ -79,9 +87,15 @@ aside.active .line_menu .title_line {
   }
 }
 @media screen and (max-width: 700px) {
-  aside.active {
+  .close.active {
     display: flex;
-    flex-direction: column;
+    margin: 15px;
+    font-size: 18px;
+    visibility: visible;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  aside.active {
     width: 100%;
   }
 

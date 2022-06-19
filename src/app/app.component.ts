@@ -17,7 +17,6 @@ export class AppComponent {
     private auth: AuthService,
     private asideService: AsideService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
   ) {
     this.auth.checkAuth();
     this.router.events.subscribe((route) => {
