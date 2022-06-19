@@ -1,10 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { SideBarRow } from '../../../Interfaces/interfaces';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
-// import { SideBarRow } from '../../../Interfaces';
-
 import { AsideService } from '../../../services/aside.service';
 
 @Component({
@@ -15,6 +10,7 @@ import { AsideService } from '../../../services/aside.service';
 export class SidebarComponent {
   isSection: string = 'survey';
   @Input() isSideSmall: boolean = false;
+  @Output() isMenuopen = new EventEmitter();
 
   constructor(public section: AsideService) {}
 
@@ -55,4 +51,7 @@ export class SidebarComponent {
       route: '/login',
     },
   ];
+  closeSideBar(){
+    this.isMenuopen.emit(false);
+  }
 }

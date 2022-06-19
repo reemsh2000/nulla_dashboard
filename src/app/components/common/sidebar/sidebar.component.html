@@ -1,4 +1,8 @@
 <aside [class.active]="isSideSmall">
+  <i class="pi pi-times close"
+  (click)="closeSideBar()"
+  [class.active]="isSideSmall"
+  ></i>
   <a
     [routerLink]="row.route"
     routerLinkActive="true"

@@ -5,6 +5,7 @@
     class="bowl_aside"
     [class.active]="openMenu"
     *ngIf="dashboardPages"
+    (isMenuopen)="checkMenu($event)"
   ></app-sidebar>
 
   <router-outlet></router-outlet>
