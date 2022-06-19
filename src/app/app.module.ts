@@ -44,6 +44,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { RecommendationComponent } from './components/recommendation/recommendation.component';
 import { TeamsPageComponent } from './components/teams-page/teams-page.component';
 import { QuestionStatisticComponent } from './components/question-statistic/question-statistic.component';
+import { EachQuestionStatisticComponent } from './components/each-question-statistic/each-question-statistic.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { QuestionStatisticComponent } from './components/question-statistic/ques
     RecommendationComponent,
     TeamsPageComponent,
     QuestionStatisticComponent,
+    EachQuestionStatisticComponent,
   ],
   imports: [
     MatTableModule,
