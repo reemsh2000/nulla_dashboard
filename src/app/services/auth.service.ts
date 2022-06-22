@@ -68,7 +68,7 @@ export class AuthService {
           })
 
           .then(() => {
-            this.router.navigate(['/welcome']);
+            this.router.navigate(['/company']);
           });
       }
     );
@@ -81,7 +81,7 @@ export class AuthService {
       .set(Record)
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/intrest']);
+        this.router.navigate(['/login']);
       })
       .catch((err) => {
         console.error(err);

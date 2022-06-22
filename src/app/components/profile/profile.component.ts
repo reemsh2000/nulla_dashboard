@@ -72,6 +72,7 @@ export class ProfileComponent implements OnInit {
     this.completeformprofile = !this.authService.completeform;
   }
   skip() {
+    console.log("mk")
     this.router.navigate(['/dashboard/profile']);
   }
 }
