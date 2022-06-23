@@ -56,12 +56,13 @@ padding-right: 25px;
   background-color: #fff;
 }
 .persentage{
-  color:#cecece;
+  color:#adacac;
   display: flex;
   justify-content: flex-end;
   justify-items: flex-end;
   padding-right: 25px;
   margin-top: -8%;
+  font-weight: 500;
   
 }
 .snapshot:nth-child(1) .snapshot_question {
