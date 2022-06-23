@@ -1,3 +1,4 @@
+import { UserTypeService } from './../../../services/user-type.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 import { AsideService } from '../../../services/aside.service';
@@ -11,8 +12,9 @@ export class SidebarComponent {
   isSection: string = 'survey';
   @Input() isSideSmall: boolean = false;
   @Output() isMenuopen = new EventEmitter();
-
-  constructor(public section: AsideService) {}
+ allCompnayIcon= PrimeIcons.USERS;
+ logoutIcon=PrimeIcons.ARROW_CIRCLE_LEFT;
+   constructor(public section: AsideService, public userType:UserTypeService) {}
 
   sideBarArray = [
     {
@@ -20,38 +22,33 @@ export class SidebarComponent {
       label: 'Dashboard',
       route: '/dashboard',
     },
-    {
-      icon: PrimeIcons.USERS,
-      label: 'Teams',
-      route: '/dashboard/teams',
-    },
-    {
-      icon: PrimeIcons.REPLY,
-      label: 'Recommendations',
-      route: '/dashboard/recommendations',
-    },
-    {
-      icon: PrimeIcons.BOOK,
-      label: 'Reports',
-      route: 'dashboard/repots',
-    },
+    // {
+    //   icon: PrimeIcons.USERS,
+    //   label: 'Teams',
+    //   route: '/dashboard/teams',
+    // },
+    // {
+    //   icon: PrimeIcons.REPLY,
+    //   label: 'Recommendations',
+    //   route: '/dashboard/recommendations',
+    // },
+    // {
+    //   icon: PrimeIcons.BOOK,
+    //   label: 'Reports',
+    //   route: 'dashboard/repots',
+    // },
     {
       icon: PrimeIcons.USER,
       label: 'Profile',
       route: '/dashboard/profile',
     },
     {
-      icon: PrimeIcons.USER,
+      icon: PrimeIcons.QUESTION_CIRCLE,
       label: 'All Questions',
       route: 'dashboard/allquestions',
-    },
-    {
-      icon: PrimeIcons.ARROW_CIRCLE_LEFT,
-      label: 'Logout',
-      route: '/login',
-    },
+    }
   ];
-  closeSideBar(){
+  closeSideBar() {
     this.isMenuopen.emit(false);
   }
 }
