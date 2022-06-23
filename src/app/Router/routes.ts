@@ -1,6 +1,5 @@
 import { EachQuestionStatisticComponent } from './../components/each-question-statistic/each-question-statistic.component';
 import { TeamsPageComponent } from './../components/teams-page/teams-page.component';
-import { AppComponent } from '../app.component';
 import { LoginComponent } from '../components/Auth/login/login.component';
 import { SignupComponent } from '../components/Auth/signup/signup.component';
 import { CompanyAccountComponent } from '../components/company/company-account/company-account.component';
@@ -11,6 +10,7 @@ import { ResetpasswordComponent } from '../components/resetpassword/resetpasswor
 import { ProfileComponent } from '../components/profile/profile.component';
 import { ReportsComponent } from 'app/components/reports/reports.component';
 import { RecommendationComponent } from 'app/components/recommendation/recommendation.component';
+import { CompaniesPageComponent } from 'app/components/companies-page/companies-page.component';
 export const routingTable = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'welcome', component: WelcomepageComponent },
@@ -25,4 +25,6 @@ export const routingTable = [
   { path: 'dashboard/recommendations', component: RecommendationComponent },
   { path: 'dashboard/repots', component: ReportsComponent },
   { path: 'dashboard/allquestions', component: EachQuestionStatisticComponent },
+  { path: 'dashboard/allcompamies', component: CompaniesPageComponent },
+
 ];
