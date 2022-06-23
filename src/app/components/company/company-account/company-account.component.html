@@ -24,7 +24,7 @@
             "
             class="handle-error"
           >
-            Company name is required.
+          Field is required.
           </div>
         </div>
         <label class="">Company address</label>
@@ -42,7 +42,7 @@
             "
             class="handle-error"
           >
-            Address is required.
+          Field is required.
           </div>
         </div>
         <label class="">Your office</label>
@@ -57,7 +57,7 @@
             *ngIf="f['office'].errors && f['office'].errors['required']"
             class="handle-error"
           >
-            office is required.
+          Field is required.
           </div>
         </div>
         <label class="">Number of employees</label>
@@ -75,18 +75,7 @@
             "
             class="handle-error"
           >
-            employee Number is required.
-          </div>
-        </div>
-
-        <div *ngIf="f['holidayDate'].touched && f['holidayDate'].invalid">
-          <div
-            *ngIf="
-              f['holidayDate'].errors && f['holidayDate'].errors['required']
-            "
-            class="handle-error"
-          >
-            holiday Date is required.
+           Field is required.
           </div>
         </div>
       </form>

@@ -9,6 +9,8 @@ import { AuthService } from 'app/services/auth.service';
 })
 export class CompanyAccountComponent implements OnInit {
   massage: string;
+  companyNameCheck: any;
+  companyNameValid: any;
 
   constructor(private authService: AuthService) {}
 
@@ -22,11 +24,22 @@ export class CompanyAccountComponent implements OnInit {
   get f() {
     return this.companyform.controls;
   }
+
   saveProfileCompany() {
-    if (this.companyform.valid) {
-      this.authService.addProfileCompany(this.companyform.value);
-    } else {
-      this.massage = 'You should enter all feilds';
-    }
+
+    let cName = this.companyform.controls['companyName'].value;
+  if(this.companyform.valid){
+    this.authService.getProfileCompanyData(cName).subscribe((data: any) => {
+      if (!data.docs.length) {
+        this.authService.addProfileCompany(this.companyform.value);
+      } else {
+        this.massage = 'Email has already exist!';
+       
+      }
+    });
+  }else{
+    this.massage = 'You should enter all feilds';
+  }
+    
   }
 }
