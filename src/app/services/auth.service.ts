@@ -29,6 +29,9 @@ export class AuthService {
   private profileData = new BehaviorSubject<any>(null);
   public profileData$ = this.profileData.asObservable();
 
+  private allCompanyData = new BehaviorSubject<any>([]);
+  public allCompanyData$ = this.allCompanyData.asObservable();
+
   public get getErrorMsg(): string {
     return this.errorMsg.getValue();
   }
@@ -85,15 +88,18 @@ export class AuthService {
       });
   }
 
-  getProfileCompanyData(cName: string) {
+
+  checkCompnayName(cName: string) {
     return this.firestore
       .collection('profile-company', (ref) =>
         ref.where('companyName', '==', cName)
       )
       .get();
-    // .subscribe((data) => {
-    //   return data.docs.length;
-    // });
+  }
+  getAllCompanyData(){
+    return this.firestore.collection('profile-company').get().subscribe((item)=>{
+     return  this.allCompanyData.next(item.docs.map(doc => doc.data()))      
+    })
   }
 
   addIntrestQuestions(Record: any) {

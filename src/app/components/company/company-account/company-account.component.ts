@@ -12,7 +12,9 @@ export class CompanyAccountComponent implements OnInit {
   companyNameCheck: any;
   companyNameValid: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+
+  }
 
   companyform = new FormGroup({
     companyName: new FormControl('', Validators.required),
@@ -29,11 +31,11 @@ export class CompanyAccountComponent implements OnInit {
 
     let cName = this.companyform.controls['companyName'].value;
   if(this.companyform.valid){
-    this.authService.getProfileCompanyData(cName).subscribe((data: any) => {
+    this.authService.checkCompnayName(cName).subscribe((data: any) => {
       if (!data.docs.length) {
         this.authService.addProfileCompany(this.companyform.value);
       } else {
-        this.massage = 'Email has already exist!';
+        this.massage = 'Company Name has already exist!';
        
       }
     });
