@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -41,7 +42,6 @@ export class AuthService {
 
         this.userId = user.uid;
         this.getUserName();
-       
       }
     });
   }
@@ -60,15 +60,12 @@ export class AuthService {
               .doc(res.user.uid)
               .set({})
               .then(() => {
-                this.firestore
-                  .collection('profile')
-                  .doc(res.user.uid)
-                  .set({})
+                this.firestore.collection('profile').doc(res.user.uid).set({});
               });
           })
 
           .then(() => {
-            this.router.navigate(['/welcome']);
+            this.router.navigate(['/company']);
           });
       }
     );
@@ -81,11 +78,22 @@ export class AuthService {
       .set(Record)
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/intrest']);
+        this.router.navigate(['/login']);
       })
       .catch((err) => {
         console.error(err);
       });
+  }
+
+  getProfileCompanyData(cName: string) {
+    return this.firestore
+      .collection('profile-company', (ref) =>
+        ref.where('companyName', '==', cName)
+      )
+      .get();
+    // .subscribe((data) => {
+    //   return data.docs.length;
+    // });
   }
 
   addIntrestQuestions(Record: any) {
@@ -140,9 +148,13 @@ export class AuthService {
       });
   }
   getProfileData() {
-    return this.firestore.collection('profile').doc(this.userId).get().subscribe((data)=>{
-      this.profileData.next(data.data())
-    });
+    return this.firestore
+      .collection('profile')
+      .doc(this.userId)
+      .get()
+      .subscribe((data) => {
+        this.profileData.next(data.data());
+      });
   }
 
   getUserName() {
