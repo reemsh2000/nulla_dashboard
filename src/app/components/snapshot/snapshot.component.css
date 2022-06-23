@@ -1,15 +1,10 @@
-*{
-/* overflow:hidden; */
-}
 .snapshot_container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 40px;
   width: 85%;
-padding-bottom:50px;
-
-
+  padding-bottom: 50px;
 }
 .snapshot {
   display: flex;
@@ -17,17 +12,17 @@ padding-bottom:50px;
   width: 30%;
   height: 150px;
   border: 1px solid #dddd;
-  border-radius:25px;
+  border-radius: 25px;
 }
 
 .snapshot_percentage {
-  background-color:#f00;
+  background-color: #f00;
   height: 50px;
   text-align: center;
-display: flex;
-justify-items: flex-end;
-justify-content: flex-end;
-padding-right: 25px;
+  display: flex;
+  justify-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 25px;
 
   color: #344767;
   font-weight: bold;
@@ -41,8 +36,7 @@ padding-right: 25px;
   height: 58px;
   color: #ffff;
   font-size: 14px;
-  /* background-color: #f00; */
-  padding:10px;
+  padding: 10px;
   border-radius: 0px 0px 15px 15px;
 }
 .snapshot:nth-child(1) .snapshot_percentage {
@@ -52,44 +46,41 @@ padding-right: 25px;
   background-color: #fff;
 }
 
-.snapshot:nth-child(3) .snapshot_percentage{
+.snapshot:nth-child(3) .snapshot_percentage {
   background-color: #fff;
 }
-.persentage{
-  color:#adacac;
+.persentage {
+  color: #adacac;
   display: flex;
   justify-content: flex-end;
   justify-items: flex-end;
   padding-right: 25px;
   margin-top: -8%;
   font-weight: 500;
-  
 }
 .snapshot:nth-child(1) .snapshot_question {
-  background-color: #2A691A;
+  background-color: #2a691a;
 }
 .snapshot:nth-child(2) .snapshot_question {
-  background-color: #17756A;
+  background-color: #17756a;
 }
 
 .snapshot:nth-child(3) .snapshot_question {
-  background-color: #F0691A;
+  background-color: #f0691a;
 }
-.img-snapshot{
-
+.img-snapshot {
   width: 25%;
   margin-top: -20px;
-  box-shadow: 0rem 0.25rem 1.25rem 0remrgba(0, 0, 0, 0.14),0rem 0.4375rem 0.625rem -0.3125remrgba(233, 30, 98, 0.4);
+  box-shadow: 0rem 0.25rem 1.25rem 0remrgba (0, 0, 0, 0.14),
+    0rem 0.4375rem 0.625rem -0.3125remrgba (233, 30, 98, 0.4);
 }
-.img{
-
-width: 100%;
-height:60px;
-margin-right: 50%;
+.img {
+  width: 100%;
+  height: 60px;
 }
 @media screen and (max-width: 1000px) {
   .snapshot {
-    width:30%;
+    width: 30%;
   }
 }
 @media (max-width: 700px) {

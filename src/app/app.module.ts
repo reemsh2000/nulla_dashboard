@@ -2,16 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './Router/app-routing.module';
+import { InterestsComponent } from './components/company/interests/interests.component';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { environment } from '../environments/environment';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import {TableModule} from 'primeng/table';
+
+
 import { AppComponent } from './app.component';
 import { AuthImageSideComponent } from './components/common/auth-image-side/auth-image-side.component';
 import { LoginComponent } from './components/Auth/login/login.component';
 import { SignupComponent } from './components/Auth/signup/signup.component';
 import { CompanyAccountComponent } from './components/company/company-account/company-account.component';
-import { InterestsComponent } from './components/company/interests/interests.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { environment } from '../environments/environment';
-
 import { StackChartComponent } from './components/common/stack-chart/stack-chart.component';
 import { StackChartsComponent } from './components/stack-charts/stack-charts.component';
 import { SidebarComponent } from './components/common/sidebar/sidebar.component';
@@ -36,8 +40,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatTableModule } from '@angular/material/table';
 import { CacheInterceptorInterceptor } from './cache-interceptor.interceptor';
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import {MessageService} from 'primeng/api';
 import { ReportsComponent } from './components/reports/reports.component';
@@ -45,6 +47,7 @@ import { RecommendationComponent } from './components/recommendation/recommendat
 import { TeamsPageComponent } from './components/teams-page/teams-page.component';
 import { QuestionStatisticComponent } from './components/question-statistic/question-statistic.component';
 import { EachQuestionStatisticComponent } from './components/each-question-statistic/each-question-statistic.component';
+import { CompaniesPageComponent } from './components/companies-page/companies-page.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,7 @@ import { EachQuestionStatisticComponent } from './components/each-question-stati
     TeamsPageComponent,
     QuestionStatisticComponent,
     EachQuestionStatisticComponent,
+    CompaniesPageComponent,
   ],
   imports: [
     MatTableModule,
@@ -95,6 +99,7 @@ import { EachQuestionStatisticComponent } from './components/each-question-stati
     BrowserAnimationsModule,
     MessagesModule,
     MessageModule,
+    TableModule
     // MessageService
   ],
   providers: [

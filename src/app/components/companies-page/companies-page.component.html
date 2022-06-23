@@ -1,0 +1,27 @@
+<div class="main_container" [class.active]="openMenu">
+  <div class="table_container">
+    <h2 class="page_title">All Companies</h2>
+    <table class="table">
+      <thead>
+        <tr class="table_head_col">
+          <th>Organisation Name</th>
+          <th>Manager Name</th>
+          <th>Position</th>
+          <th>Number of Employees</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="(allCompanyData$ | async)?.length">
+        <tr *ngFor="let company of allCompanyData$ | async">
+          <td>{{ company.companyName }}</td>
+          <td>{{ company.ManagerName }}</td>
+          <td>{{ company.position }}</td>
+          <td>{{ company.employeeNumber }}</td>
+          <td>
+            <a [href]="company.email">{{ company.email }}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

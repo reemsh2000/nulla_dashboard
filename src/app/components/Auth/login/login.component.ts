@@ -1,3 +1,4 @@
+import { UserTypeService } from './../../../services/user-type.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -15,12 +16,18 @@ export class LoginComponent implements OnInit {
   get f() {
     return this.profileForm.controls;
   }
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private userType: UserTypeService
+  ) {}
 
   ngOnInit(): void {}
   login() {
     if (this.profileForm.valid) {
       this.authService.login(this.profileForm.value);
+      if (this.profileForm.value.email === '') {
+        this.userType.setUserType();
+      }
       this.authService.errorMsg$.subscribe((msg) => {
         this.massage = msg;
       });
