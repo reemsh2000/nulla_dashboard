@@ -73,7 +73,13 @@ export class AuthService {
       }
     );
   }
-
+  checkEmail=(email: string) => {
+    return this.firestore
+    .collection('Users', (ref) =>
+      ref.where('email', '==',email)
+    )
+    .get();
+  }
   addProfileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
