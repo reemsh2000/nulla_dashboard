@@ -18,8 +18,8 @@ export class CompanyAccountComponent implements OnInit {
 
   companyform = new FormGroup({
     companyName: new FormControl('', Validators.required),
-    companyAddress: new FormControl('', Validators.required),
-    office: new FormControl('', Validators.required),
+    ManagerName: new FormControl('', Validators.required),
+    position: new FormControl('', Validators.required),
     employeeNumber: new FormControl('', Validators.required),
   });
   ngOnInit(): void {}
