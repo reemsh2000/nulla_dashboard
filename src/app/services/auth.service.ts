@@ -78,7 +78,7 @@ export class AuthService {
     this.firestore
       .collection('profile-company')
       .doc(this.userId)
-      .set(Record)
+      .set({ ...Record, email: this.email.getValue() })
       .then(() => {
         this.completeform = true;
         this.router.navigate(['/login']);
@@ -88,7 +88,6 @@ export class AuthService {
       });
   }
 
-
   checkCompnayName(cName: string) {
     return this.firestore
       .collection('profile-company', (ref) =>
@@ -96,10 +95,13 @@ export class AuthService {
       )
       .get();
   }
-  getAllCompanyData(){
-    return this.firestore.collection('profile-company').get().subscribe((item)=>{
-     return  this.allCompanyData.next(item.docs.map(doc => doc.data()))      
-    })
+  getAllCompanyData() {
+    return this.firestore
+      .collection('profile-company')
+      .get()
+      .subscribe((item) => {
+        return this.allCompanyData.next(item.docs.map((doc) => doc.data()));
+      });
   }
 
   addIntrestQuestions(Record: any) {
@@ -126,6 +128,7 @@ export class AuthService {
 
   ResetPassword(email: string) {
     this.auth.sendPasswordResetEmail(email).then(() => {
+      console.log(email);
       this.router.navigate(['/login']);
     });
   }
