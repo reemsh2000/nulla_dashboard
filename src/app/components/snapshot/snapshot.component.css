@@ -66,14 +66,14 @@ padding-right: 25px;
   
 }
 .snapshot:nth-child(1) .snapshot_question {
-  background-color: rgba(157, 133, 157, 0.8);
+  background-color: #2A691A;
 }
 .snapshot:nth-child(2) .snapshot_question {
-  background-color: rgba(32, 105, 112, 0.8);
+  background-color: #17756A;
 }
 
 .snapshot:nth-child(3) .snapshot_question {
-  background-color: rgba(100, 146, 91, 0.8);
+  background-color: #F0691A;
 }
 .img-snapshot{
 
