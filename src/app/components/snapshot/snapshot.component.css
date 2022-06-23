@@ -9,6 +9,7 @@
   width: 85%;
 padding-bottom:50px;
 
+
 }
 .snapshot {
   display: flex;
@@ -38,7 +39,7 @@ padding-right: 25px;
   text-align: center;
   padding: 0px 15px;
   height: 58px;
-  color: #000000;
+  color: #ffff;
   font-size: 14px;
   /* background-color: #f00; */
   padding:10px;
