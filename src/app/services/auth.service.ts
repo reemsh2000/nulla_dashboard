@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -41,7 +42,6 @@ export class AuthService {
 
         this.userId = user.uid;
         this.getUserName();
-       
       }
     });
   }
@@ -60,41 +60,46 @@ export class AuthService {
               .doc(res.user.uid)
               .set({})
               .then(() => {
-                this.firestore
-                  .collection('profile')
-                  .doc(res.user.uid)
-                  .set({})
+                this.firestore.collection('profile').doc(res.user.uid).set({});
               });
           })
 
           .then(() => {
-            this.router.navigate(['/welcome']);
+            this.router.navigate(['/company']);
           });
       }
     );
   }
-  checkEmail=() => {
-    return this.firestore.collection('Users').get().subscribe((item)=>{
-      // return  this.allCompanyData.next(item.docs.map(doc => doc.data()))     
-      console.log(item.docs.map((doc) => doc.data())) 
-     })
-    // .collection('Users', (ref) =>
-    //   ref.where('email', '==',email)
-    // )
-    // .get();
-  }
+
   addProfileCompany(Record: any) {
     this.firestore
       .collection('profile-company')
       .doc(this.userId)
-      .set(Record)
+      .set({ ...Record, email: this.email.getValue() })
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/intrest']);
+        this.router.navigate(['/login']);
       })
       .catch((err) => {
         console.error(err);
       });
+  }
+   checkEmail(email: string) {
+    console.log(email);
+    return this.firestore
+      .collection('profile', (ref) => ref.where('email', '==', email))
+      .get();
+  }
+
+  checkCompnayName(cName: string) {
+    return this.firestore
+      .collection('profile-company', (ref) =>
+        ref.where('companyName', '==', cName)
+      )
+      .get();
+  }
+  getAllCompanyData() {
+    return this.firestore.collection('profile-company').get();
   }
 
   addIntrestQuestions(Record: any) {
@@ -121,6 +126,7 @@ export class AuthService {
 
   ResetPassword(email: string) {
     this.auth.sendPasswordResetEmail(email).then(() => {
+      console.log(email);
       this.router.navigate(['/login']);
     });
   }
@@ -149,9 +155,13 @@ export class AuthService {
       });
   }
   getProfileData() {
-    return this.firestore.collection('profile').doc(this.userId).get().subscribe((data)=>{
-      this.profileData.next(data.data())
-    });
+    return this.firestore
+      .collection('profile')
+      .doc(this.userId)
+      .get()
+      .subscribe((data) => {
+        this.profileData.next(data.data());
+      });
   }
 
   getUserName() {

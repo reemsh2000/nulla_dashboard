@@ -33,34 +33,32 @@ export class SignupComponent implements OnInit {
     // this.emailExiis=email;
     //     }
     //     )
-    this.authService.checkEmail()
+    // this.authService.checkEmail()
   }
 
   ngOnInit(): void {}
   register() {
     let email = this.registerForm.controls['email'].value;
-
     if (this.proForm.valid && this.registerForm.valid) {
-      // this.authService.checkEmail(email).subscribe((data) => {
-      //   if (!data.docs.length) {
-      //     this.authService.register(
-      //       this.registerForm.value,
-      //       this.proForm.value
-      //     );
-      //   } else {
-      //     this.massage = 'Email has already exist!';
-      //   }
-      // });
-
-      if (
-          this.registerForm.value.confirmpassword ===
-          this.registerForm.value.password
-        ) {
-          this.showErrorDifferenetPass = false;
-          this.authService.register(this.registerForm.value, this.proForm.value);
+      this.authService.checkEmail(email).subscribe((data) => {
+        if (!data.docs.length) {
+          return this.authService.register(
+            this.registerForm.value,
+            this.proForm.value
+          );
         } else {
-          this.showErrorDifferenetPass = true;
+          this.massage = 'Email has already exist!';
         }
+      });
+      if (
+        this.registerForm.value.confirmpassword ===
+        this.registerForm.value.password
+      ) {
+        this.showErrorDifferenetPass = false;
+        this.authService.register(this.registerForm.value, this.proForm.value);
+      } else {
+        this.showErrorDifferenetPass = true;
+      }
     } else {
       this.massage = 'you should enter value';
     }

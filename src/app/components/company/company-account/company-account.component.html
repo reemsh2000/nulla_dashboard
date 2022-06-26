@@ -79,16 +79,7 @@
           </div>
         </div>
 
-        <div *ngIf="f['holidayDate'].touched && f['holidayDate'].invalid">
-          <div
-            *ngIf="
-              f['holidayDate'].errors && f['holidayDate'].errors['required']
-            "
-            class="handle-error"
-          >
-            holiday Date is required.
-          </div>
-        </div>
+  
       </form>
       <p class="massage">{{ massage }}</p>
       <button class="company-btn" (click)="saveProfileCompany()">
