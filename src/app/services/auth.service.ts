@@ -98,8 +98,8 @@ export class AuthService {
       )
       .get();
   }
-  getAllCompanyData() {
-    return this.firestore.collection('profile-company').get();
+  getAllCompanyData(){
+    return this.firestore.collection('profile-company').get()
   }
 
   addIntrestQuestions(Record: any) {
