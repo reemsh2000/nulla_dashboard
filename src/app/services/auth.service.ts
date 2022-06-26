@@ -100,17 +100,6 @@ export class AuthService {
       )
       .get();
   }
-  getAllCompanyData() {
-    return this.firestore.collection('profile-company').get();
-  }
-
-  checkCompnayName(cName: string) {
-    return this.firestore
-      .collection('profile-company', (ref) =>
-        ref.where('companyName', '==', cName)
-      )
-      .get();
-  }
   getAllCompanyData(){
     return this.firestore.collection('profile-company').get()
   }
