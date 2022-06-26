@@ -85,7 +85,7 @@ export class AuthService {
       });
   }
    checkEmail(email: string) {
-    console.log(email);
+
     return this.firestore
       .collection('profile', (ref) => ref.where('email', '==', email))
       .get();
