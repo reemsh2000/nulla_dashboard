@@ -1,7 +1,8 @@
 <aside [class.active]="isSideSmall">
-  <i class="pi pi-times close"
-  (click)="closeSideBar()"
-  [class.active]="isSideSmall"
+  <i
+    class="pi pi-times close"
+    (click)="closeSideBar()"
+    [class.active]="isSideSmall"
   ></i>
   <a
     [routerLink]="row.route"
@@ -15,6 +16,29 @@
     </div>
     <div class="title_line">
       <span>{{ row.label }}</span>
+    </div>
+  </a>
+  <a
+    *ngIf="userType.getUserType() === 'superAdmin'"
+    routerLink="dashboard/allcompamies"
+    routerLinkActive="true"
+    class="line_menu"
+    [class.active]="section.sectionName === 'All Companies'"
+  >
+    <div class="icon_line">
+      <i [ngClass]="[allCompnayIcon, 'row_icon']"></i>
+    </div>
+    <div class="title_line">
+      <span>All Companies</span>
+    </div>
+  </a>
+
+  <a routerLink="/login" routerLinkActive="true" class="line_menu">
+    <div class="icon_line">
+      <i [ngClass]="[logoutIcon, 'row_icon']"></i>
+    </div>
+    <div class="title_line">
+      <span>Logout</span>
     </div>
   </a>
 </aside>

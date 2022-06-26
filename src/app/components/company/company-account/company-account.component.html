@@ -24,40 +24,40 @@
             "
             class="handle-error"
           >
-            Company name is required.
+          Field is required.
           </div>
         </div>
-        <label class="">Company address</label>
+        <label class="">Manager Name</label>
         <input
           type="text"
-          placeholder="Enter Company address"
+          placeholder="Enter Manager Name"
           class="name"
-          formControlName="companyAddress"
+          formControlName="ManagerName"
         />
-        <div *ngIf="f['companyAddress'].touched && f['companyAddress'].invalid">
+        <div *ngIf="f['ManagerName'].touched && f['ManagerName'].invalid">
           <div
             *ngIf="
-              f['companyAddress'].errors &&
-              f['companyAddress'].errors['required']
+              f['ManagerName'].errors &&
+              f['ManagerName'].errors['required']
             "
             class="handle-error"
           >
-            Address is required.
+          Field is required.
           </div>
         </div>
-        <label class="">Your office</label>
+        <label class="">Position</label>
         <input
           type="text"
-          placeholder="Enter Your office"
+          placeholder="Enter Your position"
           class="name"
-          formControlName="office"
+          formControlName="position"
         />
-        <div *ngIf="f['office'].touched && f['office'].invalid">
+        <div *ngIf="f['position'].touched && f['position'].invalid">
           <div
-            *ngIf="f['office'].errors && f['office'].errors['required']"
+            *ngIf="f['position'].errors && f['position'].errors['required']"
             class="handle-error"
           >
-            office is required.
+          Field is required.
           </div>
         </div>
         <label class="">Number of employees</label>
@@ -75,11 +75,9 @@
             "
             class="handle-error"
           >
-            employee Number is required.
+           Field is required.
           </div>
         </div>
-
-  
       </form>
       <p class="massage">{{ massage }}</p>
       <button class="company-btn" (click)="saveProfileCompany()">

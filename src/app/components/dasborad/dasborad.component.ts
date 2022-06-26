@@ -8,7 +8,7 @@ import { AsideService } from 'app/services/aside.service';
 })
 export class DasboradComponent {
   openMenu: boolean=false ;
-  title = 'nulla';
+  title = 'nula';
   displayResult = false;
 
   constructor(private asideService: AsideService) {

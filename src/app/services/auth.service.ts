@@ -29,6 +29,8 @@ export class AuthService {
   private profileData = new BehaviorSubject<any>(null);
   public profileData$ = this.profileData.asObservable();
 
+
+
   public get getErrorMsg(): string {
     return this.errorMsg.getValue();
   }
@@ -100,6 +102,17 @@ export class AuthService {
   }
   getAllCompanyData() {
     return this.firestore.collection('profile-company').get();
+  }
+
+  checkCompnayName(cName: string) {
+    return this.firestore
+      .collection('profile-company', (ref) =>
+        ref.where('companyName', '==', cName)
+      )
+      .get();
+  }
+  getAllCompanyData(){
+    return this.firestore.collection('profile-company').get()
   }
 
   addIntrestQuestions(Record: any) {
