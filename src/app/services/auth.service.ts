@@ -29,8 +29,6 @@ export class AuthService {
   private profileData = new BehaviorSubject<any>(null);
   public profileData$ = this.profileData.asObservable();
 
-
-
   public get getErrorMsg(): string {
     return this.errorMsg.getValue();
   }
@@ -80,7 +78,7 @@ export class AuthService {
       .set({ ...Record, email: this.email.getValue() })
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/login']);
+        this.router.navigate(['/dashboard']);
       })
       .catch((err) => {
         console.error(err);
@@ -94,8 +92,8 @@ export class AuthService {
       )
       .get();
   }
-  getAllCompanyData(){
-    return this.firestore.collection('profile-company').get()
+  getAllCompanyData() {
+    return this.firestore.collection('profile-company').get();
   }
 
   addIntrestQuestions(Record: any) {
@@ -121,11 +119,20 @@ export class AuthService {
   }
 
   ResetPassword(email: string) {
-    this.auth.sendPasswordResetEmail(email).then(() => {
-      console.log(email);
-      this.router.navigate(['/login']);
-    });
+    this.auth
+      .sendPasswordResetEmail(email )
+      .then(
+        () => {
+          alert('A password reset link has been sent to your email address , check spam emails');
+          this.router.navigate(['/login']);
+        },
+        (rejectionReason) => alert(rejectionReason)
+      )
+      .catch((e) =>
+        alert('An error occurred while attempting to reset your password')
+      );
   }
+
   logout() {
     this.auth.signOut().then(() => {
       this.router.navigate(['/login']);
@@ -144,7 +151,7 @@ export class AuthService {
       .set(Record)
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/profile']);
       })
       .catch((err) => {
         console.error(err);
