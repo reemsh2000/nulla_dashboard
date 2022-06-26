@@ -26,12 +26,24 @@ export class SignupComponent implements OnInit {
     return this.proForm.controls;
   }
   massage: string;
-
+  emailExiis: string;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
   register() {
+    let email = this.registerForm.controls['email'].value;
     if (this.proForm.valid && this.registerForm.valid) {
+      this.authService.checkEmail(email).subscribe((data) => {
+        if (!data.docs.length) {
+          return this.authService.register(
+            this.registerForm.value,
+            this.proForm.value
+          );
+        } else {
+          this.massage = 'Email has already exist!';
+        }
+      });
+
       if (
         this.registerForm.value.confirmpassword ===
         this.registerForm.value.password
