@@ -4,11 +4,13 @@
   width: 75%;
   margin: 15px auto;
   box-shadow: 2px 2px #dddd;
-  height: 600px;
+  /* height: 650px; */
   margin-bottom: 70%;
 }
 .auth_image {
   width: 50%;
+  height: 650px;
+
 }
 
 .join-container {
@@ -64,7 +66,7 @@ label {
   border: none;
   padding: 12px 0px;
   width: 100%;
-  margin-top: 8%;
+  margin-top: 5%;
   font-size: 14px;
   margin-left: -12%;
   color: #fff;
