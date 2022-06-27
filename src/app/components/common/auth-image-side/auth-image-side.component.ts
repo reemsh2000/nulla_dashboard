@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-auth-image-side',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-image-side.component.css']
 })
 export class AuthImageSideComponent implements OnInit {
-
+@Input ()imageHeight:string
   constructor() { }
 
   ngOnInit(): void {
