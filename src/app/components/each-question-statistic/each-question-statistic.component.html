@@ -1,4 +1,7 @@
 <div class="main_container" [class.active]="openMenu">
+  <div *ngIf="showErrorMsg">
+    <app-error-message [message]="ErrorMsg"></app-error-message>
+  </div>
   <app-search
     (importEvent)="checkImport($event)"
     class="search_comp"

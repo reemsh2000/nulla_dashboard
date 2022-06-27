@@ -84,8 +84,7 @@ export class AuthService {
         console.error(err);
       });
   }
-   checkEmail(email: string) {
-
+  checkEmail(email: string) {
     return this.firestore
       .collection('profile', (ref) => ref.where('email', '==', email))
       .get();
@@ -98,8 +97,8 @@ export class AuthService {
       )
       .get();
   }
-  getAllCompanyData(){
-    return this.firestore.collection('profile-company').get()
+  getAllCompanyData() {
+    return this.firestore.collection('profile-company').get();
   }
 
   addIntrestQuestions(Record: any) {
@@ -125,18 +124,30 @@ export class AuthService {
   }
 
   ResetPassword(email: string) {
-    this.auth
-      .sendPasswordResetEmail(email )
+    let msg;
+    return this.auth
+      .sendPasswordResetEmail(email)
       .then(
         () => {
-          alert('A password reset link has been sent to your email address , check spam emails');
-          this.router.navigate(['/login']);
+          msg =
+            'A password reset link has been sent to your email address , check spam emails';
+
+          return {
+            detail: msg,
+            summary: 'Success',
+            severity: 'success',
+          };
+          // this.router.navigate(['/login']);
         },
-        (rejectionReason) => alert(rejectionReason)
+        (rejectionReason) => {
+          msg = 'There is no user record corresponding to this identifier.';
+          return rejectionReason && { detail: msg, severity: 'error', summary: 'Error' };
+        }
       )
-      .catch((e) =>
-        alert('An error occurred while attempting to reset your password')
-      );
+      .catch((e) => {
+        msg = 'An error occurred while attempting to reset your password';
+        return { detail: msg, severity: 'error', summary: 'Error' };
+      });
   }
 
   logout() {
