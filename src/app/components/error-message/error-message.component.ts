@@ -9,14 +9,14 @@ import {Message,MessageService} from 'primeng/api';
 })
 export class ErrorMessageComponent  {
   msgs1: Message[];
-  msg= {severity:'error', summary:'Error', detail:'You should enter a valid type form'};
- @Input() showErrorMessage: boolean;
+ @Input() message: Message;
 
   
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService) {
+  }
   ngOnInit() {
       this.msgs1 = [
-        this.msg 
+        this.message 
       ];
   }
   
