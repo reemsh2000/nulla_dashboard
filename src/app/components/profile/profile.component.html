@@ -1,9 +1,12 @@
-<div class="profile-container" *ngIf="!completeformprofile" [class.aisdesmall]="asideService.getOpenAsideValue()">
+<div
+  class="profile-container"
+  *ngIf="!completeformprofile"
+  [class.aisdesmall]="asideService.getOpenAsideValue()"
+>
   <div class="basic-info">
     <h3 class="basic-word">Basic Info</h3>
     <div class="btns">
       <button class="profile-btn" (click)="save()">Save</button>
-      <button class="profile-btn skip" (click)="skip()">Skip</button>
     </div>
   </div>
   <div class="profile-inputs">
