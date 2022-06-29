@@ -1,13 +1,19 @@
-.teams_chart {
-  /* width:250px !important; */
-  width: 60% !important;
-  height: 100%;
+.team-container{
+  width: 90% !important;
+  height: 98%;
 
   border-top: 1px solid #ddd;
   box-shadow: 2px 2px 2px 2px #dddd;
-margin-left: 20px;
+
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
+  margin-left: -20%;
+}
+
+.teams_chart {
+ width: 70%;
+ margin-left:20%
+
 }
 
 @media (max-width: 700px) {

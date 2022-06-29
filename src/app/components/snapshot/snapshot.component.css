@@ -60,20 +60,8 @@
   margin-top: -8%;
   font-weight: 500;
 }
-<<<<<<< HEAD
-.snapshot:nth-child(1) .snapshot_question {
-  background-color: #192e14;
-}
-.snapshot:nth-child(2) .snapshot_question {
-  background-color: #6d812b;
-}
-
-.snapshot:nth-child(3) .snapshot_question {
-  background-color: #f08001;
-=======
  .snapshot_question {
   background-color: #1B5757;
->>>>>>> 1b47ecc214e98c8646c08b0cb1f7ba847d8f5da3
 }
 .img-snapshot {
   width: 25%;
