@@ -1,6 +1,15 @@
 .card {
   height: 80%;
   width: 90%;
+  width: 90% !important;
+  height: 98%;
+
+  border-top: 1px solid #ddd;
+  box-shadow: 2px 2px 2px 2px #dddd;
+
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: -20%;
 }
 
 @media (max-width: 700px) {
