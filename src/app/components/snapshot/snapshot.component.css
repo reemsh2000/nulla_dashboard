@@ -13,7 +13,9 @@
   height: 150px;
   border: 1px solid #dddd;
   border-radius: 25px;
+  padding:15px;
 }
+
 
 .snapshot_percentage {
   background-color: #f00;
@@ -58,15 +60,8 @@
   margin-top: -8%;
   font-weight: 500;
 }
-.snapshot:nth-child(1) .snapshot_question {
-  background-color: #2a691a;
-}
-.snapshot:nth-child(2) .snapshot_question {
-  background-color: #17756a;
-}
-
-.snapshot:nth-child(3) .snapshot_question {
-  background-color: #f0691a;
+ .snapshot_question {
+  background-color: #1B5757;
 }
 .img-snapshot {
   width: 25%;
