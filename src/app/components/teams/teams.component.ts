@@ -11,8 +11,8 @@ export class TeamsComponent {
     datasets: [
       {
         data: [],
-        backgroundColor: ['#192e14', '#f08001', '#f08001','#6d812b'],
-        hoverBackgroundColor: ['#71C21E', '#25400A', '#FF9F29','#FAF3E3'],
+        backgroundColor: ['#1B5757', '#FFAD4F', '#CAF25A','#1C9486'],
+        hoverBackgroundColor: ['#1B5757', '#FFAD4F', '#CAF25A','#1C9486'],
       },
     ],
   };
@@ -29,14 +29,8 @@ export class TeamsComponent {
         datasets: [
           {
             data: Object.values(question.questionStatistic),
-            backgroundColor: ['#192e14', '#f08001', '#f08001','#6d812b'],
-            hoverBackgroundColor: [
-              '#7387A9',
-              '#FF9F29',
-              '#36A2EB',
-              '#344767',
-              '#2C0204',
-            ],
+            backgroundColor: ['#1B5757', '#FFAD4F', '#CAF25A','#1C9486'],
+            hoverBackgroundColor: ['#1B5757', '#FFAD4F', '#CAF25A','#1C9486'],
           },
         ],
       };

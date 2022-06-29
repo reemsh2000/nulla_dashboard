@@ -14,7 +14,7 @@ export class AgeStatisticsComponent {
       {
         label: 'Age destibution',
         data: [],
-        backgroundColor: '#f0691a',
+        backgroundColor: '#1D9486',
       },
     ],
   };
@@ -31,7 +31,7 @@ export class AgeStatisticsComponent {
           {
             label: 'Age destibution',
             data: question.questionStatistic,
-            backgroundColor: '#f0691a',
+            backgroundColor: '#1D9486',
           },
         ],
       };

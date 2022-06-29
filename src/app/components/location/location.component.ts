@@ -14,7 +14,7 @@ export class LocationComponent {
       {
         label: 'Location destibution',
         data: [],
-        backgroundColor: '#6d812b',
+        backgroundColor: '#FFAD4F',
       },
     ],
   };
@@ -31,7 +31,7 @@ export class LocationComponent {
           {
             label: 'Location destibution',
             data: question.questionStatistic,
-            backgroundColor: '#6d812b',
+            backgroundColor: '#FFAD4F',
           },
         ],
       };
