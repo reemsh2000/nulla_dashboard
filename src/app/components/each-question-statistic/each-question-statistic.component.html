@@ -6,9 +6,36 @@
     (importEvent)="checkImport($event)"
     class="search_comp"
   ></app-search>
+
   <div *ngIf="displayResult">
-    <div class="snapshot" *ngFor="let question of allQuestions$ | async">
-      <app-stat-question [question]="question"></app-stat-question>
+    <div *ngIf="(allQuestions$ | async)?.length === 0">
+      <p-progressSpinner class="loader"></p-progressSpinner>
+    </div>
+    <div *ngIf="(allQuestions$ | async)?.length !== 0">
+      <fieldset class="snapshots_container">
+        <legend class="legend">Driver</legend>
+        <div *ngFor="let question of allQuestions$ | async" [class.cont_snap]="question.title === 'Driver'">
+          <div *ngIf="question.title === 'Driver'" class="snapshot">
+            <app-stat-question [question]="question"></app-stat-question>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="snapshots_container">
+        <legend class="legend">Personal</legend>
+        <div *ngFor="let question of allQuestions$ | async" [class.cont_snap]="question.title === 'Personal'">
+          <div *ngIf="question.title === 'Personal' && question"  class="snapshot">
+            <app-stat-question [question]="question"></app-stat-question>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="snapshots_container">
+        <legend class="legend">Lead</legend>
+        <div *ngFor="let question of allQuestions$ | async" [class.cont_snap]="question.title === 'Lead'" >
+          <div *ngIf="question.title === 'Lead'" class="snapshot">
+            <app-stat-question [question]="question"></app-stat-question>
+          </div>
+        </div>
+      </fieldset>
     </div>
   </div>
 </div>

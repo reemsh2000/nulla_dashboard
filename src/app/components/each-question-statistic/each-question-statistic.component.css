@@ -17,6 +17,31 @@
   font-weight: bold;
   margin-top: 100px;
 }
+.snapshots_container{
+  width:85%;
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+  box-shadow: -1px 2px 9px -1px rgba(224, 224, 224, 0.867);
+  padding: 20px;
+  margin-top: 20px;
+}
+.legend{
+  font-weight: bold;
+  font-size: 22px;
+}
+.snapshot{
+  width: 95%;
+}
+.cont_snap{
+  width: 50%;
+}
+@media screen and (max-width: 1100px) {
+  .cont_snap{
+    width: 80% ;
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 700px) {
   .content {
     width: 95%;

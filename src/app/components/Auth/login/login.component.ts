@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment';
 import { UserTypeService } from './../../../services/user-type.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.profileForm.valid) {
       this.authService.login(this.profileForm.value);
-      if (this.profileForm.value.email === '') {
+      if (this.profileForm.value.email === environment.FounderEmail) {
         this.userType.setUserType();
       }
       this.authService.errorMsg$.subscribe((msg) => {

@@ -168,7 +168,7 @@ export class AuthService {
       .set(Record)
       .then(() => {
         this.completeform = true;
-        this.router.navigate(['/dashboard/profile']);
+        this.router.navigate(['/dashboard']);
       })
       .catch((err) => {
         console.error(err);
