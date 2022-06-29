@@ -1,14 +1,26 @@
-.teams_chart  {
-      width:250px !important;
+.team-container{
+  width: 90% !important;
+  height: 100%;
+
+  border-top: 1px solid #ddd;
+  box-shadow: 2px 2px 2px 2px #dddd;
+
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: -20%;
 }
 
+.teams_chart {
+ width: 60%;
+ margin-left:15%
+
+}
 
 @media (max-width: 700px) {
-    .teams-chart{
-        width:50%;
-        height:50%;
-        margin-left:12%;
-       padding-top:18px
-    }
+  .teams-chart {
+    width: 50%;
+    height: 50%;
+    margin-left: 12%;
+    padding-top: 18px;
   }
-  
+}
