@@ -59,14 +59,14 @@
   font-weight: 500;
 }
 .snapshot:nth-child(1) .snapshot_question {
-  background-color: #2a691a;
+  background-color: #192e14;
 }
 .snapshot:nth-child(2) .snapshot_question {
-  background-color: #17756a;
+  background-color: #6d812b;
 }
 
 .snapshot:nth-child(3) .snapshot_question {
-  background-color: #f0691a;
+  background-color: #f08001;
 }
 .img-snapshot {
   width: 25%;
