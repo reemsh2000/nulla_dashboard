@@ -1,4 +1,4 @@
-import { DataService } from './../../services/data.service';
+import { DataService } from '../../../services/data.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
