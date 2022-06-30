@@ -1,5 +1,5 @@
-import { environment } from './../../../../environments/environment';
-import { UserTypeService } from './../../../services/user-type.service';
+import { environment } from '../../../../environments/environment';
+import { UserTypeService } from '../../../services/user-type.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
