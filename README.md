@@ -106,6 +106,10 @@ This page for Nulla admin just, the admin can see all compnaies in the site and 
 * intsall firebase 
 * git clone ```https://github.com/reemsh2000/nulla_dashboard.git```
 * npm i 
+* cd functions
+* npm i 
+* cd ../
+* npm start
 ------------
 ## API documentation 
 ````
