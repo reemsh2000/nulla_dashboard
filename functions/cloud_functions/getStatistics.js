@@ -7,7 +7,7 @@ const getSurveyStatistics = async (req, res) => {
   const apiEndPoint = "https://api.typeform.com/forms/";
   const headers = {
     Authorization:
-      "Bearer tfp_2Ph2w1NhEaFUmqoLFnsDGQo72i7VHt3uvjYXtvtow9hv_3mJs7NpZAGDsrf",
+      "Bearer tfp_4VvjvM4NdWzgpjcc2hZGUeSm12EaatmFWnihZ9z7bt1X_3pc4UmKjyWkA9T",
   };
   const { surveyId } = req.params;
   const { data: questions } = await axios.get(apiEndPoint + surveyId, {
