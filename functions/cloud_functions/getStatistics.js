@@ -1,4 +1,5 @@
 const axios = require("axios");
+const env = require('env2')('../.env');
 const getPersonalityStatistics = require("./utils/personality/getPersonalityStatistics");
 const getSnapshotStatistics = require("./utils/snapshot/getSnapshotStatistics");
 const getDemographicStatistics = require("./utils/demographic/getDemographicStatistics");
@@ -7,7 +8,7 @@ const getSurveyStatistics = async (req, res) => {
   const apiEndPoint = "https://api.typeform.com/forms/";
   const headers = {
     Authorization:
-      "Bearer tfp_4VvjvM4NdWzgpjcc2hZGUeSm12EaatmFWnihZ9z7bt1X_3pc4UmKjyWkA9T",
+    process.env.TYPEFORM_TOKEN
   };
   const { surveyId } = req.params;
   const { data: questions } = await axios.get(apiEndPoint + surveyId, {
