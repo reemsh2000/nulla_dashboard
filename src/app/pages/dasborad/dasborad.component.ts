@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AsideService } from 'app/services/aside.service';
 import { DataService } from 'app/services/data.service';
 
@@ -7,12 +7,16 @@ import { DataService } from 'app/services/data.service';
   templateUrl: './dasborad.component.html',
   styleUrls: ['./dasborad.component.css'],
 })
-export class DasboradComponent {
+export class DasboradComponent implements OnInit {
   openMenu: boolean = false;
   title = 'nula';
   displayResult = false;
   showErrorMsg: boolean = false;
-  ErrorMsg= {severity:'error', summary:'Error', detail:'You should enter a valid type form'};
+  ErrorMsg = {
+    severity: 'error',
+    summary: 'Error',
+    detail: 'You should enter a valid type form',
+  };
 
   constructor(
     private asideService: AsideService,
@@ -22,6 +26,9 @@ export class DasboradComponent {
       this.openMenu = val;
     });
     this.asideService.setSection('Dashboard');
+  }
+  ngOnInit(): void {
+    this.checkImport(true);
   }
   checkImport(event: any) {
     this.dataService.getStatistics().subscribe(
