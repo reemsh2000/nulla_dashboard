@@ -26,8 +26,6 @@ Nula is a sustainability platform that educates and engages organizations’ tea
 #### As  a Super Admin (founder): 
 > * you can check all companies they signup for and their information.
 
-## User journey 
-
 
 
   
