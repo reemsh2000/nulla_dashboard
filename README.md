@@ -128,6 +128,7 @@ Database: Firebase store.
 
 -----------------------
 ## How to create Effective typeform survey ?
+
 follow the steps here : [Link](https://docs.google.com/document/d/11hEeZ45TovPKbPjAqRp1BA24WwaDU0VoC0_A1uJuJoE/edit?usp=sharing)
 ------------------------------------
 ## what is next?
