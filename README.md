@@ -129,3 +129,18 @@ Database: Firebase store.
 -----------------------
 ## How to create Effective typeform survey ?
 follow the steps here : [Link](https://docs.google.com/document/d/11hEeZ45TovPKbPjAqRp1BA24WwaDU0VoC0_A1uJuJoE/edit?usp=sharing)
+------------------------------------
+## what is next?
+* Adding company employees to the site.
+* Add information about the company's employees.
+* Send the survey link using the email of a specific team.
+* Add an employee using the CSV upload button.
+* Create a team and add information about the team in addition to adding team members.
+* Add different types of surveys and choose to whom to send them.
+* Add a heatmap for a specific type of question.
+* Add more permission for the company manager or human resources
+-----------------------------------------
+## MVP blockers :
+* The way to associate the question with its type on the Typeform.
+* Performance issues: because the returned API was so interleaf.
+* using firebase cloud functions as backend, because we want to deploy the front end and backend of the website on the same server.
